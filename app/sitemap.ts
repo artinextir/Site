@@ -18,6 +18,7 @@ const staticPaths = [
   "/contact",
   "/revit-plugin-development-tehran",
   "/revit-family-creation-isfahan",
+  "/revit-family-creation-tehran",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
