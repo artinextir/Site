@@ -1,0 +1,19 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+
+# Next.js's static export for app/icon.tsx and app/apple-icon.tsx emits
+# extensionless files (out/icon, out/apple-icon). Cloudflare Pages infers
+# Content-Type from the file extension, so without these it falls back to
+# application/octet-stream — and X-Content-Type-Options: nosniff above means
+# browsers/crawlers won't sniff their way past that, so the favicon silently
+# fails to render (this is why Google wasn't showing it in search results).
+/icon
+  Content-Type: image/png
+/apple-icon
+  Content-Type: image/png

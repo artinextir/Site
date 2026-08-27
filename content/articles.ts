@@ -1,0 +1,94 @@
+import type { Localized } from "@/lib/i18n/config";
+
+export interface ArticleSummary {
+  slug: string;
+  category: string;
+  title: string;
+  leadOpinion: string;
+  publishedLabel: string;
+}
+
+export interface ArticlesContent {
+  meta: { title: string; description: string };
+  breadcrumb: string;
+  intro: {
+    eyebrow: string;
+    aside: string;
+    headline: string;
+    description: string;
+  };
+  readMore: string;
+  cta: { statement: string; label: string };
+  articles: ArticleSummary[];
+}
+
+export const articles: Localized<ArticlesContent> = {
+  fa: {
+    meta: {
+      title: "بینش‌ها — آرتینکست",
+      description: "یادداشت‌های میدانی درباره اتوماسیون، توسعه ابزار، BIM و آمادگی هوش مصنوعی، بدون هیاهو.",
+    },
+    breadcrumb: "بینش‌ها",
+    intro: {
+      eyebrow: "بینش‌ها",
+      aside: "یادداشت‌های میدانی",
+      headline: "یادداشت‌هایی کوتاه و کاربردی درباره اتوماسیون، توسعه ابزار، BIM و آمادگی هوش مصنوعی.",
+      description: "بدون هیاهو؛ تمرکز روی تصمیم درست، همان تصمیمی که معمولاً کسی دوست ندارد اول بگیرد.",
+    },
+    readMore: "خواندن یادداشت",
+    cta: {
+      statement: "چالش واقعی‌ای دارید که ارزش بررسی دقیق‌تر دارد؟",
+      label: "شروع گفتگو",
+    },
+    articles: [
+      {
+        slug: "revit-model-checker",
+        category: "BIM و رویت",
+        title: "چک‌کننده مدل رویت QAQC را خودکار می‌کند، جایگزینش نمی‌شود",
+        leadOpinion: "گزارشی که یک چک‌کننده مدل تحویل می‌دهد کار ساده‌ای است؛ چیزی که آن گزارش را قابل‌اعتماد می‌کند، همان چک‌ستی است که کسی حوصله ساختنش را نداشت.",
+        publishedLabel: "۲۰۲۶/۰۸/۲۶",
+      },
+      {
+        slug: "revit-library-optimization",
+        category: "BIM و رویت",
+        title: "بهینه‌سازی کتابخانه رویت فقط حذف فایل نیست",
+        leadOpinion: "خطرناک‌ترین مشکل یک کتابخانه رویت معمولاً بزرگ‌ترین فایل نیست؛ همان جزئیاتی است که کسی بررسی نکرده.",
+        publishedLabel: "۲۰۲۶/۰۸/۱۹",
+      },
+    ],
+  },
+  en: {
+    meta: {
+      title: "Insights — ARTINEXT",
+      description: "Practical field notes on automation, tool development, BIM, and AI readiness, no hype.",
+    },
+    breadcrumb: "Insights",
+    intro: {
+      eyebrow: "Insights",
+      aside: "Field notes",
+      headline: "Short, practical notes on automation, tool development, BIM, and AI readiness.",
+      description: "No hype. Just the decision that matters, usually the one nobody wants to make first.",
+    },
+    readMore: "Read the note",
+    cta: {
+      statement: "Have a real challenge worth examining more closely?",
+      label: "Start a project",
+    },
+    articles: [
+      {
+        slug: "revit-model-checker",
+        category: "BIM & Revit",
+        title: "A Revit model checker automates QA/QC — it doesn't replace it",
+        leadOpinion: "The report a model checker hands you is the easy part. The checkset that made that report worth trusting is the part nobody wanted to build.",
+        publishedLabel: "Aug 26, 2026",
+      },
+      {
+        slug: "revit-library-optimization",
+        category: "BIM & Revit",
+        title: "Revit library optimization isn't about deleting files",
+        leadOpinion: "The most dangerous problem in a Revit library is rarely the biggest file — it's the one detail nobody checked.",
+        publishedLabel: "Aug 19, 2026",
+      },
+    ],
+  },
+};

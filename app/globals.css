@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --font-peyda: "Peyda", Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("/fonts/peyda/Peyda-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("/fonts/peyda/Peyda-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("/fonts/peyda/Peyda-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("/fonts/peyda/Peyda-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0b;
+  color: #f4f2ee;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #6e89bb;
+  color: #0a0a0b;
+}
+
+/* Persian (fa) uses Peyda throughout; English uses the display/sans pairing */
+html[lang="fa"] body {
+  font-family: var(--font-peyda), Tahoma, sans-serif;
+}
+
+html[lang="en"] body {
+  font-family: var(--font-sans), sans-serif;
+}
+
+html[lang="en"] .font-heading {
+  font-family: var(--font-display), sans-serif;
+}
+
+html[lang="fa"] .font-heading {
+  font-family: var(--font-peyda), Tahoma, sans-serif;
+  font-weight: 700;
+}
+
+.noise-grain {
+  background-image: var(--tw-gradient-grain, none);
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(244, 242, 238, 0.05) 1px, transparent 0);
+  background-size: 22px 22px;
+  opacity: 0.5;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
