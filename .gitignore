@@ -21,6 +21,9 @@ yarn-error.log*
 .env
 .env*.local
 
+# local-only, never pushed to any repo — see the file itself for why
+push-allowlist.txt
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

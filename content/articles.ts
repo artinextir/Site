@@ -42,6 +42,13 @@ export const articles: Localized<ArticlesContent> = {
     },
     articles: [
       {
+        slug: "revit-plugin-development-cost",
+        category: "BIM و رویت",
+        title: "توسعه پلاگین رویت چقدر هزینه دارد؟",
+        leadOpinion: "پلاگینی که فقط یک دکمه به‌نظر می‌رسد، هیچ‌وقت بر اساس همان دکمه قیمت نمی‌خورد؛ بر اساس هفته‌ها کاری قیمت می‌خورد که پشت آن دکمه پنهان شده.",
+        publishedLabel: "۲۰۲۶/۰۸/۲۷",
+      },
+      {
         slug: "revit-model-checker",
         category: "BIM و رویت",
         title: "چک‌کننده مدل رویت QAQC را خودکار می‌کند، جایگزینش نمی‌شود",
@@ -75,6 +82,13 @@ export const articles: Localized<ArticlesContent> = {
       label: "Start a project",
     },
     articles: [
+      {
+        slug: "revit-plugin-development-cost",
+        category: "BIM & Revit",
+        title: "How much does Revit plugin development cost?",
+        leadOpinion: "A plugin that looks like one button was never priced by the button — it's priced by the weeks of work standing behind it.",
+        publishedLabel: "Aug 27, 2026",
+      },
       {
         slug: "revit-model-checker",
         category: "BIM & Revit",
