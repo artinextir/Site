@@ -42,6 +42,20 @@ export const articles: Localized<ArticlesContent> = {
     },
     articles: [
       {
+        slug: "aec-workflow-automation",
+        category: "اتوماسیون",
+        title: "اتوماسیون گردش کار AEC از کجا واقعا شروع می‌شود؟",
+        leadOpinion: "سقف چیزی که ارزش خودکارسازی دارد، معمولا تست‌نشده است، نه واقعی.",
+        publishedLabel: "۲۰۲۶/۰۸/۲۸",
+      },
+      {
+        slug: "custom-parametric-revit-family-creation",
+        category: "BIM و رویت",
+        title: "ساخت فمیلی پارامتریک اختصاصی رویت",
+        leadOpinion: "فمیلی‌ای که فقط یک‌بار در ادیتور فلکس می‌شود، هنوز ثابت نکرده کار می‌کند؛ ثابت کرده یک‌بار کار کرده.",
+        publishedLabel: "۲۰۲۶/۰۸/۲۸",
+      },
+      {
         slug: "revit-plugin-development-cost",
         category: "BIM و رویت",
         title: "توسعه پلاگین رویت چقدر هزینه دارد؟",
@@ -82,6 +96,20 @@ export const articles: Localized<ArticlesContent> = {
       label: "Start a project",
     },
     articles: [
+      {
+        slug: "aec-workflow-automation",
+        category: "Automation",
+        title: "Where AEC workflow automation should start",
+        leadOpinion: "The ceiling on what's worth automating is usually untested, not real.",
+        publishedLabel: "Aug 28, 2026",
+      },
+      {
+        slug: "custom-parametric-revit-family-creation",
+        category: "BIM & Revit",
+        title: "Custom parametric Revit family creation",
+        leadOpinion: "A family that only flexes once in the editor hasn't proven it works. It's proven it worked once.",
+        publishedLabel: "Aug 28, 2026",
+      },
       {
         slug: "revit-plugin-development-cost",
         category: "BIM & Revit",
