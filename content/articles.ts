@@ -42,6 +42,22 @@ export const articles: Localized<ArticlesContent> = {
     },
     articles: [
       {
+        slug: "revit-plugin-development-company",
+        category: "BIM و رویت",
+        title: "انتخاب شرکت توسعه پلاگین رویت: به چه چیزی واقعاً باید نگاه کرد؟",
+        leadOpinion:
+          "خطرناک‌ترین مشکل یک همکاری با شرکت توسعه پلاگین معمولاً از نمونه‌کار ضعیف نمی‌آید؛ از همان جزئیات کوچکی می‌آید که کسی موقع ارزیابی بررسی نکرده.",
+        publishedLabel: "۲۰۲۶/۰۸/۲۹",
+      },
+      {
+        slug: "custom-dynamo-script-development",
+        category: "BIM و رویت",
+        title: "توسعه اسکریپت اختصاصی داینامو چه چیزی را واقعاً جایگزین می‌کند؟",
+        leadOpinion:
+          "پلاگینی که فقط یک دکمه به‌نظر می‌رسد، هیچ‌وقت بر اساس همان دکمه ساخته نشده؛ بر اساس هفته‌ها تصمیم پشت آن دکمه ساخته شده، و همین حرف درباره یک گراف داینامو هم صادق است.",
+        publishedLabel: "۲۰۲۶/۰۸/۲۹",
+      },
+      {
         slug: "aec-workflow-automation",
         category: "اتوماسیون",
         title: "اتوماسیون گردش کار AEC از کجا واقعا شروع می‌شود؟",
@@ -96,6 +112,22 @@ export const articles: Localized<ArticlesContent> = {
       label: "Start a project",
     },
     articles: [
+      {
+        slug: "revit-plugin-development-company",
+        category: "BIM & Revit",
+        title: "Choosing a Revit plugin development company: what actually matters",
+        leadOpinion:
+          "The most dangerous problem in a plugin development partnership rarely comes from a weak portfolio. It comes from the small detail nobody checked during evaluation.",
+        publishedLabel: "Aug 29, 2026",
+      },
+      {
+        slug: "custom-dynamo-script-development",
+        category: "BIM & Revit",
+        title: "Custom Dynamo script development: what it actually replaces",
+        leadOpinion:
+          "A plugin that looks like one button was never priced by the button — it's priced by the weeks of decisions standing behind it, and the same is true of a Dynamo graph.",
+        publishedLabel: "Aug 29, 2026",
+      },
       {
         slug: "aec-workflow-automation",
         category: "Automation",
