@@ -1,0 +1,41 @@
+# ARTINEXT
+
+> ARTINEXT is a digital-systems studio based in Iran, working remotely with architecture, structural, and MEP teams. Three service lines: custom Revit/BIM content (parametric families, office libraries, library optimization), custom digital tools (Revit plugins, add-ins, model QA/QC checkers, Dynamo scripts), and workflow automation (process automation, software/data integration, operational dashboards). The site ships in Persian (fa, default) and English (en) at matching URLs — swap the locale segment (`/fa/...` or `/en/...`) for either language.
+
+ARTINEXT does not build off-the-shelf, generic tools. Every project starts from a real, specific workflow problem, not a pre-built product — and the team explicitly turns away work that's just installing a generic plugin without any process review (see `/about`).
+
+## Services
+
+- [Solutions overview](https://artinext.ir/en/solutions): Six services — process automation, custom tool development, dashboards and management systems, BIM/Revit content, modeling and data systems, and AI readiness.
+- [Specialist Revit content](https://artinext.ir/en/products/revit-families): Product families, office libraries, project families, and library optimization for real production models, not demo geometry.
+- [Custom digital tools](https://artinext.ir/en/products/digital-tools): Custom plugins, model quality control, output management, and data tools shaped around how a specific team actually works.
+- [Intelligent automation](https://artinext.ir/en/products/automation): Workflow automation, software/data integration, operational dashboards, and organizational AI assistants, one controlled flow from request to report.
+- [Research & Development](https://artinext.ir/en/research-development): Small, fast prototypes used to test an idea before full investment, rather than committing to a build on a guess.
+
+## Regional / local pages
+
+- [Revit plugin development, Tehran](https://artinext.ir/en/revit-plugin-development-tehran): Custom Revit plugin development for architecture, structural, and MEP offices in Tehran.
+- [Revit family creation, Tehran](https://artinext.ir/en/revit-family-creation-tehran): Custom Revit family creation for manufacturers, architecture, and MEP offices in Tehran.
+- [Revit family creation, Isfahan](https://artinext.ir/en/revit-family-creation-isfahan): Custom Revit family creation for manufacturers, architecture, and MEP offices working with Isfahan.
+- [Workflow automation, Tehran](https://artinext.ir/en/workflow-automation-tehran): Workflow automation, software/data integration, and operational dashboards for companies and technical offices in Tehran — not Revit-specific.
+- [Revit plugin development, UAE](https://artinext.ir/en/revit-plugin-development-uae): Custom Revit plugin and add-on development for architecture, structural, and MEP firms across the UAE, delivered fully remote from the Iran-based team.
+
+## Insights (articles)
+
+- [Choosing a Revit plugin development company](https://artinext.ir/en/articles/revit-plugin-development-company): What actually matters when evaluating a Revit plugin development partner, and where those partnerships usually go wrong.
+- [Custom Dynamo script development](https://artinext.ir/en/articles/custom-dynamo-script-development): What a custom Dynamo script actually replaces, and when it's the right tool versus a full Revit API plugin.
+- [Where AEC workflow automation should start](https://artinext.ir/en/articles/aec-workflow-automation): How to find the right first process to automate, and why the real ceiling on automation is usually untested rather than fixed.
+- [Custom parametric Revit family creation](https://artinext.ir/en/articles/custom-parametric-revit-family-creation): What makes a parametric Revit family actually reliable across real projects, not just functional once in the editor.
+- [How much does Revit plugin development cost?](https://artinext.ir/en/articles/revit-plugin-development-cost): What actually drives Revit plugin pricing — workflow complexity, integration needs, and user count — instead of a flat price list.
+- [A Revit model checker automates QA/QC — it doesn't replace it](https://artinext.ir/en/articles/revit-model-checker): Why the checkset behind a model checker, not the checker itself, is what makes its report trustworthy.
+- [Revit library optimization isn't about deleting files](https://artinext.ir/en/articles/revit-library-optimization): What actually needs fixing in a bloated or inconsistent Revit content library.
+
+## Company
+
+- [About](https://artinext.ir/en/about): Who ARTINEXT is, its point of view on tooling, and who the studio explicitly isn't a fit for.
+- [Contact](https://artinext.ir/en/contact): Start a project — direct email and phone, plus what the first conversation covers.
+
+## Notes
+
+- Farsi (fa) is the default locale and the primary language for the Iran-based audience; English (en) mirrors every page at the same path under `/en/`.
+- No fabricated statistics, client counts, testimonials, or physical office address appear anywhere on this site — content only states what's verifiably true.

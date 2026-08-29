@@ -6,11 +6,14 @@ export function ogImageUrl(locale: Locale): string {
   return `${siteUrl}/${locale}/opengraph-image`;
 }
 
-export function hreflangAlternates(path: string): Record<Locale, string> {
+export function hreflangAlternates(path: string): Record<Locale | "x-default", string> {
   const suffix = path === "/" ? "" : path;
   return {
     fa: `${siteUrl}/fa${suffix}`,
     en: `${siteUrl}/en${suffix}`,
+    // fa is defaultLocale and the primary audience — same page the bare
+    // domain's meta-refresh redirect (app/page.tsx) sends everyone to.
+    "x-default": `${siteUrl}/fa${suffix}`,
   };
 }
 
@@ -25,4 +28,7 @@ export const site = {
   email: "artinext.ai@gmail.com",
   phone: "+98 930 525 3240",
   phoneHref: "+989305253240",
+  // Organization schema's `sameAs`. LinkedIn is planned but not live yet —
+  // add its URL here the day it goes up, nothing else needs to change.
+  sameAs: ["https://www.instagram.com/artinext.ir/"],
 };

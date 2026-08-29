@@ -26,6 +26,7 @@ export async function generateMetadata({
       languages: {
         fa: `${siteUrl}/fa`,
         en: `${siteUrl}/en`,
+        "x-default": `${siteUrl}/fa`,
       },
     },
   };
@@ -57,6 +58,7 @@ export default async function LocaleLayout({
     email: site.email,
     telephone: site.phoneHref,
     logo: `${siteUrl}/artinext-logo.svg`,
+    sameAs: site.sameAs,
   };
 
   // GitHub Pages can't serve custom HTTP response headers, so the CSP that

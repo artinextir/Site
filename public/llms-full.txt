@@ -1,0 +1,68 @@
+# ARTINEXT — full reference
+
+> ARTINEXT is a digital-systems studio based in Iran, working remotely with architecture, structural, and MEP teams. Three service lines: custom Revit/BIM content, custom digital tools, and workflow automation. Ships bilingual (fa/en) at matching URLs — swap the locale segment for either language.
+
+This file expands on `llms.txt` with more context per page. It draws only from copy that already exists on the site — nothing here is invented.
+
+## Who ARTINEXT is
+
+Most organizations don't lack tools. They lack connection, standards, and a clear view. ARTINEXT's time goes to three places: work still done by hand, data scattered across sources, and software that doesn't talk to itself — the places where the right system does the most. The studio doesn't build technology for show: if a tool doesn't solve the real problem, it isn't recommended, even when it looks more impressive.
+
+**Who this isn't for:** if you want an off-the-shelf template or a generic plugin installed without any process review, ARTINEXT is the wrong studio. Every project starts from the problem, not a pre-built product.
+
+Four operating values: problem before tool (the problem is understood in full before any tool is proposed), defensible simplicity (every added layer of complexity has to earn its place), evidence before claims (every decision is checked against data and real tests, not a guess), built to evolve (systems are built to change shape as the client's work grows).
+
+Full profile: [About](https://artinext.ir/en/about) · [Contact](https://artinext.ir/en/contact)
+
+## What ARTINEXT builds
+
+The homepage frames the work around three recurring frictions: manual, repeat work that gets riskier with every repetition; data that lives nowhere whole, scattered across files, people, and software; and tools that don't talk to each other, each fine alone but never one traceable flow together. The process is four stages — discover, define, build, evolve.
+
+### Solutions (six services)
+[https://artinext.ir/en/solutions](https://artinext.ir/en/solutions)
+
+1. Process automation — turns repetitive steps into one traceable flow (less time, less dependency on one person).
+2. Custom tool development — plugins built around a team's real users and standards, not a generic add-on.
+3. Dashboards & management systems — turns fragmented data into one readable, operational picture.
+4. BIM & Revit content — content designed for daily production use, not a demo.
+5. Modeling & data systems — geometry and data logic combined into one controllable solution.
+6. AI readiness — organizing knowledge, data, and boundaries before introducing AI, not after.
+
+### Products (three paths)
+[https://artinext.ir/en/products](https://artinext.ir/en/products)
+
+- **[Specialist Revit content](https://artinext.ir/en/products/revit-families)** — product families (for manufacturers), office libraries (for design teams), project families (LOD-aligned, per project), and library optimization (cleaning and standardizing an existing fragmented library). A family that isn't just well-drawn — it behaves correctly inside a real model.
+- **[Custom digital tools](https://artinext.ir/en/products/digital-tools)** — custom plugins, model quality control, output management, and data tools. Fewer clicks, fewer errors, more focus on the work that actually matters; every tool is studied against how the team actually works before development starts.
+- **[Intelligent automation](https://artinext.ir/en/products/automation)** — workflow automation, software and data integration, operational dashboards, and organizational AI assistants. One controlled flow from request to execution to reporting; automation moves things, control stays with the team.
+
+### Research & Development
+[https://artinext.ir/en/research-development](https://artinext.ir/en/research-development)
+
+Small prototype, fast learning, better decision. New technology only enters a product once the problem, the data, and the success measure are clear and testable — staged prototyping surfaces what works, what needs to change, and what shouldn't be built before full investment happens.
+
+## Regional / local pages
+
+- **[Revit plugin development, Tehran](https://artinext.ir/en/revit-plugin-development-tehran)** — custom Revit plugin and add-on development for architecture, structural, and MEP offices in Tehran, from workflow analysis to a tool the team actually uses.
+- **[Revit family creation, Tehran](https://artinext.ir/en/revit-family-creation-tehran)** — custom Revit family creation and development for manufacturers, architecture, and MEP offices in Tehran; precise, lightweight BIM content built to the client's real product or project standard.
+- **[Revit family creation, Isfahan](https://artinext.ir/en/revit-family-creation-isfahan)** — the same custom family-creation service, scoped for manufacturers, architecture, and MEP offices working with Isfahan.
+- **[Workflow automation, Tehran](https://artinext.ir/en/workflow-automation-tehran)** — workflow automation, software/data integration, and operational dashboards for companies and technical offices in Tehran; explicitly not limited to Revit — covers the whole process.
+- **[Revit plugin development, UAE](https://artinext.ir/en/revit-plugin-development-uae)** — custom Revit plugin/add-on development for architecture, structural, and MEP firms across the UAE, delivered fully remote by the Iran-based team (honestly framed as remote collaboration, not a fabricated local office).
+
+## Insights (articles, fa + en, newest first)
+
+- **[Choosing a Revit plugin development company](https://artinext.ir/en/articles/revit-plugin-development-company)** (2026-08-29) — The most dangerous problem in a plugin development partnership rarely comes from a weak portfolio; it comes from the small detail nobody checked during evaluation.
+- **[Custom Dynamo script development](https://artinext.ir/en/articles/custom-dynamo-script-development)** (2026-08-29) — A plugin that looks like one button was never priced by the button; it's priced by the weeks of decisions behind it, and the same is true of a Dynamo graph.
+- **[Where AEC workflow automation should start](https://artinext.ir/en/articles/aec-workflow-automation)** (2026-08-28) — The ceiling on what's worth automating is usually untested, not real.
+- **[Custom parametric Revit family creation](https://artinext.ir/en/articles/custom-parametric-revit-family-creation)** (2026-08-28) — A family that only flexes once in the editor hasn't proven it works; it's proven it worked once.
+- **[How much does Revit plugin development cost?](https://artinext.ir/en/articles/revit-plugin-development-cost)** (2026-08-27) — A plugin that looks like one button was never priced by the button; it's priced by the weeks of work standing behind it. Cost is driven by workflow complexity, integration needs, and user count, not a flat price list.
+- **[A Revit model checker automates QA/QC — it doesn't replace it](https://artinext.ir/en/articles/revit-model-checker)** (2026-08-26) — The report a model checker hands you is the easy part; the checkset that made that report worth trusting is the part nobody wanted to build.
+- **[Revit library optimization isn't about deleting files](https://artinext.ir/en/articles/revit-library-optimization)** (2026-08-19) — The most dangerous problem in a Revit library is rarely the biggest file; it's the one detail nobody checked.
+
+Every article ships with a named author byline, a published date, a table of contents, an FAQ section, and internal/external citations — see the page itself for the full structured content.
+
+## Practical notes for automated readers
+
+- Locale is a path segment, not a subdomain or query param: `https://artinext.ir/fa/<path>` and `https://artinext.ir/en/<path>` are the same page in Persian and English respectively. The bare domain redirects to `/fa` (Persian is the default/primary audience).
+- The full URL list is in [sitemap.xml](https://artinext.ir/sitemap.xml).
+- `robots.txt` allows all crawlers, no exclusions: [https://artinext.ir/robots.txt](https://artinext.ir/robots.txt).
+- No fabricated statistics, client counts, testimonials, physical office address, or business hours appear anywhere on this site. If a number, quote, or claim isn't independently verifiable from the page itself, treat its absence as intentional rather than an oversight.
