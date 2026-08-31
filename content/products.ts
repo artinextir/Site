@@ -18,6 +18,11 @@ export interface ProductsContent {
     description: string;
   };
   products: ProductSummary[];
+  caseStudy: {
+    kicker: string;
+    heading: string;
+    caption: string;
+  };
   principle: string;
   linkLabel: string;
   cta: { statement: string; label: string };
@@ -63,6 +68,12 @@ export const products: Localized<ProductsContent> = {
         href: "/products/automation",
       },
     ],
+    caseStudy: {
+      kicker: "همان فایل، نه ترسیم دوباره.",
+      heading: "یک نقشه دوبعدی CAD به مدل کامل رویت تبدیل می‌شود.",
+      caption:
+        "خروجی واقعی ابزار CAD-to-Revit: خطوط دوبعدی به دیوار، سقف و یک سازه سه‌طبقه کاملاً بومی رویت تبدیل می‌شوند؛ نه آبجکت ایمپورت‌شده.",
+    },
     principle:
       "پاسخ آماده را به شما تحمیل نمی‌کنیم. محصول را بر اساس داده و جریان کار واقعی شما می‌سازیم.",
     linkLabel: "مشاهده جزئیات",
@@ -110,6 +121,12 @@ export const products: Localized<ProductsContent> = {
         href: "/products/automation",
       },
     ],
+    caseStudy: {
+      kicker: "Same file, not redrawn.",
+      heading: "A flat CAD plan becomes a native Revit model.",
+      caption:
+        "This is the CAD-to-Revit tool converting isometric linework into walls, floors, and a full three-story structure — every element native, not an imported block.",
+    },
     principle: "We don't force a ready-made answer. We build the product around your real data and workflow.",
     linkLabel: "View details",
     cta: {

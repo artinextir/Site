@@ -9,6 +9,7 @@ import { StrengthMarkers } from "@/components/StrengthMarkers";
 import { Marquee } from "@/components/Marquee";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { ProductCard } from "@/components/ProductCard";
+import { CaseStudyClip } from "@/components/CaseStudyClip";
 import { home } from "@/content/home";
 import { products } from "@/content/products";
 import { locales, type Locale } from "@/lib/i18n/config";
@@ -93,12 +94,12 @@ export default async function HomePage({
       <Marquee items={c.marquee} />
 
       <Section tone="ink">
-        <Container className="py-20 md:py-28">
+        <Container className="py-section-md md:py-section-lg">
           <p className="text-xs uppercase tracking-widest text-navy-300">{c.statement.kicker}</p>
           <h2 className="font-heading text-balance mt-4 max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             {c.statement.headline}
           </h2>
-          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-ink-border bg-ink-border md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-md border border-ink-border bg-ink-border md:grid-cols-3">
             {c.statement.frictions.map((f) => (
               <div key={f.title} className="bg-ink p-7">
                 <h3 className="font-heading text-base font-semibold">{f.title}</h3>
@@ -109,15 +110,35 @@ export default async function HomePage({
         </Container>
       </Section>
 
+      {c.caseStudy && (
+        <Section tone="ink">
+          <Container className="py-section-md md:py-section-lg">
+            <p className="text-xs uppercase tracking-widest text-navy-300">{c.caseStudy.kicker}</p>
+            <h2 className="font-heading text-balance mt-4 max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
+              {c.caseStudy.heading}
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+              {c.caseStudy.caption}
+            </p>
+            <div className="mt-10">
+              <CaseStudyClip
+                src="/case-studies/etabs-to-revit.mp4"
+                poster="/case-studies/etabs-to-revit-poster.jpg"
+              />
+            </div>
+          </Container>
+        </Section>
+      )}
+
       <Section tone="smoke">
-        <Container className="py-20 md:py-28">
+        <Container className="py-section-md md:py-section-lg">
           <h2 className="font-heading text-3xl font-semibold text-ink md:text-4xl">
             {c.productsTeaser.heading}
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {p.products.map((product) => (
-              <div key={product.href} className="rounded-2xl border border-smoke-border bg-smoke p-1">
-                <div className="rounded-[14px] bg-ink p-1">
+              <div key={product.href} className="rounded-md border border-smoke-border bg-smoke p-1">
+                <div className="h-full rounded-[4px] bg-ink p-1">
                   <ProductCard
                     locale={locale}
                     eyebrow={product.eyebrow}
@@ -135,7 +156,7 @@ export default async function HomePage({
       </Section>
 
       <Section tone="ink">
-        <Container className="py-20 md:py-28">
+        <Container className="py-section-md md:py-section-lg">
           <h2 className="font-heading text-3xl font-semibold md:text-4xl">{c.process.heading}</h2>
           <div className="mt-10">
             <ProcessSteps steps={c.process.steps} tone="ink" />
@@ -147,7 +168,7 @@ export default async function HomePage({
         <Container className="py-16 md:py-20">
           <Link
             href={lh(locale, c.fieldNoteTeaser.href)}
-            className="group flex flex-col items-start justify-between gap-6 rounded-2xl border border-smoke-border bg-ink p-8 text-smoke md:flex-row md:items-center md:p-10"
+            className="group flex flex-col items-start justify-between gap-6 rounded-md border border-smoke-border bg-ink p-8 text-smoke md:flex-row md:items-center md:p-10"
           >
             <div>
               <span className="text-xs uppercase tracking-widest text-navy-300">

@@ -55,7 +55,7 @@ export async function generateMetadata({
 
 function ResponsiveImage({ image, priority }: { image: ArticleImage; priority?: boolean }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-ink-border">
+    <div className="relative overflow-hidden rounded-md border border-ink-border">
       {/* eslint-disable-next-line @next/next/no-img-element -- manual multi-source srcset; next/image can't emit one under output:export */}
       <img
         src={image.src}

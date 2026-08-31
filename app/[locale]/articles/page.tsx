@@ -72,7 +72,7 @@ export default async function ArticlesPage({
               <Link
                 key={article.slug}
                 href={lh(locale, `/articles/${article.slug}`)}
-                className="group flex flex-col justify-between rounded-2xl border border-ink-border bg-ink-soft p-7 transition-colors duration-200 hover:border-navy-400"
+                className="group flex flex-col justify-between rounded-md border border-ink-border bg-ink-soft p-7 transition-colors duration-200 hover:border-navy-400"
               >
                 <div>
                   <div className="flex items-center justify-between">

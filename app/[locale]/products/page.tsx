@@ -4,6 +4,7 @@ import { Section } from "@/components/Section";
 import { PageIntro } from "@/components/PageIntro";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ProductCard } from "@/components/ProductCard";
+import { CaseStudyClip } from "@/components/CaseStudyClip";
 import { CtaBand } from "@/components/CtaBand";
 import { products } from "@/content/products";
 import { nav } from "@/content/nav";
@@ -79,6 +80,24 @@ export default async function ProductsPage({
                 linkLabel={c.linkLabel}
               />
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="ink">
+        <Container className="pb-16 md:pb-20">
+          <p className="text-xs uppercase tracking-widest text-navy-300">{c.caseStudy.kicker}</p>
+          <h2 className="font-heading text-balance mt-4 max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
+            {c.caseStudy.heading}
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+            {c.caseStudy.caption}
+          </p>
+          <div className="mt-10">
+            <CaseStudyClip
+              src="/case-studies/cad-to-revit.mp4"
+              poster="/case-studies/cad-to-revit-poster.jpg"
+            />
           </div>
         </Container>
       </Section>

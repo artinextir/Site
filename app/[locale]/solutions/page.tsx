@@ -81,7 +81,7 @@ export default async function SolutionsPage({
       </Section>
 
       <Section tone="smoke">
-        <Container className="py-20 md:py-28">
+        <Container className="py-section-md md:py-section-lg">
           <h2 className="font-heading text-3xl font-semibold text-ink md:text-4xl">
             {c.process.heading}
           </h2>

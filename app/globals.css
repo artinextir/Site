@@ -73,22 +73,112 @@ html[lang="fa"] .font-heading {
   font-weight: 700;
 }
 
-.noise-grain {
-  background-image: var(--tw-gradient-grain, none);
-}
-
-.bg-grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(circle at 1px 1px, rgba(244, 242, 238, 0.05) 1px, transparent 0);
-  background-size: 22px 22px;
-  opacity: 0.5;
-}
-
 .text-balance {
   text-wrap: balance;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* HeroVisual signature element: a pen-trace-in on load. Elements use SVG's
+   pathLength="1" so this keyframe works for any line/path without measuring
+   pixel lengths. */
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flag-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* HeroVisual corner registration ticks — plotter trim-mark motif. */
+.registration-ticks::before,
+.registration-ticks::after,
+.registration-ticks > .tick-tr,
+.registration-ticks > .tick-bl {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.registration-ticks::before {
+  top: 10px;
+  left: 10px;
+  border-top: 1px solid rgba(110, 137, 187, 0.55);
+  border-left: 1px solid rgba(110, 137, 187, 0.55);
+}
+
+.registration-ticks::after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 1px solid rgba(110, 137, 187, 0.55);
+  border-right: 1px solid rgba(110, 137, 187, 0.55);
+}
+
+.registration-ticks > .tick-tr {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid rgba(110, 137, 187, 0.55);
+  border-right: 1px solid rgba(110, 137, 187, 0.55);
+}
+
+.registration-ticks > .tick-bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid rgba(110, 137, 187, 0.55);
+  border-left: 1px solid rgba(110, 137, 187, 0.55);
+}
+
+/* Lighter version of the same motif for page-intro top edges — two short
+   corner marks, no full frame. */
+.top-tick::before,
+.top-tick::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid rgba(110, 137, 187, 0.4);
+  pointer-events: none;
+}
+
+.top-tick::before {
+  left: 0;
+  border-left: 1px solid rgba(110, 137, 187, 0.4);
+}
+
+.top-tick::after {
+  right: 0;
+  border-right: 1px solid rgba(110, 137, 187, 0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {

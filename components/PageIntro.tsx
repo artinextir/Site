@@ -21,7 +21,7 @@ export function PageIntro({
   const mutedText = tone === "ink" ? "text-white/60" : "text-ink/60";
 
   return (
-    <div className="py-20 md:py-28">
+    <div className="top-tick relative py-section-md md:py-section-lg">
       {breadcrumbs && <div className="mb-10">{breadcrumbs}</div>}
       <div className="flex flex-wrap items-center gap-3 mb-6">
         <Tag tone={tone}>{eyebrow}</Tag>

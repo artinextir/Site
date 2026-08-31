@@ -1,4 +1,4 @@
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 
 // Peyda is declared as a plain @font-face in globals.css instead of via
 // next/font/local: next/font's automatic preload <link> injection doesn't
@@ -8,9 +8,12 @@ import { Space_Grotesk, Inter } from "next/font/google";
 // URL the CSS will request, which next/font's content-hashed output can't
 // support without knowing the hash ahead of time.
 
-export const spaceGrotesk = Space_Grotesk({
+// Only the two weights `.font-heading` actually sets (font-semibold /
+// font-bold) are loaded — every extra static weight is a network request
+// that pushes back FCP/LCP for no visual gain.
+export const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["600", "700"],
   variable: "--font-display",
   display: "swap",
 });

@@ -64,12 +64,12 @@ export default async function ContactPage({
 
       <Container className="pb-24 md:pb-32">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_380px]">
-          <div className="rounded-2xl border border-ink-border bg-ink-soft p-7 md:p-10">
+          <div className="rounded-md border border-ink-border bg-ink-soft p-7 md:p-10">
             <ContactForm content={c.form} />
           </div>
 
           <aside className="flex flex-col gap-8">
-            <div className="rounded-2xl border border-ink-border p-7">
+            <div className="rounded-md border border-ink-border p-7">
               <ul className="flex flex-col gap-4 text-sm">
                 <li>
                   <span className="block text-white/50">{c.sidebar.emailLabel}</span>
@@ -90,7 +90,7 @@ export default async function ContactPage({
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-ink-border p-7">
+            <div className="rounded-md border border-ink-border p-7">
               <h2 className="font-heading text-base font-semibold">{c.sidebar.firstCallHeading}</h2>
               <ol className="mt-5 flex flex-col gap-4">
                 {c.sidebar.firstCallSteps.map((step, i) => (

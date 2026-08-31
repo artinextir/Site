@@ -38,6 +38,14 @@ const config: Config = {
         peyda: ["var(--font-peyda)", "Tahoma", "sans-serif"],
         display: ["var(--font-display)", "sans-serif"],
         sans: ["var(--font-sans)", "sans-serif"],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "Liberation Mono",
+          "monospace",
+        ],
       },
       letterSpacing: {
         tightest: "-0.04em",
@@ -45,8 +53,10 @@ const config: Config = {
       maxWidth: {
         content: "1280px",
       },
-      backgroundImage: {
-        "grain": "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 0)",
+      spacing: {
+        "section-sm": "4rem",
+        "section-md": "5rem",
+        "section-lg": "7rem",
       },
     },
   },

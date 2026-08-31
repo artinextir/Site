@@ -22,6 +22,12 @@ export interface HomeContent {
     headline: string;
     frictions: { title: string; description: string }[];
   };
+  // Optional: only the homepage carries this teaser today.
+  caseStudy?: {
+    kicker: string;
+    heading: string;
+    caption: string;
+  };
   productsTeaser: {
     heading: string;
     linkLabel: string;
@@ -79,6 +85,12 @@ export const home: Localized<HomeContent> = {
           description: "هر ابزار به‌تنهایی خوب کار می‌کند، اما هرگز یک جریان واحد و قابل‌ردیابی نمی‌سازند.",
         },
       ],
+    },
+    caseStudy: {
+      kicker: "خروجی واقعی ابزار، نه شبیه‌سازی.",
+      heading: "یک خروجی ETABS؛ یک مدل کامل رویت.",
+      caption:
+        "۵٬۰۸۷ المان پردازش شد. ۴٬۸۸۸ تیر و ۱۸۷ ستون، مستقیم از خروجی ETABS ساخته شد؛ بدون جای‌گذاری دستی.",
     },
     productsTeaser: {
       heading: "سه مسیر. یک استاندارد.",
@@ -140,6 +152,12 @@ export const home: Localized<HomeContent> = {
           description: "Each one fine alone, never one traceable flow together.",
         },
       ],
+    },
+    caseStudy: {
+      kicker: "From the tool, not a mockup.",
+      heading: "One ETABS export. A full Revit model.",
+      caption:
+        "5,087 elements processed. 4,888 beams and 187 columns created, straight from the ETABS output — no manual placement.",
     },
     productsTeaser: {
       heading: "Three paths. One standard.",

@@ -22,7 +22,7 @@ export function ListCard({
   return (
     <div className={`border-t ${borderClass} py-7 first:border-t-0 first:pt-0`}>
       <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-8">
-        <span className={`font-heading text-sm font-semibold ${indexColor} md:w-10 md:shrink-0`}>
+        <span className={`font-mono text-sm font-semibold ${indexColor} md:w-10 md:shrink-0`}>
           {index}
         </span>
         <div className="flex-1">

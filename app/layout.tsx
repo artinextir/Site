@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { spaceGrotesk, inter } from "@/lib/fonts";
+import { archivo, inter } from "@/lib/fonts";
 import { siteUrl } from "@/content/site";
 import "./globals.css";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} min-h-screen bg-ink text-smoke`}
+        className={`${archivo.variable} ${inter.variable} min-h-screen bg-ink text-smoke`}
         suppressHydrationWarning
       >
         {children}

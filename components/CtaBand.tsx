@@ -17,7 +17,7 @@ export function CtaBand({
 }) {
   return (
     <Section tone="smoke" className="relative overflow-hidden border-t border-smoke-border">
-      <Container className="py-20 md:py-28 flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+      <Container className="py-section-md md:py-section-lg flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
         <p className="font-heading text-balance max-w-2xl text-2xl md:text-3xl font-semibold leading-tight text-ink">
           {statement}
         </p>

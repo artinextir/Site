@@ -80,7 +80,7 @@ export default async function AboutPage({
 
       <Section tone="smoke">
         <Container className="py-16 md:py-20">
-          <div className="rounded-2xl border border-navy-700/30 bg-ink p-8 text-smoke md:p-10">
+          <div className="rounded-md border border-navy-700/30 bg-ink p-8 text-smoke md:p-10">
             <h2 className="font-heading text-xl font-semibold md:text-2xl">{c.notFor.heading}</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
               {c.notFor.description}

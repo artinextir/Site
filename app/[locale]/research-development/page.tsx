@@ -65,7 +65,7 @@ export default async function ResearchDevelopmentPage({
 
       <Section tone="ink">
         <Container className="pb-16 md:pb-20">
-          <div className="rounded-2xl border border-ink-border bg-ink-soft p-8 md:p-12">
+          <div className="rounded-md border border-ink-border bg-ink-soft p-8 md:p-12">
             <span className="text-xs uppercase tracking-widest text-navy-300">{c.feature.tag}</span>
             <h2 className="font-heading mt-4 max-w-2xl text-2xl font-semibold leading-snug md:text-3xl">
               {c.feature.headline}

@@ -13,7 +13,7 @@ export function ProcessSteps({
     <div className={`grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4`}>
       {steps.map((step, i) => (
         <div key={step.title} className={`border-t ${borderClass} pt-6`}>
-          <span className={`font-heading text-2xl font-bold ${numberColor}`}>
+          <span className={`font-mono text-2xl font-semibold ${numberColor}`}>
             {String(i + 1).padStart(2, "0")}
           </span>
           <h3 className="font-heading mt-3 text-base font-semibold">{step.title}</h3>

@@ -83,7 +83,7 @@ export default async function DigitalToolsPage({
         <Container className="pb-20 md:pb-28">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {c.collections.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-ink-border p-7">
+              <div key={item.title} className="rounded-md border border-ink-border p-7">
                 <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/55">{item.description}</p>
               </div>
