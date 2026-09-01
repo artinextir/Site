@@ -3,17 +3,19 @@
 // viewport — otherwise the track runs out of content before the loop resets,
 // which reads as the strip going blank. `items` here is a short word list,
 // so it's repeated generously (must stay an even count for -50% to land on
-// an exact copy boundary) rather than duplicated just once.
+// an exact copy boundary) rather than duplicated just once. REPEAT_COUNT=8
+// (32 DOM nodes on a 4-item list) proved safely wide enough but Lighthouse
+// flags it as the page's single largest DOM subtree; 6 keeps 3x the margin
+// over the REPEAT_COUNT=2 case that visibly ran dry, at 25% fewer nodes.
 //
 // The animation always travels -50% of the (now much wider) track in one
-// DURATION, so scroll speed = trackWidth / (2 * DURATION). Quadrupling
-// REPEAT_COUNT from the original 2 copies to 8 quadrupled that speed too —
-// DURATION is scaled by the same factor to land back at the original pace.
-const REPEAT_COUNT = 8;
+// DURATION, so scroll speed = trackWidth / (2 * DURATION) — DURATION scales
+// linearly with REPEAT_COUNT (14s per copy) to hold that speed constant.
+const REPEAT_COUNT = 6;
 // Tailwind's class scanner needs this as a literal string (it can't read a
 // JS variable), so the value has to stay hardcoded here rather than built
 // from a DURATION_S constant — see the comment above for how it was derived.
-const DURATION_CLASS = "animate-[marquee_112s_linear_infinite]";
+const DURATION_CLASS = "animate-[marquee_84s_linear_infinite]";
 
 export function Marquee({ items }: { items: string[] }) {
   const loop = Array.from({ length: REPEAT_COUNT }, () => items).flat();

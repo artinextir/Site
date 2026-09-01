@@ -42,7 +42,14 @@ export function CaseStudyClip({ src, poster }: { src: string; poster: string }) 
         />
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={poster} alt="" aria-hidden="true" className="aspect-video w-full object-cover" />
+        <img
+          src={poster}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="aspect-video w-full object-cover"
+        />
       )}
     </div>
   );
