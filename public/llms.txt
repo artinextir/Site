@@ -12,13 +12,24 @@ ARTINEXT does not build off-the-shelf, generic tools. Every project starts from 
 - [Intelligent automation](https://artinext.ir/en/products/automation): Workflow automation, software/data integration, operational dashboards, and organizational AI assistants, one controlled flow from request to report.
 - [Research & Development](https://artinext.ir/en/research-development): Small, fast prototypes used to test an idea before full investment, rather than committing to a build on a guess.
 
+## General (non-geo) service pages
+
+- [Revit Plugin Development](https://artinext.ir/en/revit-plugin-development): Custom Revit plugin development for architecture, structural, and MEP offices across Iran, no city qualifier — for a bare, un-geo-qualified search for the service.
+- [Revit Family Creation](https://artinext.ir/en/revit-family-creation): Custom Revit family creation for manufacturers, architecture, and MEP offices across Iran, no city qualifier.
+- [AEC Workflow Automation](https://artinext.ir/en/aec-workflow-automation): Workflow automation, software/data integration, and operational dashboards for companies and technical offices across Iran — not Revit-specific, no city qualifier.
+
 ## Regional / local pages
 
 - [Revit plugin development, Tehran](https://artinext.ir/en/revit-plugin-development-tehran): Custom Revit plugin development for architecture, structural, and MEP offices in Tehran.
+- [Revit plugin development, Mashhad](https://artinext.ir/en/revit-plugin-development-mashhad): Custom Revit plugin development for architecture, structural, and MEP offices in Mashhad, delivered fully remote from the Tehran-based team.
+- [Revit plugin development, UAE](https://artinext.ir/en/revit-plugin-development-uae): Custom Revit plugin and add-on development for architecture, structural, and MEP firms across the UAE, delivered fully remote from the Iran-based team.
+- [Revit plugin development, Canada](https://artinext.ir/en/revit-plugin-development-canada): Custom Revit plugin and add-on development for architecture, structural, and MEP firms across Canada, delivered fully remote from the Iran-based team.
 - [Revit family creation, Tehran](https://artinext.ir/en/revit-family-creation-tehran): Custom Revit family creation for manufacturers, architecture, and MEP offices in Tehran.
 - [Revit family creation, Isfahan](https://artinext.ir/en/revit-family-creation-isfahan): Custom Revit family creation for manufacturers, architecture, and MEP offices working with Isfahan.
+- [Revit family creation, Shiraz](https://artinext.ir/en/revit-family-creation-shiraz): Custom Revit family creation for manufacturers, architecture, and MEP offices working with Shiraz.
+- [Revit family creation service, United States](https://artinext.ir/en/revit-family-creation-service-united-states): Custom Revit family creation and development for manufacturers, architecture, and MEP offices across the United States, delivered fully remote from the Iran-based team.
 - [Workflow automation, Tehran](https://artinext.ir/en/workflow-automation-tehran): Workflow automation, software/data integration, and operational dashboards for companies and technical offices in Tehran — not Revit-specific.
-- [Revit plugin development, UAE](https://artinext.ir/en/revit-plugin-development-uae): Custom Revit plugin and add-on development for architecture, structural, and MEP firms across the UAE, delivered fully remote from the Iran-based team.
+- [Workflow automation, Isfahan](https://artinext.ir/en/workflow-automation-isfahan): Workflow automation, software/data integration, and operational dashboards for companies and technical offices working with Isfahan — not Revit-specific, delivered fully remote from the Tehran-based team.
 
 ## Insights (articles)
 

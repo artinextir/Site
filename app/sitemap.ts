@@ -26,6 +26,9 @@ const staticPaths = [
   "/revit-plugin-development",
   "/revit-family-creation",
   "/aec-workflow-automation",
+  "/workflow-automation-isfahan",
+  "/revit-family-creation-shiraz",
+  "/revit-plugin-development-canada",
 ];
 
 // Google's own sitemap guidance is explicit that a lastmod stamped with
