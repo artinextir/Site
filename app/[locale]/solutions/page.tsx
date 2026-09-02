@@ -67,6 +67,7 @@ export default async function SolutionsPage({
 
       <Section tone="ink">
         <Container className="pb-20 md:pb-28">
+          <h2 className="sr-only">{c.breadcrumb}</h2>
           {c.services.map((service, i) => (
             <ListCard
               key={service.title}

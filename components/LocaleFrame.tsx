@@ -46,7 +46,7 @@ export function LocaleFrame({
   // absent on GitHub Pages. Harmless to also render on Cloudflare Pages,
   // where the real header already covers this.
   const cspContent =
-    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests";
+    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests";
 
   return (
     <div dir={dirOf(locale)}>

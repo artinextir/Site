@@ -42,7 +42,10 @@ export function AuthorByline({
   };
 
   const nameNode = href ? (
-    <Link href={lh(locale, href)} className="text-white/80 hover:text-navy-300 transition-colors">
+    <Link
+      href={lh(locale, href)}
+      className="text-white/80 underline decoration-white/25 underline-offset-2 transition-colors hover:text-navy-300 hover:decoration-navy-300"
+    >
       {name}
     </Link>
   ) : (

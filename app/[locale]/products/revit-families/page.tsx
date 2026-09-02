@@ -81,6 +81,7 @@ export default async function RevitFamiliesPage({
 
       <Section tone="ink">
         <Container className="pb-20 md:pb-28">
+          <h2 className="sr-only">{c.breadcrumb}</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {c.collections.map((item) => (
               <div key={item.title} className="rounded-md border border-ink-border p-7">

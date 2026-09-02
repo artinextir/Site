@@ -67,6 +67,7 @@ export default async function ProductsPage({
 
       <Section tone="ink">
         <Container className="pb-16 md:pb-20">
+          <h2 className="sr-only">{c.breadcrumb}</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {c.products.map((product) => (
               <ProductCard

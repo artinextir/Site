@@ -46,16 +46,43 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
     setInvalidFields(new Set());
     setStatus("submitting");
 
-    // TODO: wire this to the real contact backend/endpoint once available.
-    window.setTimeout(() => {
-      setStatus("success");
-      form.reset();
-    }, 600);
+    data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "");
+    data.append("subject", `New contact form submission — ${values.fullName}`);
+    data.append("from_name", "artinext.ir contact form");
+
+    // multipart/form-data is a CORS-safelisted content type, so this skips the
+    // preflight OPTIONS request — Web3Forms doesn't return CORS headers on
+    // preflight responses, which silently kills a JSON-content-type submission
+    // in every browser. A successful multipart submission returns Web3Forms'
+    // HTML thank-you page rather than JSON, so success is read off the HTTP
+    // status instead of assuming a JSON body.
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: data,
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          setStatus("error");
+          return;
+        }
+        const contentType = response.headers.get("content-type") ?? "";
+        const succeeded = contentType.includes("application/json")
+          ? Boolean((await response.json()).success)
+          : true;
+        setStatus(succeeded ? "success" : "error");
+        if (succeeded) form.reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      });
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
       <h2 className="font-heading text-xl font-semibold md:text-2xl">{content.heading}</h2>
+
+      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm text-white/60">

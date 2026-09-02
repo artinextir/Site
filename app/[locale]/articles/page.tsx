@@ -67,6 +67,7 @@ export default async function ArticlesPage({
 
       <Section tone="ink">
         <Container className="pb-20 md:pb-28">
+          <h2 className="sr-only">{c.breadcrumb}</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {c.articles.map((article) => (
               <Link
