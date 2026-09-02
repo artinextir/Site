@@ -68,7 +68,7 @@ export const localRevitFamilyCreationIsfahan: Localized<HomeContent> = {
     meta: {
       title: "Revit Family Creation in Isfahan — ARTINEXT",
       description:
-        "Custom Revit family creation and development for manufacturers, architecture, and MEP offices working with Isfahan — precise, lightweight BIM content built to your real standard.",
+        "Custom Revit family creation for manufacturers, architecture, and MEP offices working with Isfahan — precise, lightweight BIM content built to your real standard.",
     },
     breadcrumb: "Revit Family Creation, Isfahan",
     hero: {

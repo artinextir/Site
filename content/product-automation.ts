@@ -4,9 +4,9 @@ import type { ProductSubpageContent } from "@/content/product-revit-families";
 export const productAutomation: Localized<ProductSubpageContent> = {
   fa: {
     meta: {
-      title: "اتوماسیون هوشمند — آرتینکست",
+      title: "اتوماسیون هوشمند جریان کار و داده — آرتینکست",
       description:
-        "اتوماسیون جریان کار، یکپارچه‌سازی نرم‌افزار و داده، داشبورد عملیاتی و دستیار هوش مصنوعی سازمانی.",
+        "اتوماسیون جریان کار، یکپارچه‌سازی نرم‌افزار و داده، داشبورد عملیاتی و دستیار هوش مصنوعی سازمانی؛ همه در یک جریان کنترل‌شده، از درخواست تا گزارش‌دهی.",
     },
     breadcrumb: "اتوماسیون هوشمند",
     step: "۰۳ / ۰۳",

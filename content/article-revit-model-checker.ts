@@ -226,7 +226,7 @@ export const articleRevitModelChecker: Localized<ArticleContent> = {
     meta: {
       title: "Revit Model Checker: It Automates QA/QC, Not Replaces It",
       description:
-        "A Revit model checker only measures parameters and naming against a written rule. A complete guide to building checksets, running reviews, triaging flags, and when outside help is worth it.",
+        "A Revit model checker only measures parameters and naming against a written rule. Covers checksets, running reviews, triaging flags, and when outside help is worth it.",
     },
     breadcrumb: "A Revit model checker automates QA/QC — it doesn't replace it",
     category: "BIM & Revit",

@@ -42,8 +42,9 @@ export interface ContactContent {
 export const contact: Localized<ContactContent> = {
   fa: {
     meta: {
-      title: "تماس با آرتینکست",
-      description: "مسئله خود را کوتاه و دقیق بنویسید؛ قدم بعدی را با هم روشن می‌کنیم.",
+      title: "تماس با آرتینکست — اتوماسیون، BIM و ابزار اختصاصی",
+      description:
+        "مسئله را کوتاه و دقیق بنویسید: فرایند فعلی، جایی که کار می‌شکند و نتیجه‌ای که می‌خواهید. با هم مسئله را ترسیم می‌کنیم و قدم بعدی را پیشنهاد می‌دهیم.",
     },
     breadcrumb: "تماس",
     intro: {
@@ -95,8 +96,9 @@ export const contact: Localized<ContactContent> = {
   },
   en: {
     meta: {
-      title: "Contact ARTINEXT",
-      description: "Write the problem down, short and specific. We'll figure out the next step together.",
+      title: "Contact ARTINEXT — Automation, BIM & Custom Tools",
+      description:
+        "Write the problem down, short and specific: your current process, where it breaks, and the outcome you want. We map it together and propose the next step.",
     },
     breadcrumb: "Contact",
     intro: {

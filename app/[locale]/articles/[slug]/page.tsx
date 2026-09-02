@@ -75,6 +75,7 @@ function ResponsiveImage({ image, priority }: { image: ArticleImage; priority?: 
         width={image.width}
         height={image.height}
         loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : undefined}
         className="aspect-[16/9] w-full object-cover grayscale-[15%] contrast-[1.05] brightness-[0.85]"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />

@@ -123,7 +123,7 @@ export function Header({ locale, content }: { locale: Locale; content: NavConten
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-border text-smoke focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-400 md:hidden"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-ink-border text-smoke focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-400 md:hidden"
           aria-label="Menu"
           aria-expanded={open}
         >

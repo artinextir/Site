@@ -6,7 +6,7 @@ export const localWorkflowAutomationIsfahan: Localized<HomeContent> = {
     meta: {
       title: "اتوماسیون گردش کار در اصفهان — آرتینکست",
       description:
-        "طراحی و اجرای اتوماسیون گردش کار، یکپارچه‌سازی نرم‌افزار و داده و داشبورد عملیاتی برای شرکت‌ها و دفاتر فنی اصفهان؛ همکاری کاملاً ریموت، نه فقط برای رویت، برای کل جریان کاری شما.",
+        "طراحی و اجرای اتوماسیون گردش کار، یکپارچه‌سازی نرم‌افزار و داده و داشبورد عملیاتی برای شرکت‌ها و دفاتر فنی اصفهان؛ همکاری کاملاً ریموت، برای کل جریان کاری شما.",
     },
     breadcrumb: "اتوماسیون گردش کار اصفهان",
     hero: {
@@ -68,7 +68,7 @@ export const localWorkflowAutomationIsfahan: Localized<HomeContent> = {
     meta: {
       title: "Workflow Automation in Isfahan — ARTINEXT",
       description:
-        "Workflow automation, software and data integration, and operational dashboards for companies and technical offices working with Isfahan — fully remote, not just for Revit, for your whole process.",
+        "Workflow automation, software and data integration, and operational dashboards for companies and technical offices working with Isfahan — fully remote, for your whole process.",
     },
     breadcrumb: "Workflow Automation, Isfahan",
     hero: {

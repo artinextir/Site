@@ -39,6 +39,8 @@ export function CaseStudyClip({ src, poster }: { src: string; poster: string }) 
           aria-hidden="true"
           tabIndex={-1}
           src={src}
+          width={1280}
+          height={720}
         />
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
@@ -49,6 +51,8 @@ export function CaseStudyClip({ src, poster }: { src: string; poster: string }) 
           loading="lazy"
           decoding="async"
           className="aspect-video w-full object-cover"
+          width={1280}
+          height={720}
         />
       )}
     </div>

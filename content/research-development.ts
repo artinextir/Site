@@ -21,9 +21,9 @@ export interface ResearchDevelopmentContent {
 export const researchDevelopment: Localized<ResearchDevelopmentContent> = {
   fa: {
     meta: {
-      title: "تحقیق و توسعه — آرتینکست",
+      title: "تحقیق و توسعه: نمونه اولیه سریع — آرتینکست",
       description:
-        "پیش از سرمایه‌گذاری کامل، ایده را با نمونه اولیه سریع آزمایش می‌کنیم؛ یادگیری واقعی، تصمیم بهتر.",
+        "پیش از سرمایه‌گذاری کامل، ایده را با نمونه اولیه سریع آزمایش می‌کنیم؛ نمونه‌سازی مرحله‌ای نشان می‌دهد چه چیزی کار می‌کند و چه چیزی اصلاً نباید ساخته شود.",
     },
     breadcrumb: "تحقیق و توسعه",
     intro: {
@@ -53,7 +53,7 @@ export const researchDevelopment: Localized<ResearchDevelopmentContent> = {
     meta: {
       title: "Research & Development — ARTINEXT",
       description:
-        "We test ideas with a fast prototype before full investment: real learning, better decisions.",
+        "We test ideas with a small, fast prototype before full investment — real usage data over a feature list, and a clear answer on what's actually worth building.",
     },
     breadcrumb: "R&D",
     intro: {

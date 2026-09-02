@@ -68,7 +68,7 @@ export const localRevitFamilyCreationShiraz: Localized<HomeContent> = {
     meta: {
       title: "Revit Family Creation in Shiraz — ARTINEXT",
       description:
-        "Custom Revit family creation and development for manufacturers, architecture, and MEP offices working with Shiraz — precise, lightweight BIM content built to your real product or project standard.",
+        "Custom Revit family creation for manufacturers, architecture, and MEP offices working with Shiraz — precise, lightweight BIM content built to your real project standard.",
     },
     breadcrumb: "Revit Family Creation, Shiraz",
     hero: {

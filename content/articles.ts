@@ -25,8 +25,9 @@ export interface ArticlesContent {
 export const articles: Localized<ArticlesContent> = {
   fa: {
     meta: {
-      title: "بینش‌ها — آرتینکست",
-      description: "یادداشت‌های میدانی درباره اتوماسیون، توسعه ابزار، BIM و آمادگی هوش مصنوعی، بدون هیاهو.",
+      title: "یادداشت‌های میدانی اتوماسیون، BIM و رویت — آرتینکست",
+      description:
+        "یادداشت‌های میدانی درباره اتوماسیون، توسعه ابزار اختصاصی، BIM و آمادگی هوش مصنوعی؛ تمرکز روی همان تصمیمی که معمولاً کسی دوست ندارد اول بگیرد، بدون هیاهو.",
     },
     breadcrumb: "بینش‌ها",
     intro: {
@@ -96,8 +97,9 @@ export const articles: Localized<ArticlesContent> = {
   },
   en: {
     meta: {
-      title: "Insights — ARTINEXT",
-      description: "Practical field notes on automation, tool development, BIM, and AI readiness, no hype.",
+      title: "Insights on Automation, BIM & Revit Tools — ARTINEXT",
+      description:
+        "Field notes on automation, custom tool development, BIM, and AI readiness — what worked, what didn't, and the decision nobody wanted to make first. No hype.",
     },
     breadcrumb: "Insights",
     intro: {

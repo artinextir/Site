@@ -17,7 +17,7 @@ export interface ProductSubpageContent {
 export const productRevitFamilies: Localized<ProductSubpageContent> = {
   fa: {
     meta: {
-      title: "محتوای تخصصی رویت — آرتینکست",
+      title: "محتوای تخصصی رویت: فمیلی و کتابخانه BIM — آرتینکست",
       description:
         "محتوای BIM دقیق و سبک برای مدل‌های واقعی: فمیلی محصول، کتابخانه دفتر، فمیلی پروژه و بهینه‌سازی کتابخانه.",
     },

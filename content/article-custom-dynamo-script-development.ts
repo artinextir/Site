@@ -61,7 +61,7 @@ export const articleCustomDynamoScriptDevelopment: Localized<ArticleContent> = {
   fa: {
     slug: "custom-dynamo-script-development",
     meta: {
-      title: "توسعه اسکریپت اختصاصی داینامو چه چیزی را واقعاً جایگزین می‌کند؟ — آرتینکست",
+      title: "توسعه اسکریپت اختصاصی داینامو چه چیزی را واقعاً جایگزین می‌کند؟",
       description:
         "توسعه اسکریپت اختصاصی داینامو یعنی خودکارسازی یک فرایند رویت با گراف‌های قابل‌اعتماد، نه فقط اتصال چند نود. راهنمای کامل: مستندسازی، کنترل کیفیت، پایتون و تصمیم ساخت افزونه.",
     },
@@ -236,9 +236,9 @@ export const articleCustomDynamoScriptDevelopment: Localized<ArticleContent> = {
   en: {
     slug: "custom-dynamo-script-development",
     meta: {
-      title: "Custom Dynamo Script Development: What It Actually Replaces — ARTINEXT",
+      title: "Custom Dynamo Script Development: What It Replaces",
       description:
-        "Custom Dynamo script development means automating a specific Revit process with a graph people can trust, not just wiring nodes together once. A guide to documentation, QC, Python, and add-ins.",
+        "Custom Dynamo script development means automating a Revit process with a graph people can trust, not wiring nodes together once. Covers documentation, QC, Python, and add-ins.",
     },
     breadcrumb: "Custom Dynamo script development",
     category: "BIM & Revit",

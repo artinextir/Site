@@ -61,7 +61,7 @@ export const articleRevitPluginDevelopmentCompany: Localized<ArticleContent> = {
   fa: {
     slug: "revit-plugin-development-company",
     meta: {
-      title: "انتخاب شرکت توسعه پلاگین رویت: به چه چیزی واقعاً باید نگاه کرد؟ — آرتینکست",
+      title: "انتخاب شرکت توسعه پلاگین رویت: به چه چیزی واقعاً باید نگاه کرد؟",
       description:
         "انتخاب شرکت توسعه پلاگین رویت یعنی بررسی درک آن‌ها از جریان کار، مالکیت کد و پشتیبانی بعد از تحویل، نه فقط نمونه‌کار. راهنمای کامل ارزیابی و علائم هشدار.",
     },
@@ -230,9 +230,9 @@ export const articleRevitPluginDevelopmentCompany: Localized<ArticleContent> = {
   en: {
     slug: "revit-plugin-development-company",
     meta: {
-      title: "Choosing a Revit Plugin Development Company: What Actually Matters — ARTINEXT",
+      title: "Choosing a Revit Plugin Development Company: What Matters",
       description:
-        "Choosing a Revit plugin development company means checking workflow fit, code ownership, and support after delivery, not just the portfolio. A full evaluation guide and red flags.",
+        "Choosing a Revit plugin development company means checking workflow fit, code ownership, and support after delivery, not just the portfolio. An evaluation guide and red flags.",
     },
     breadcrumb: "Choosing a Revit plugin development company",
     category: "BIM & Revit",
