@@ -12,7 +12,7 @@ export function hreflangAlternates(path: string): Record<Locale | "x-default", s
     fa: `${siteUrl}/fa${suffix}`,
     en: `${siteUrl}/en${suffix}`,
     // fa is defaultLocale and the primary audience — same page the bare
-    // domain's meta-refresh redirect (app/page.tsx) sends everyone to.
+    // domain (app/page.tsx) renders directly.
     "x-default": `${siteUrl}/fa${suffix}`,
   };
 }

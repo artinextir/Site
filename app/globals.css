@@ -86,15 +86,27 @@ html[lang="fa"] .font-heading {
   }
 }
 
-/* HeroVisual signature element: a pen-trace-in on load. Elements use SVG's
-   pathLength="1" so this keyframe works for any line/path without measuring
-   pixel lengths. */
-@keyframes draw-line {
+/* HeroVisual signature element: a pen-trace-in on load. Scales from the
+   line's start point instead of animating stroke-dashoffset — Lighthouse
+   flags stroke-dashoffset as a non-composited property (it repaints every
+   frame on the main thread), while transform: scale runs on the compositor.
+   Each line is perfectly horizontal or vertical, so a single-axis scale from
+   the correct transform-origin reproduces the same "drawn in" look. */
+@keyframes draw-line-x {
   from {
-    stroke-dashoffset: 1;
+    transform: scaleX(0);
   }
   to {
-    stroke-dashoffset: 0;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes draw-line-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
   }
 }
 

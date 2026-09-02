@@ -34,12 +34,10 @@ export function HeroVisual({ label, tag }: { label: string; tag: string }) {
             y1={40}
             x2={x}
             y2={264}
-            pathLength={1}
             stroke="rgba(110,137,187,0.5)"
             strokeWidth="1"
-            strokeDasharray="1"
-            className="motion-safe:animate-[draw-line_650ms_ease-out_forwards]"
-            style={{ animationDelay: `${i * 90}ms` }}
+            className="motion-safe:animate-[draw-line-y_650ms_ease-out_forwards]"
+            style={{ transformBox: "view-box", transformOrigin: `${x}px 40px`, animationDelay: `${i * 90}ms` }}
           />
         ))}
         {ROW_Y.map((y, i) => (
@@ -49,12 +47,10 @@ export function HeroVisual({ label, tag }: { label: string; tag: string }) {
             y1={y}
             x2={280}
             y2={y}
-            pathLength={1}
             stroke="rgba(110,137,187,0.5)"
             strokeWidth="1"
-            strokeDasharray="1"
-            className="motion-safe:animate-[draw-line_650ms_ease-out_forwards]"
-            style={{ animationDelay: `${250 + i * 90}ms` }}
+            className="motion-safe:animate-[draw-line-x_650ms_ease-out_forwards]"
+            style={{ transformBox: "view-box", transformOrigin: `40px ${y}px`, animationDelay: `${250 + i * 90}ms` }}
           />
         ))}
 
@@ -85,10 +81,7 @@ export function HeroVisual({ label, tag }: { label: string; tag: string }) {
             them), rise past the dimension line, with the customary 45° tick
             at every crossing instead of an arrow or a perpendicular hash.
             No invented number, purely geometric. */}
-        <g
-          className="motion-safe:animate-[draw-line_500ms_ease-out_forwards]"
-          style={{ animationDelay: "560ms" }}
-        >
+        <g>
           {COLUMN_X.map((x) => (
             <line
               key={`ext-${x}`}
@@ -96,13 +89,22 @@ export function HeroVisual({ label, tag }: { label: string; tag: string }) {
               y1={270}
               x2={x}
               y2={298}
-              pathLength={1}
-              strokeDasharray="1"
               stroke="rgba(110,137,187,0.35)"
               strokeWidth="1"
+              className="motion-safe:animate-[draw-line-y_500ms_ease-out_forwards]"
+              style={{ transformBox: "view-box", transformOrigin: `${x}px 270px`, animationDelay: "560ms" }}
             />
           ))}
-          <line x1={COLUMN_X[0]} y1={292} x2={COLUMN_X[2]} y2={292} pathLength={1} strokeDasharray="1" stroke="rgba(110,137,187,0.6)" strokeWidth="1" />
+          <line
+            x1={COLUMN_X[0]}
+            y1={292}
+            x2={COLUMN_X[2]}
+            y2={292}
+            stroke="rgba(110,137,187,0.6)"
+            strokeWidth="1"
+            className="motion-safe:animate-[draw-line-x_500ms_ease-out_forwards]"
+            style={{ transformBox: "view-box", transformOrigin: `${COLUMN_X[0]}px 292px`, animationDelay: "560ms" }}
+          />
           {COLUMN_X.map((x) => (
             <line
               key={`tick-${x}`}
