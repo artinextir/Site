@@ -28,6 +28,8 @@ export const site = {
   email: "artinext.ai@gmail.com",
   phone: "+98 930 525 3240",
   phoneHref: "+989305253240",
+  instagram: "@artinext.ir",
+  instagramHref: "https://www.instagram.com/artinext.ir/",
   // Organization schema's `sameAs`. LinkedIn is planned but not live yet —
   // add its URL here the day it goes up, nothing else needs to change.
   sameAs: ["https://www.instagram.com/artinext.ir/"],

@@ -60,6 +60,18 @@ export function Footer({ locale, content }: { locale: Locale; content: NavConten
                 </a>
               </li>
               <li>
+                <span className="text-white/50">{f.instagramLabel}: </span>
+                <a
+                  href={site.instagramHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-navy-300"
+                  dir="ltr"
+                >
+                  {site.instagram}
+                </a>
+              </li>
+              <li>
                 <Link href={lh(locale, f.consultationHref)} className="transition-colors hover:text-navy-300">
                   {f.consultationLabel}
                 </Link>

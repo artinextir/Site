@@ -19,6 +19,7 @@ export interface NavContent {
     consultationHref: string;
     emailLabel: string;
     phoneLabel: string;
+    instagramLabel: string;
     metaLine: string;
   };
 }
@@ -70,6 +71,7 @@ export const nav: Localized<NavContent> = {
       consultationHref: "/contact",
       emailLabel: "ایمیل",
       phoneLabel: "تلفن",
+      instagramLabel: "اینستاگرام",
       metaLine: "© ۲۰۲۶ آرتینکست — طراحی فناوری / ایران",
     },
   },
@@ -119,6 +121,7 @@ export const nav: Localized<NavContent> = {
       consultationHref: "/contact",
       emailLabel: "Email",
       phoneLabel: "Phone",
+      instagramLabel: "Instagram",
       metaLine: "© 2026 ARTINEXT — DESIGN TECHNOLOGY / IRAN",
     },
   },
