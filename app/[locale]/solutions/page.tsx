@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = solutions[locale as Locale] ?? solutions.fa;
-  const url = `${siteUrl}/${locale}/solutions`;
+  const url = `${siteUrl}/${locale}/solutions/`;
 
   return {
     title: c.meta.title,

@@ -33,7 +33,7 @@ export function AuthorByline({
     name,
     jobTitle: role,
     ...(bio ? { description: bio } : {}),
-    ...(href ? { url: `${siteUrl}/${locale}${href}` } : {}),
+    ...(href ? { url: `${siteUrl}/${locale}${href}/` } : {}),
     worksFor: {
       "@type": "Organization",
       name: "ARTINEXT",

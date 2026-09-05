@@ -33,7 +33,7 @@ export async function generateMetadata({
   const c =
     localRevitFamilyCreationServiceUnitedStates[locale as Locale] ??
     localRevitFamilyCreationServiceUnitedStates.fa;
-  const url = `${siteUrl}/${locale}${PATH}`;
+  const url = `${siteUrl}/${locale}${PATH}/`;
 
   return {
     title: c.meta.title,
@@ -66,7 +66,7 @@ export default async function RevitFamilyCreationServiceUnitedStatesPage({
   const c = localRevitFamilyCreationServiceUnitedStates[locale];
   const p = products[locale];
   const n = nav[locale];
-  const url = `${siteUrl}/${locale}${PATH}`;
+  const url = `${siteUrl}/${locale}${PATH}/`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

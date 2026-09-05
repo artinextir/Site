@@ -14,7 +14,7 @@ import { hreflangAlternates, ogImageUrl, siteUrl } from "@/content/site";
 // link) so this isn't a duplicate-content page in Google's eyes.
 export function generateMetadata(): Metadata {
   const c = home.fa;
-  const url = `${siteUrl}/fa`;
+  const url = `${siteUrl}/fa/`;
 
   return {
     title: c.meta.title,

@@ -31,7 +31,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = localRevitPluginDevelopmentUae[locale as Locale] ?? localRevitPluginDevelopmentUae.fa;
-  const url = `${siteUrl}/${locale}${PATH}`;
+  const url = `${siteUrl}/${locale}${PATH}/`;
 
   return {
     title: c.meta.title,
@@ -64,7 +64,7 @@ export default async function RevitPluginDevelopmentUaePage({
   const c = localRevitPluginDevelopmentUae[locale];
   const p = products[locale];
   const n = nav[locale];
-  const url = `${siteUrl}/${locale}${PATH}`;
+  const url = `${siteUrl}/${locale}${PATH}/`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

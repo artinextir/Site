@@ -31,7 +31,7 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const article = getArticle(locale as Locale, slug);
   if (!article) return {};
-  const url = `${siteUrl}/${locale}/articles/${slug}`;
+  const url = `${siteUrl}/${locale}/articles/${slug}/`;
 
   return {
     title: article.meta.title,
@@ -95,7 +95,7 @@ export default async function ArticlePage({
 
   const c = articles[locale];
   const n = nav[locale];
-  const url = `${siteUrl}/${locale}/articles/${slug}`;
+  const url = `${siteUrl}/${locale}/articles/${slug}/`;
 
   const articleSchema = {
     "@context": "https://schema.org",

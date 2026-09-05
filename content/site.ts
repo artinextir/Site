@@ -2,6 +2,10 @@ import type { Locale } from "@/lib/i18n/config";
 
 export const siteUrl = "https://artinext.ir";
 
+// Deliberately no trailing slash: opengraph-image is Next's special image
+// route convention, which next export always emits as a flat file (never
+// a directory/index.html) regardless of the trailingSlash config — adding
+// a slash here 404s.
 export function ogImageUrl(locale: Locale): string {
   return `${siteUrl}/${locale}/opengraph-image`;
 }
@@ -9,11 +13,11 @@ export function ogImageUrl(locale: Locale): string {
 export function hreflangAlternates(path: string): Record<Locale | "x-default", string> {
   const suffix = path === "/" ? "" : path;
   return {
-    fa: `${siteUrl}/fa${suffix}`,
-    en: `${siteUrl}/en${suffix}`,
+    fa: `${siteUrl}/fa${suffix}/`,
+    en: `${siteUrl}/en${suffix}/`,
     // fa is defaultLocale and the primary audience — same page the bare
     // domain (app/page.tsx) renders directly.
-    "x-default": `${siteUrl}/fa${suffix}`,
+    "x-default": `${siteUrl}/fa${suffix}/`,
   };
 }
 

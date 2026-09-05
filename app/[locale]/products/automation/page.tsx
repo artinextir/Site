@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = productAutomation[locale as Locale] ?? productAutomation.fa;
-  const url = `${siteUrl}/${locale}/products/automation`;
+  const url = `${siteUrl}/${locale}/products/automation/`;
 
   return {
     title: c.meta.title,
@@ -43,7 +43,7 @@ export default async function AutomationProductPage({
   const c = productAutomation[locale];
   const n = nav[locale];
   const hub = products[locale];
-  const url = `${siteUrl}/${locale}/products/automation`;
+  const url = `${siteUrl}/${locale}/products/automation/`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

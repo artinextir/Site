@@ -21,7 +21,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = contact[locale as Locale] ?? contact.fa;
-  const url = `${siteUrl}/${locale}/contact`;
+  const url = `${siteUrl}/${locale}/contact/`;
 
   return {
     title: c.meta.title,

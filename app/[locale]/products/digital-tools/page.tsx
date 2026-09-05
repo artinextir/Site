@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = productDigitalTools[locale as Locale] ?? productDigitalTools.fa;
-  const url = `${siteUrl}/${locale}/products/digital-tools`;
+  const url = `${siteUrl}/${locale}/products/digital-tools/`;
 
   return {
     title: c.meta.title,
@@ -43,7 +43,7 @@ export default async function DigitalToolsPage({
   const c = productDigitalTools[locale];
   const n = nav[locale];
   const hub = products[locale];
-  const url = `${siteUrl}/${locale}/products/digital-tools`;
+  const url = `${siteUrl}/${locale}/products/digital-tools/`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

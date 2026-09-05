@@ -41,8 +41,8 @@ const staticPaths = [
 function languagesFor(suffix: string) {
   return {
     languages: Object.fromEntries([
-      ...locales.map((l) => [l, `${siteUrl}/${l}${suffix}`]),
-      ["x-default", `${siteUrl}/fa${suffix}`],
+      ...locales.map((l) => [l, `${siteUrl}/${l}${suffix}/`]),
+      ["x-default", `${siteUrl}/fa${suffix}/`],
     ]),
   };
 }
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const path of staticPaths) {
       const suffix = path === "/" ? "" : path;
       entries.push({
-        url: `${siteUrl}/${locale}${suffix}`,
+        url: `${siteUrl}/${locale}${suffix}/`,
         alternates: languagesFor(suffix),
       });
     }
@@ -63,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const entry = article[locale];
       const suffix = `/articles/${entry.slug}`;
       entries.push({
-        url: `${siteUrl}/${locale}${suffix}`,
+        url: `${siteUrl}/${locale}${suffix}/`,
         lastModified: new Date(entry.updatedAt ?? entry.publishedAt),
         alternates: languagesFor(suffix),
       });

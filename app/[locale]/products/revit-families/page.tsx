@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = productRevitFamilies[locale as Locale] ?? productRevitFamilies.fa;
-  const url = `${siteUrl}/${locale}/products/revit-families`;
+  const url = `${siteUrl}/${locale}/products/revit-families/`;
 
   return {
     title: c.meta.title,
@@ -43,7 +43,7 @@ export default async function RevitFamiliesPage({
   const c = productRevitFamilies[locale];
   const n = nav[locale];
   const hub = products[locale];
-  const url = `${siteUrl}/${locale}/products/revit-families`;
+  const url = `${siteUrl}/${locale}/products/revit-families/`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

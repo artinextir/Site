@@ -31,7 +31,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const c = localRevitPluginDevelopmentMashhad[locale as Locale] ?? localRevitPluginDevelopmentMashhad.fa;
-  const url = `${siteUrl}/${locale}${PATH}`;
+  const url = `${siteUrl}/${locale}${PATH}/`;
 
   return {
     title: c.meta.title,
@@ -64,7 +64,7 @@ export default async function RevitPluginDevelopmentMashhadPage({
   const c = localRevitPluginDevelopmentMashhad[locale];
   const p = products[locale];
   const n = nav[locale];
-  const url = `${siteUrl}/${locale}${PATH}`;
+  const url = `${siteUrl}/${locale}${PATH}/`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

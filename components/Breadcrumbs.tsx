@@ -29,7 +29,7 @@ export function Breadcrumbs({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
-      item: `${siteUrl}/${locale}${item.href === "/" ? "" : item.href}`,
+      item: `${siteUrl}/${locale}${item.href === "/" ? "" : item.href}/`,
     })),
   };
 

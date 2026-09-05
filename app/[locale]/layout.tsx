@@ -18,11 +18,11 @@ export async function generateMetadata({
 
   return {
     alternates: {
-      canonical: `${siteUrl}/${locale}`,
+      canonical: `${siteUrl}/${locale}/`,
       languages: {
-        fa: `${siteUrl}/fa`,
-        en: `${siteUrl}/en`,
-        "x-default": `${siteUrl}/fa`,
+        fa: `${siteUrl}/fa/`,
+        en: `${siteUrl}/en/`,
+        "x-default": `${siteUrl}/fa/`,
       },
     },
   };
