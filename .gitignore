@@ -27,3 +27,6 @@ push-allowlist.txt
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# screenshots from scripts/shot.mjs
+shots

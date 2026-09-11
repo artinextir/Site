@@ -1,1 +1,10 @@
-/  /fa  302
+# Netlify / Cloudflare Pages rewrite rules. Unforced rules only fire when no
+# static file matched, so /en/ and /fa/ always win on their own.
+#
+# There is deliberately no `/*  /fa/  200` catch-all. It looks harmless, but
+# it answers every unknown URL with the Persian homepage at status 200 — so
+# /fa/solutions/, /en/anything and every typo become indexable duplicates of
+# the home page instead of honest 404s. Unmatched paths fall through to
+# out/404.html, which both hosts serve with a real 404.
+
+/index.html  /fa/  200

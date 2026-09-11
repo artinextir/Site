@@ -1,16 +1,22 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Container } from "@/components/Container";
-import { Section } from "@/components/Section";
-import { PageIntro } from "@/components/PageIntro";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { CtaBand } from "@/components/CtaBand";
-import { researchDevelopment } from "@/content/research-development";
-import { nav } from "@/content/nav";
-import { locales, type Locale } from "@/lib/i18n/config";
-import { siteUrl, ogImageUrl, hreflangAlternates } from "@/content/site";
+
+import type { Locale } from "@/lib/i18n/config";
+import { locales } from "@/lib/i18n/config";
+import { rnd } from "@/content/rnd";
+import { site, siteUrl } from "@/content/site";
+import { RndTrack } from "@/components/sections/RndTrack";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+function resolve(localeRaw: string) {
+  if (!(locales as readonly string[]).includes(localeRaw)) notFound();
+  const locale = localeRaw as Locale;
+  return { locale, c: rnd[locale] };
 }
 
 export async function generateMetadata({
@@ -18,82 +24,103 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
-  const c = researchDevelopment[locale as Locale] ?? researchDevelopment.fa;
+  const { locale: localeRaw } = await params;
+  const { locale, c } = resolve(localeRaw);
   const url = `${siteUrl}/${locale}/research-development/`;
 
   return {
+    metadataBase: new URL(siteUrl),
     title: c.meta.title,
     description: c.meta.description,
-    alternates: { canonical: url, languages: hreflangAlternates("/research-development") },
-    openGraph: { title: c.meta.title, description: c.meta.description, url, type: "website", images: [ogImageUrl(locale as Locale)] },
-    twitter: { card: "summary_large_image", title: c.meta.title, description: c.meta.description, images: [ogImageUrl(locale as Locale)] },
+    alternates: {
+      canonical: url,
+      languages: {
+        fa: `${siteUrl}/fa/research-development/`,
+        en: `${siteUrl}/en/research-development/`,
+        "x-default": `${siteUrl}/fa/research-development/`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      locale: locale === "fa" ? "fa_IR" : "en_US",
+      title: c.meta.title,
+      description: c.meta.description,
+      url,
+      images: [{ url: `/images/og-${locale}.jpg`, width: 1200, height: 630, alt: c.meta.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: c.meta.title,
+      description: c.meta.description,
+      images: [`/images/og-${locale}.jpg`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    },
   };
 }
 
-export default async function ResearchDevelopmentPage({
+export default async function RndPageRoute({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale: rawLocale } = await params;
-  const locale = rawLocale as Locale;
-  const c = researchDevelopment[locale];
-  const n = nav[locale];
+  const { locale: localeRaw } = await params;
+  const { locale, c } = resolve(localeRaw);
+  const url = `${siteUrl}/${locale}/research-development/`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": url,
+        url,
+        name: c.meta.title,
+        description: c.meta.description,
+        inLanguage: locale === "fa" ? "fa-IR" : "en",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${url}#breadcrumb` },
+        about: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        // The panels are the stages of one process, in order — that is exactly
+        // what HowTo describes, and it is true of the page rather than bolted
+        // on for the markup's sake.
+        "@type": "HowTo",
+        "@id": `${url}#process`,
+        name: c.hero.title,
+        description: c.hero.lead,
+        step: c.panels.map((p, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: p.title,
+          text: p.body,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: site.name, item: `${siteUrl}/${locale}/` },
+          { "@type": "ListItem", position: 2, name: c.breadcrumb, item: url },
+        ],
+      },
+    ],
+  };
 
   return (
-    <>
-      <Section tone="ink">
-        <Container>
-          <PageIntro
-            eyebrow={c.intro.eyebrow}
-            aside={c.intro.aside}
-            headline={c.intro.headline}
-            description={c.intro.description}
-            breadcrumbs={
-              <Breadcrumbs
-                locale={locale}
-                items={[
-                  { label: n.homeLabel, href: "/" },
-                  { label: c.breadcrumb, href: "/research-development" },
-                ]}
-              />
-            }
-          />
-        </Container>
-      </Section>
+    <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-      <Section tone="ink">
-        <Container className="pb-16 md:pb-20">
-          <div className="rounded-md border border-ink-border bg-ink-soft p-8 md:p-12">
-            <span className="text-xs uppercase tracking-widest text-navy-300">{c.feature.tag}</span>
-            <h2 className="font-heading mt-4 max-w-2xl text-2xl font-semibold leading-snug md:text-3xl">
-              {c.feature.headline}
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
-              {c.feature.description}
-            </p>
-          </div>
-        </Container>
-      </Section>
+      <RndTrack c={c} locale={locale} />
 
-      <Section tone="ink">
-        <Container className="pb-20 md:pb-28">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {c.principles.map((p, i) => (
-              <div key={p.title} className="border-t border-ink-border pt-6">
-                <span className="font-heading text-2xl font-bold text-navy-400">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-heading mt-3 text-base font-semibold">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">{p.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <CtaBand locale={locale} statement={c.cta.statement} ctaLabel={c.cta.label} />
-    </>
+    </main>
   );
 }

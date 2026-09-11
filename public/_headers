@@ -1,19 +1,43 @@
+# Netlify / Cloudflare Pages header rules. These are the four Lighthouse
+# "Trust and Safety" audits — they are host-level, so they cannot be set from
+# the Next config on a static export.
+#
+# The CSP is strict-by-default with two deliberate exceptions:
+#   - 'unsafe-inline' on style-src: Next inlines critical CSS, and the hero
+#     writes custom properties to element style attributes every frame.
+#   - 'unsafe-inline' on script-src: the JSON-LD block and the root redirect
+#     are inline scripts. Move to a nonce if the site ever gains a server.
+
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  X-Frame-Options: DENY
   Cross-Origin-Opener-Policy: same-origin
+  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), camera=(), microphone=()
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
 
-# Next.js's static export for app/icon.tsx and app/apple-icon.tsx emits
-# extensionless files (out/icon, out/apple-icon). Cloudflare Pages infers
-# Content-Type from the file extension, so without these it falls back to
-# application/octet-stream — and X-Content-Type-Options: nosniff above means
-# browsers/crawlers won't sniff their way past that, so the favicon silently
-# fails to render (this is why Google wasn't showing it in search results).
-/icon
-  Content-Type: image/png
-/apple-icon
-  Content-Type: image/png
+# Hashed build output is immutable by construction.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/hero-model.json
+  Cache-Control: public, max-age=604800
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/llms.txt
+  Cache-Control: public, max-age=86400
+
+/llms-full.txt
+  Cache-Control: public, max-age=86400

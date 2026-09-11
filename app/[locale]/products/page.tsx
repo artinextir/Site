@@ -1,18 +1,30 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Container } from "@/components/Container";
-import { Section } from "@/components/Section";
-import { PageIntro } from "@/components/PageIntro";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { ProductCard } from "@/components/ProductCard";
-import { CaseStudyClip } from "@/components/CaseStudyClip";
-import { CtaBand } from "@/components/CtaBand";
+
+import type { Locale } from "@/lib/i18n/config";
+import { locales } from "@/lib/i18n/config";
 import { products } from "@/content/products";
-import { nav } from "@/content/nav";
-import { locales, type Locale } from "@/lib/i18n/config";
-import { siteUrl, ogImageUrl, hreflangAlternates } from "@/content/site";
+import { home } from "@/content/home";
+import { site, siteUrl } from "@/content/site";
+import { revitFamilyCreation } from "@/content/services/revit-family-creation";
+import { aecWorkflowAutomation } from "@/content/services/aec-workflow-automation";
+import { ProductsHero } from "@/components/sections/ProductsHero";
+import { Showcase } from "@/components/sections/Showcase";
+import { Demo } from "@/components/sections/Demo";
+import { Dashboards } from "@/components/sections/Dashboards";
+import { Cta } from "@/components/sections/Cta";
+import { ServiceLink } from "@/components/ServiceLink";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+function resolve(localeRaw: string) {
+  if (!(locales as readonly string[]).includes(localeRaw)) notFound();
+  const locale = localeRaw as Locale;
+  return { locale, c: products[locale] };
 }
 
 export async function generateMetadata({
@@ -20,98 +32,131 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
-  const c = products[locale as Locale] ?? products.fa;
+  const { locale: localeRaw } = await params;
+  const { locale, c } = resolve(localeRaw);
   const url = `${siteUrl}/${locale}/products/`;
 
   return {
+    metadataBase: new URL(siteUrl),
     title: c.meta.title,
     description: c.meta.description,
-    alternates: { canonical: url, languages: hreflangAlternates("/products") },
-    openGraph: { title: c.meta.title, description: c.meta.description, url, type: "website", images: [ogImageUrl(locale as Locale)] },
-    twitter: { card: "summary_large_image", title: c.meta.title, description: c.meta.description, images: [ogImageUrl(locale as Locale)] },
+    alternates: {
+      canonical: url,
+      languages: {
+        fa: `${siteUrl}/fa/products/`,
+        en: `${siteUrl}/en/products/`,
+        "x-default": `${siteUrl}/fa/products/`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      locale: locale === "fa" ? "fa_IR" : "en_US",
+      title: c.meta.title,
+      description: c.meta.description,
+      url,
+      images: [{ url: `/images/og-${locale}.jpg`, width: 1200, height: 630, alt: c.meta.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: c.meta.title,
+      description: c.meta.description,
+      images: [`/images/og-${locale}.jpg`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    },
   };
 }
 
-export default async function ProductsPage({
+export default async function ProductsPageRoute({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale: rawLocale } = await params;
-  const locale = rawLocale as Locale;
-  const c = products[locale];
-  const n = nav[locale];
+  const { locale: localeRaw } = await params;
+  const { locale, c } = resolve(localeRaw);
+  const h = home[locale];
+  const url = `${siteUrl}/${locale}/products/`;
+
+  // The artefacts are the service pages' own evidence, reused as-is; only the
+  // heading copy is this page's. Missing data is a build error, not a blank.
+  const showcase = revitFamilyCreation[locale].showcase;
+  const dashboards = aecWorkflowAutomation[locale].dashboards;
+  if (!showcase || !dashboards) throw new Error("products: artefact data missing");
+
+  const sections = [c.families, c.tools, c.automation];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": url,
+        url,
+        name: c.meta.title,
+        description: c.meta.description,
+        inLanguage: locale === "fa" ? "fa-IR" : "en",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${url}#breadcrumb` },
+        about: { "@id": `${siteUrl}/#organization` },
+        mainEntity: { "@id": `${url}#products` },
+      },
+      {
+        // Each product is delivered through a service page; the list says so
+        // explicitly, alongside the links in the sections themselves.
+        "@type": "ItemList",
+        "@id": `${url}#products`,
+        itemListElement: sections.map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: p.title,
+          url: `${siteUrl}${p.link.href}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: site.name, item: `${siteUrl}/${locale}/` },
+          { "@type": "ListItem", position: 2, name: c.breadcrumb, item: url },
+        ],
+      },
+    ],
+  };
 
   return (
-    <>
-      <Section tone="ink">
-        <Container>
-          <PageIntro
-            eyebrow={c.intro.eyebrow}
-            aside={c.intro.aside}
-            headline={c.intro.headline}
-            description={c.intro.description}
-            breadcrumbs={
-              <Breadcrumbs
-                locale={locale}
-                items={[
-                  { label: n.homeLabel, href: "/" },
-                  { label: c.breadcrumb, href: "/products" },
-                ]}
-              />
-            }
-          />
-        </Container>
-      </Section>
+    <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-      <Section tone="ink">
-        <Container className="pb-16 md:pb-20">
-          <h2 className="sr-only">{c.breadcrumb}</h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {c.products.map((product) => (
-              <ProductCard
-                key={product.href}
-                locale={locale}
-                eyebrow={product.eyebrow}
-                title={product.title}
-                description={product.description}
-                tags={product.tags}
-                href={product.href}
-                linkLabel={c.linkLabel}
-              />
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <ProductsHero c={c} />
 
-      <Section tone="ink">
-        <Container className="pb-16 md:pb-20">
-          <p className="text-xs uppercase tracking-widest text-navy-300">{c.caseStudy.kicker}</p>
-          <h2 className="font-heading text-balance mt-4 max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
-            {c.caseStudy.heading}
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
-            {c.caseStudy.caption}
-          </p>
-          <div className="mt-10">
-            <CaseStudyClip
-              src="/case-studies/cad-to-revit.mp4"
-              poster="/case-studies/cad-to-revit-poster.jpg"
-            />
-          </div>
-        </Container>
-      </Section>
+      <Showcase
+        id={c.families.id}
+        s={{ ...showcase, eyebrow: c.families.eyebrow, title: c.families.title, lead: c.families.lead }}
+        aside={<ServiceLink {...c.families.link} />}
+      />
 
-      <Section tone="ink">
-        <Container className="pb-20 md:pb-28">
-          <p className="font-heading max-w-2xl text-xl font-semibold leading-snug md:text-2xl">
-            {c.principle}
-          </p>
-        </Container>
-      </Section>
+      <Demo
+        id={c.tools.id}
+        s={{ ...h.demo, eyebrow: c.tools.eyebrow, title: c.tools.title, lead: c.tools.lead }}
+        ui={h.ui}
+        aside={<ServiceLink {...c.tools.link} />}
+      />
 
-      <CtaBand locale={locale} statement={c.cta.statement} ctaLabel={c.cta.label} />
-    </>
+      <Dashboards
+        id={c.automation.id}
+        locale={locale}
+        s={{ ...dashboards, eyebrow: c.automation.eyebrow, title: c.automation.title, lead: c.automation.lead }}
+        aside={<ServiceLink {...c.automation.link} />}
+      />
+
+      <Cta locale={locale} s={{ ...h.cta, eyebrow: c.ctaEyebrow }} action={h.navCta} />
+    </main>
   );
 }

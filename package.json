@@ -1,15 +1,17 @@
 {
-  "name": "artinext",
+  "name": "artinext-v3",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/fix-locale-html.mjs",
     "start": "next start",
     "lint": "eslint .",
-    "verify-seo": "node scripts/verify-seo.mjs",
-    "deploy": "npm run build && node scripts/deploy.mjs"
+    "shots": "node scripts/shot.mjs",
+    "postbuild": "node scripts/postbuild.mjs",
+    "preview": "npm run build && node scripts/serve-static.mjs",
+    "serve": "node scripts/serve-static.mjs",
+    "verify-seo": "node scripts/verify-seo.mjs"
   },
   "dependencies": {
     "next": "15.5.24",
@@ -17,24 +19,13 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.24",
+    "playwright": "^1.63.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
-  },
-  "browserslist": [
-    "chrome >= 93",
-    "edge >= 93",
-    "firefox >= 92",
-    "safari >= 15.4",
-    "ios_saf >= 15.4",
-    "and_chr >= 93",
-    "samsung >= 17"
-  ]
+  }
 }

@@ -1,62 +1,34 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./content/**/*.{ts,tsx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./content/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      /* Channel form so Tailwind's /alpha modifier works on every token —
+         bg-ink/70, border-sage/40, text-fg/90 all resolve correctly. */
       colors: {
-        ink: {
-          DEFAULT: "#0a0a0b",
-          soft: "#111214",
-          border: "#232427",
-        },
-        smoke: {
-          DEFAULT: "#f4f2ee",
-          soft: "#eae7e1",
-          border: "#d9d5cc",
-        },
-        navy: {
-          50: "#eef2f8",
-          100: "#d7e1ef",
-          200: "#b0c3df",
-          300: "#93aad1",
-          400: "#6e89bb",
-          500: "#4f6ea3",
-          600: "#375683",
-          700: "#233d63",
-          800: "#172a47",
-          900: "#0d1b30",
-          950: "#081020",
-        },
+        ink: "rgb(var(--ink-rgb) / <alpha-value>)",
+        surface: "rgb(var(--surface-rgb) / <alpha-value>)",
+        "surface-2": "rgb(var(--surface-2-rgb) / <alpha-value>)",
+        line: "rgb(var(--line-rgb) / <alpha-value>)",
+        "line-2": "rgb(var(--line-2-rgb) / <alpha-value>)",
+        sage: "rgb(var(--sage-rgb) / <alpha-value>)",
+        amber: "rgb(var(--amber-rgb) / <alpha-value>)",
+        slate: "rgb(var(--slate-rgb) / <alpha-value>)",
+        fg: "rgb(var(--fg-rgb) / <alpha-value>)",
+        "fg-muted": "rgb(var(--fg-muted-rgb) / <alpha-value>)",
+        plate: "rgb(var(--plate-rgb) / <alpha-value>)",
       },
       fontFamily: {
-        peyda: ["var(--font-peyda)", "Tahoma", "sans-serif"],
-        display: ["var(--font-display)", "sans-serif"],
-        sans: ["var(--font-sans)", "sans-serif"],
-        mono: [
-          "ui-monospace",
-          "SFMono-Regular",
-          "Menlo",
-          "Consolas",
-          "Liberation Mono",
-          "monospace",
-        ],
-      },
-      letterSpacing: {
-        tightest: "-0.04em",
+        mono: "var(--font-stack-mono)",
+        sans: "var(--font-stack-sans)",
+        fa: "var(--font-fa)",
       },
       maxWidth: {
-        content: "1280px",
+        shell: "82rem",
       },
-      spacing: {
-        "section-sm": "4rem",
-        "section-md": "5rem",
-        "section-lg": "7rem",
+      transitionTimingFunction: {
+        out: "cubic-bezier(.22,.61,.36,1)",
       },
     },
   },

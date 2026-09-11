@@ -1,87 +1,101 @@
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
-import { Button } from "@/components/Button";
-import { Container } from "@/components/Container";
-import type { NavContent } from "@/content/nav";
-import { site } from "@/content/site";
 import type { Locale } from "@/lib/i18n/config";
-import { lh } from "@/lib/i18n/href";
+import { LocaleSwitch } from "@/components/LocaleSwitch";
+import type { HomeContent } from "@/content/home";
+import { site } from "@/content/site";
+import { Wordmark } from "@/components/Logo";
+import { Instagram, Mail, Phone } from "@/components/Icons";
 
-export function Footer({ locale, content }: { locale: Locale; content: NavContent }) {
-  const f = content.footer;
+export function Footer({ locale, c }: { locale: Locale; c: HomeContent }) {
 
   return (
-    <footer className="border-t border-ink-border bg-ink text-smoke">
-      <Container className="py-16 md:py-20">
-        <div className="flex flex-col items-start justify-between gap-8 border-b border-ink-border pb-14 md:flex-row md:items-center">
-          <p className="font-heading max-w-xl text-2xl md:text-3xl font-semibold leading-tight">
-            {f.bannerLine}
+    <footer className="border-t border-line bg-surface/40">
+      <div className="shell grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:gap-8 md:py-20">
+        <div>
+          <Wordmark className="text-fg" />
+          <p className="body-copy mt-5 max-w-[38ch]">{c.footer.tagline}</p>
+          <p dir="ltr" className="lat mt-4 max-w-[46ch] text-[0.6875rem] tracking-[0.08em] text-slate rtl:text-right">
+            {site.motto}
           </p>
-          <Button href={lh(locale, "/contact")} variant="outline-ink" className="shrink-0">
-            {f.bannerCta}
-          </Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
-            <Logo className="h-9 w-auto text-smoke" />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">{f.blurb}</p>
-          </div>
-
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-white/50">{f.exploreHeading}</h3>
-            <ul className="mt-5 flex flex-col gap-3">
-              {f.exploreLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={lh(locale, link.href)}
-                    className="text-sm text-white/70 transition-colors hover:text-navy-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-white/50">{f.contactHeading}</h3>
-            <ul className="mt-5 flex flex-col gap-3 text-sm text-white/70">
-              <li>
-                <span className="text-white/50">{f.emailLabel}: </span>
-                <a href={`mailto:${site.email}`} className="transition-colors hover:text-navy-300">
-                  {site.email}
-                </a>
-              </li>
-              <li>
-                <span className="text-white/50">{f.phoneLabel}: </span>
-                <a href={`tel:${site.phoneHref}`} className="transition-colors hover:text-navy-300" dir="ltr">
-                  {site.phone}
-                </a>
-              </li>
-              <li>
-                <span className="text-white/50">{f.instagramLabel}: </span>
-                <a
-                  href={site.instagramHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-navy-300"
-                  dir="ltr"
+        <nav aria-label={c.footer.navTitle}>
+          <h2 className="eyebrow">{c.footer.navTitle}</h2>
+          <ul className="mt-5 flex flex-col gap-3">
+            {c.nav.map((item) => (
+              <li key={item.href}>
+                <Link
+                  prefetch={false}
+                  href={item.href}
+                  className="inline-flex min-h-[24px] items-center text-sm text-fg-muted transition-colors duration-200 hover:text-fg"
                 >
-                  {site.instagram}
-                </a>
-              </li>
-              <li>
-                <Link href={lh(locale, f.consultationHref)} className="transition-colors hover:text-navy-300">
-                  {f.consultationLabel}
+                  {item.label}
                 </Link>
               </li>
-            </ul>
-          </div>
-        </div>
+            ))}
+            <li>
+              <Link
+                prefetch={false}
+                href={`/${locale}/contact/`}
+                className="inline-flex min-h-[24px] items-center text-sm text-fg-muted transition-colors duration-200 hover:text-fg"
+              >
+                {c.footer.contactTitle}
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-        <p className="border-t border-ink-border pt-8 text-xs text-white/50">{f.metaLine}</p>
-      </Container>
+        <div>
+          <h2 className="eyebrow">{c.footer.contactTitle}</h2>
+          <ul className="mt-5 flex flex-col gap-3">
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                dir="ltr"
+                className="lat inline-flex min-h-[24px] items-center gap-2.5 text-sm text-fg-muted transition-colors duration-200 hover:text-sage rtl:flex-row-reverse"
+              >
+                <Mail width={16} height={16} aria-hidden="true" />
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${site.phoneHref}`}
+                dir="ltr"
+                className="lat inline-flex min-h-[24px] items-center gap-2.5 text-sm text-fg-muted transition-colors duration-200 hover:text-sage rtl:flex-row-reverse"
+              >
+                <Phone width={16} height={16} aria-hidden="true" />
+                {site.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.instagramHref}
+                target="_blank"
+                rel="noreferrer"
+                dir="ltr"
+                className="lat inline-flex min-h-[24px] items-center gap-2.5 text-sm text-fg-muted transition-colors duration-200 hover:text-sage rtl:flex-row-reverse"
+              >
+                <Instagram width={16} height={16} aria-hidden="true" />
+                {site.instagram}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-line">
+        <div className="shell flex flex-col gap-3 py-6 text-[0.75rem] text-fg-muted sm:flex-row sm:items-center sm:justify-between">
+          <p dir="ltr" className="lat tracking-[0.08em]">
+            {c.footer.legal}
+          </p>
+          <LocaleSwitch
+            locale={locale}
+            label={c.ui.langSwitch}
+            className="inline-flex min-h-[24px] items-center transition-colors duration-200 hover:text-fg"
+          />
+        </div>
+      </div>
     </footer>
   );
 }

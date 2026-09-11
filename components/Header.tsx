@@ -1,171 +1,168 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
-import { Button } from "@/components/Button";
-import { LocaleSwitch } from "@/components/LocaleSwitch";
-import type { NavContent } from "@/content/nav";
 import type { Locale } from "@/lib/i18n/config";
-import { lh } from "@/lib/i18n/href";
+import type { HomeContent } from "@/content/home";
+import { Wordmark } from "@/components/Logo";
+import { LocaleSwitch } from "@/components/LocaleSwitch";
+import { ArrowRight, Close, Menu } from "@/components/Icons";
 
-export function Header({ locale, content }: { locale: Locale; content: NavContent }) {
+type Props = { locale: Locale; c: HomeContent };
+
+export function Header({ locale, c }: Props) {
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-  const productsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!productsOpen) return;
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setProductsOpen(false);
-    }
-    function onClickOutside(event: MouseEvent) {
-      if (productsRef.current && !productsRef.current.contains(event.target as Node)) {
-        setProductsOpen(false);
-      }
-    }
-    document.addEventListener("keydown", onKeyDown);
-    document.addEventListener("mousedown", onClickOutside);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.removeEventListener("mousedown", onClickOutside);
+  // Lock the page behind the mobile sheet, and let Escape close it.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
     };
-  }, [productsOpen]);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-border bg-ink/85 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-content items-center justify-between px-6 py-4 md:px-10">
+    <>
+      {/*
+        The sheet is a sibling of <header>, not a child, and that is load-
+        bearing. Once the page scrolls, the header takes `backdrop-blur-md`,
+        and a non-none backdrop-filter makes an element the containing block
+        for its fixed-position descendants. Nested, the sheet's `inset-0`
+        resolved against the 68px header instead of the viewport, so it
+        covered the header strip only and its own nav spilled over the page
+        with nothing painted behind it.
+      */}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled ? "border-b border-line bg-ink/85 backdrop-blur-md" : "border-b border-transparent"
+        }`}
+      >
+      <div className="shell flex h-[var(--header-h)] items-center justify-between gap-6">
         <Link
-          href={lh(locale, "/")}
-          aria-label="ARTINEXT — Home"
-          className="flex items-center gap-2 text-smoke"
+          prefetch={false}
+          href={`/${locale}/`}
+          className="text-fg transition-colors duration-200 hover:text-sage"
+          aria-label="ARTINEXT"
         >
-          <Logo className="h-8 w-auto" />
+          <Wordmark />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {content.links.map((link) =>
-            link.href === "/products" ? (
-              <div
-                key={link.href}
-                ref={productsRef}
-                className="relative"
-                onMouseEnter={() => setProductsOpen(true)}
-                onMouseLeave={() => setProductsOpen(false)}
-              >
+        <nav aria-label={locale === "fa" ? "ناوبری اصلی" : "Main"} className="hidden lg:block">
+          <ul className="flex items-center gap-8">
+            {c.nav.map((item) => (
+              <li key={item.href}>
                 <Link
-                  href={lh(locale, link.href)}
-                  className="text-sm text-white/70 transition-colors hover:text-navy-300"
-                  aria-haspopup="true"
-                  aria-expanded={productsOpen}
-                  aria-controls="products-dropdown"
-                  onFocus={() => setProductsOpen(true)}
+                  prefetch={false}
+                  href={item.href}
+                  className="inline-flex min-h-[24px] items-center px-1 text-[0.8125rem] text-fg-muted transition-colors duration-200 hover:text-fg"
                 >
-                  {link.label}
+                  {item.label}
                 </Link>
-                {productsOpen && (
-                  <div
-                    id="products-dropdown"
-                    className="absolute start-0 top-full w-80 rounded-md border border-ink-border bg-ink-soft p-5 shadow-2xl"
-                  >
-                    <p className="mb-4 text-xs leading-relaxed text-white/50">
-                      {content.productsDropdown.heading}
-                    </p>
-                    <ul className="flex flex-col gap-3">
-                      {content.productsDropdown.items.map((item) => (
-                        <li key={item.href}>
-                          <Link
-                            href={lh(locale, item.href)}
-                            onFocus={() => setProductsOpen(true)}
-                            onBlur={(event) => {
-                              if (!productsRef.current?.contains(event.relatedTarget as Node)) {
-                                setProductsOpen(false);
-                              }
-                            }}
-                            className="block rounded-sm px-2 py-1.5 transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-400"
-                          >
-                            <span className="block text-sm font-medium text-smoke">
-                              {item.label}
-                            </span>
-                            <span className="block text-xs text-white/45">
-                              {item.description}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={link.href}
-                href={lh(locale, link.href)}
-                className="text-sm text-white/70 transition-colors hover:text-navy-300"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+              </li>
+            ))}
+          </ul>
         </nav>
 
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="flex items-center gap-2">
           <LocaleSwitch
             locale={locale}
-            className="rounded-sm px-1.5 py-1 text-xs font-medium tracking-widest text-white/50 transition-colors hover:text-navy-300"
+            label={c.ui.langSwitch}
+            className="hidden rounded-[3px] border border-line px-3 py-2 text-[0.75rem] text-fg-muted transition-colors duration-200 hover:border-line-2 hover:text-fg sm:block"
           />
-          <Button href={lh(locale, "/contact")} variant="primary">
-            {content.cta}
-          </Button>
-        </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-ink-border text-smoke focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-400 md:hidden"
-          aria-label="Menu"
-          aria-expanded={open}
-        >
-          <span className="relative block h-3 w-4">
-            <span
-              className={`absolute left-0 right-0 h-px bg-current transition-transform ${open ? "top-1.5 rotate-45" : "top-0"}`}
+          <Link
+            prefetch={false}
+            href={`/${locale}/contact/`}
+            className="hidden items-center gap-2 rounded-[3px] bg-amber px-4 py-2.5 text-[0.8125rem] font-medium text-ink transition-opacity duration-200 hover:opacity-90 sm:inline-flex"
+          >
+            {c.navCta}
+            <ArrowRight
+              width={15}
+              height={15}
+              aria-hidden="true"
+              className="rtl:-scale-x-100"
             />
-            <span
-              className={`absolute left-0 right-0 top-1.5 h-px bg-current transition-opacity ${open ? "opacity-0" : "opacity-100"}`}
-            />
-            <span
-              className={`absolute left-0 right-0 h-px bg-current transition-transform ${open ? "top-1.5 -rotate-45" : "top-3"}`}
-            />
-          </span>
-        </button>
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label={c.ui.menu}
+            aria-expanded={open}
+            className="grid h-11 w-11 place-items-center rounded-[3px] border border-line text-fg lg:hidden"
+          >
+            <Menu aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
-      {open && (
-        <div className="border-t border-ink-border px-6 pb-6 md:hidden">
-          <nav className="flex flex-col gap-1 pt-4">
-            {content.links.map((link) => (
-              <Link
-                key={link.href}
-                href={lh(locale, link.href)}
-                onClick={() => setOpen(false)}
-                className="rounded-sm px-2 py-3 text-sm text-white/80 transition-colors hover:bg-ink-soft hover:text-navy-300"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="mt-4 flex items-center justify-between border-t border-ink-border pt-4">
-            <LocaleSwitch
-              locale={locale}
-              className="rounded-sm px-1.5 py-1 text-xs font-medium tracking-widest text-white/50"
-            />
-            <Button href={lh(locale, "/contact")} variant="primary" className="!px-5 !py-2.5">
-              {content.cta}
-            </Button>
+      </header>
+
+      {open ? (
+        <div className="fixed inset-0 z-[60] bg-ink lg:hidden">
+          <div className="shell flex h-[var(--header-h)] items-center justify-between">
+            <Wordmark />
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label={c.ui.close}
+              autoFocus
+              className="grid h-11 w-11 place-items-center rounded-[3px] border border-line text-fg"
+            >
+              <Close aria-hidden="true" />
+            </button>
           </div>
+
+          <nav className="shell mt-6" aria-label={locale === "fa" ? "ناوبری اصلی" : "Main"}>
+            <ul className="flex flex-col">
+              {c.nav.map((item) => (
+                <li key={item.href} className="border-b border-line">
+                  <Link
+                    prefetch={false}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-5 text-xl text-fg"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-col gap-3">
+              <Link
+                prefetch={false}
+                href={`/${locale}/contact/`}
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-[3px] bg-amber px-5 py-4 font-medium text-ink"
+              >
+                {c.navCta}
+              </Link>
+              <LocaleSwitch
+                locale={locale}
+                label={c.ui.langSwitch}
+                onNavigate={() => setOpen(false)}
+                className="inline-flex items-center justify-center rounded-[3px] border border-line px-5 py-4 text-fg-muted"
+              />
+            </div>
+          </nav>
         </div>
-      )}
-    </header>
+      ) : null}
+    </>
   );
 }

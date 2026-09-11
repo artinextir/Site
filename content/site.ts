@@ -1,40 +1,31 @@
-import type { Locale } from "@/lib/i18n/config";
-
 export const siteUrl = "https://artinext.ir";
 
-// Deliberately no trailing slash: opengraph-image is Next's special image
-// route convention, which next export always emits as a flat file (never
-// a directory/index.html) regardless of the trailingSlash config — adding
-// a slash here 404s.
-export function ogImageUrl(locale: Locale): string {
-  return `${siteUrl}/${locale}/opengraph-image`;
-}
-
-export function hreflangAlternates(path: string): Record<Locale | "x-default", string> {
-  const suffix = path === "/" ? "" : path;
-  return {
-    fa: `${siteUrl}/fa${suffix}/`,
-    en: `${siteUrl}/en${suffix}/`,
-    // fa is defaultLocale and the primary audience — same page the bare
-    // domain (app/page.tsx) renders directly.
-    "x-default": `${siteUrl}/fa${suffix}/`,
-  };
-}
+/**
+ * The hero recording. Null until the asset lands, and the hero falls back to
+ * the drawn section detail — so the fold is never broken by a missing file.
+ *
+ * Asset contract: 1920x1200, 8-12s, seamless loop, no audio track, no UI
+ * chrome, and a quiet third on the text side (inline-start in en, inline-end
+ * in fa) for the headline to sit on. Poster is the FINAL frame, so the
+ * no-JS / reduced-motion path still shows the finished model.
+ */
+export const heroMedia: {
+  mp4: string;
+  webm?: string;
+  poster: string;
+} | null = null;
 
 export const site = {
   name: "ARTINEXT",
-  // Persian alternate names for the Organization schema's `alternateName` —
-  // "ارتینکست" is the common no-madda spelling people actually type when
-  // searching, since آ takes an extra keystroke most don't bother with.
   nameFa: "آرتینکست",
   nameFaAlt: "ارتینکست",
   legalLine: "ARTINEXT — DESIGN TECHNOLOGY / IRAN",
+  /** Footer line, in English on both locales. */
+  motto: "advanced research & technology innovation for the next generation",
   email: "artinext.ai@gmail.com",
   phone: "+98 930 525 3240",
   phoneHref: "+989305253240",
   instagram: "@artinext.ir",
   instagramHref: "https://www.instagram.com/artinext.ir/",
-  // Organization schema's `sameAs`. LinkedIn is planned but not live yet —
-  // add its URL here the day it goes up, nothing else needs to change.
   sameAs: ["https://www.instagram.com/artinext.ir/"],
 };

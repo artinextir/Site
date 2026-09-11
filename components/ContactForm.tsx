@@ -9,9 +9,11 @@ const REQUIRED_FIELDS = ["fullName", "phone", "brief"] as const;
 type RequiredField = (typeof REQUIRED_FIELDS)[number];
 
 const inputClass =
-  "w-full rounded-md border border-ink-border bg-ink px-4 py-3 text-sm text-smoke placeholder:text-white/30 outline-none transition-colors focus-visible:border-navy-400 focus-visible:ring-2 focus-visible:ring-navy-400/40";
+  "w-full rounded-[4px] border border-line bg-ink px-4 py-3 text-[0.9375rem] text-fg outline-none transition-colors duration-300 placeholder:text-slate/70 focus-visible:border-sage focus-visible:ring-2 focus-visible:ring-sage/30";
 
-const invalidInputClass = "border-red-400";
+const invalidInputClass = "border-amber";
+
+const labelClass = "flex flex-col gap-2 text-[0.8125rem] text-slate";
 
 export function ContactForm({ content }: { content: ContactContent["form"] }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -51,9 +53,9 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
     data.append("from_name", "artinext.ir contact form");
 
     // multipart/form-data is a CORS-safelisted content type, so this skips the
-    // preflight OPTIONS request — Web3Forms doesn't return CORS headers on
+    // preflight OPTIONS request — Web3Forms does not return CORS headers on
     // preflight responses, which silently kills a JSON-content-type submission
-    // in every browser. A successful multipart submission returns Web3Forms'
+    // in every browser. A successful multipart submission returns the Web3Forms
     // HTML thank-you page rather than JSON, so success is read off the HTTP
     // status instead of assuming a JSON body.
     fetch("https://api.web3forms.com/submit", {
@@ -80,14 +82,24 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-      <h2 className="font-heading text-xl font-semibold md:text-2xl">{content.heading}</h2>
+      <h2 className="text-[1.125rem] font-semibold tracking-[-0.01em] text-fg md:text-[1.25rem]">
+        {content.heading}
+      </h2>
 
-      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+      {/* Honeypot. Hidden from people and from assistive tech; bots fill it. */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <label className="flex flex-col gap-2 text-sm text-white/60">
+        <label className={labelClass}>
           <span>
-            {content.fields.fullName} <span className="text-navy-300">*</span>
+            {content.fields.fullName} <span className="text-sage">*</span>
           </span>
           <input
             ref={fieldRefs.fullName}
@@ -99,18 +111,20 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
             className={`${inputClass} ${invalidFields.has("fullName") ? invalidInputClass : ""}`}
           />
           {invalidFields.has("fullName") && (
-            <span role="alert" className="text-xs text-red-400">
+            <span role="alert" className="text-[0.75rem] text-amber">
               {content.status.validationError}
             </span>
           )}
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/60">
+
+        <label className={labelClass}>
           {content.fields.company}
           <input name="company" type="text" autoComplete="organization" className={inputClass} />
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/60">
+
+        <label className={labelClass}>
           <span>
-            {content.fields.phone} <span className="text-navy-300">*</span>
+            {content.fields.phone} <span className="text-sage">*</span>
           </span>
           <input
             ref={fieldRefs.phone}
@@ -120,21 +134,28 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
             dir="ltr"
             autoComplete="tel"
             aria-invalid={invalidFields.has("phone")}
-            className={`${inputClass} ${invalidFields.has("phone") ? invalidInputClass : ""}`}
+            className={`${inputClass} lat ${invalidFields.has("phone") ? invalidInputClass : ""}`}
           />
           {invalidFields.has("phone") && (
-            <span role="alert" className="text-xs text-red-400">
+            <span role="alert" className="text-[0.75rem] text-amber">
               {content.status.validationError}
             </span>
           )}
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/60">
+
+        <label className={labelClass}>
           {content.fields.email}
-          <input name="email" type="email" dir="ltr" autoComplete="email" className={inputClass} />
+          <input
+            name="email"
+            type="email"
+            dir="ltr"
+            autoComplete="email"
+            className={`${inputClass} lat`}
+          />
         </label>
       </div>
 
-      <label className="flex flex-col gap-2 text-sm text-white/60">
+      <label className={labelClass}>
         {content.fields.need}
         <select name="need" defaultValue="" autoComplete="off" className={inputClass}>
           <option value="" disabled>
@@ -148,32 +169,35 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
         </select>
       </label>
 
-      <label className="flex flex-col gap-2 text-sm text-white/60">
+      <label className={labelClass}>
         <span>
-          {content.fields.brief} <span className="text-navy-300">*</span>
+          {content.fields.brief} <span className="text-sage">*</span>
         </span>
         <textarea
           ref={fieldRefs.brief}
           name="brief"
           required
-          rows={5}
+          /* Four, not five: the whole form has to sit inside one screen
+             beside the aside, and the fifth row was what pushed the submit
+             button under the fold on a 900px viewport. */
+          rows={4}
           placeholder={content.fields.briefPlaceholder}
           aria-invalid={invalidFields.has("brief")}
           className={`${inputClass} ${invalidFields.has("brief") ? invalidInputClass : ""}`}
         />
         {invalidFields.has("brief") && (
-          <span role="alert" className="text-xs text-red-400">
+          <span role="alert" className="text-[0.75rem] text-amber">
             {content.status.validationError}
           </span>
         )}
       </label>
 
-      <p className="text-xs text-white/50">{content.requiredNote}</p>
+      <p className="text-[0.75rem] text-slate">{content.requiredNote}</p>
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex items-center justify-center gap-2 self-start rounded-full border border-navy-400 bg-navy-400 px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-navy-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-60"
+        className="inline-flex items-center justify-center gap-2 self-start rounded-[4px] border border-sage bg-sage px-6 py-3 text-[0.875rem] font-medium text-ink transition-colors duration-300 hover:bg-transparent hover:text-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-ink disabled:opacity-60"
       >
         {status === "submitting" && (
           <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -186,17 +210,17 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
       </button>
 
       {status === "success" && (
-        <p role="status" className="text-sm text-navy-300">
+        <p role="status" className="text-[0.875rem] text-sage">
           {content.status.success}
         </p>
       )}
       {status === "validation-error" && (
-        <p role="alert" className="text-sm text-red-400">
+        <p role="alert" className="text-[0.875rem] text-amber">
           {content.status.validationError}
         </p>
       )}
       {status === "error" && (
-        <p role="alert" className="text-sm text-red-400">
+        <p role="alert" className="text-[0.875rem] text-amber">
           {content.status.error}
         </p>
       )}

@@ -2,202 +2,998 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
-  --font-peyda: "Peyda", Tahoma, sans-serif;
-}
+@layer base {
+  :root {
+    /* One source of truth per colour: bare channels, so any utility or
+       gradient can take its own alpha, plus a ready-made colour for CSS. */
+    --ink-rgb: 11 12 16;
+    --surface-rgb: 16 18 25;
+    --surface-2-rgb: 22 25 35;
+    --line-rgb: 35 39 51;
+    --line-2-rgb: 46 52 66;
 
-@font-face {
-  font-family: "Peyda";
-  src: url("/fonts/peyda/Peyda-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+    /* Accents. One role each: sage = structure, amber = action, slate = data. */
+    --sage-rgb: 158 193 172;
+    --amber-rgb: 216 167 106;
+    --slate-rgb: 143 165 188;
 
-@font-face {
-  font-family: "Peyda";
-  src: url("/fonts/peyda/Peyda-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+    --fg-rgb: 233 235 239;
+    --fg-muted-rgb: 152 160 174;
+    --plate-rgb: 244 245 247;
 
-@font-face {
-  font-family: "Peyda";
-  src: url("/fonts/peyda/Peyda-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
+    /* Ground + surfaces — sampled from color.png (#101018) */
+    --ink: rgb(var(--ink-rgb));
+    --surface: rgb(var(--surface-rgb));
+    --surface-2: rgb(var(--surface-2-rgb));
+    --line: rgb(var(--line-rgb));
+    --line-2: rgb(var(--line-2-rgb));
 
-@font-face {
-  font-family: "Peyda";
-  src: url("/fonts/peyda/Peyda-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+    --sage: rgb(var(--sage-rgb));
+    --amber: rgb(var(--amber-rgb));
+    --slate: rgb(var(--slate-rgb));
 
-html {
-  scroll-behavior: smooth;
-}
+    /* Text */
+    --fg: rgb(var(--fg-rgb));
+    --fg-muted: rgb(var(--fg-muted-rgb));
 
-body {
-  background-color: #0a0a0b;
-  color: #f4f2ee;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+    /* Light plate behind product recordings */
+    --plate: rgb(var(--plate-rgb));
 
-::selection {
-  background-color: #6e89bb;
-  color: #0a0a0b;
-}
+    --shell-x: clamp(1.25rem, 5vw, 4.5rem);
 
-/* Persian (fa) uses Peyda throughout; English uses the display/sans pairing */
-html[lang="fa"] body {
-  font-family: var(--font-peyda), Tahoma, sans-serif;
-}
+    /* The header is fixed, so it covers the top of every section. Sections
+       reserve it as padding rather than letting content slide underneath. */
+    --header-h: 68px;
 
-html[lang="en"] body {
-  font-family: var(--font-sans), sans-serif;
-}
+    --font-stack-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+    --font-stack-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 
-html[lang="en"] .font-heading {
-  font-family: var(--font-display), sans-serif;
-}
-
-html[lang="fa"] .font-heading {
-  font-family: var(--font-peyda), Tahoma, sans-serif;
-  font-weight: 700;
-}
-
-.text-balance {
-  text-wrap: balance;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
+    color-scheme: dark;
   }
-  to {
-    transform: translateX(-50%);
+
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* One screen per section, so the scroll settles on a band rather than
+     between two. Only where every section really is one screen tall and
+     there is a pointer to drive it: on a phone the content is taller than
+     the viewport and mandatory snapping would fight the reader. */
+  @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+    html {
+      scroll-snap-type: y mandatory;
+    }
+
+    main > section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    footer {
+      scroll-snap-align: end;
+    }
+
+    /* The cloud page snaps like every other one: one stage per screen,
+       `scroll-stop` so a flick cannot skip a stage, and the transformation
+       playing out over the snap itself. Free scrolling was the alternative
+       and it loses more than it gains — between two stages there is nothing
+       to read and a shape halfway through becoming another shape, so a page
+       that lets the reader stop there mostly shows them that.
+
+       These need saying explicitly because the sections live inside the
+       track, not directly under `main`, so the rule above does not reach
+       them. */
+    [data-cloud-track] section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    /* Articles are long-form, so the one-screen band does not apply — and
+       mandatory snapping between a header and a closing band thousands of
+       pixels apart would pull the reader off the paragraph they are on. */
+    html:has(main[data-free-scroll]) {
+      scroll-snap-type: none;
+    }
+  }
+
+  /* A page of the article index arriving. Short and small — it only has to
+     say the list changed, not perform the change. */
+  .article-page {
+    animation: article-page-in 260ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  @keyframes article-page-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-page {
+      animation: none;
+    }
+  }
+
+  /* Copy typed on and off beside the R&D page's scroll-driven cloud.
+
+     The state arrives as custom properties and is only applied here, above
+     the breakpoint the cloud itself runs at. Below it the properties are set
+     and ignored, so the copy shows from the server's HTML onward — which on a
+     phone is both the right behaviour and the one that keeps it off the
+     critical path for first paint. */
+  @media (min-width: 1024px) {
+    .typed {
+      opacity: var(--o, 1);
+      transition: opacity var(--t, 0ms) linear var(--d, 0ms);
+    }
+  }
+
+  body {
+    background-color: var(--ink);
+    color: var(--fg);
+    font-feature-settings: "kern";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Two faces, two jobs. Kode Mono is the engineering voice — headlines,
+     eyebrows, code, specs, nav. Instrument Sans carries prose, because a
+     display monospace set at reading size across 11,000px of page is a tax
+     the reader pays on every line. */
+  [lang="en"] body,
+  [lang="en"] {
+    font-family: var(--font-stack-sans);
+    letter-spacing: -0.006em;
+  }
+
+  [lang="en"] h1,
+  [lang="en"] h2,
+  [lang="en"] h3,
+  [lang="en"] .display,
+  [lang="en"] .eyebrow,
+  [lang="en"] .lat,
+  [lang="en"] .tnum,
+  [lang="en"] code,
+  [lang="en"] kbd,
+  [lang="en"] nav a {
+    font-family: var(--font-stack-mono);
+    letter-spacing: -0.012em;
+  }
+
+  /* Noto Kufi Arabic is geometric-display: Persian body needs more leading.
+     Persian keeps one face — Kufi already carries display and text weight,
+     and no second Arabic face here would sit beside it without a fight.
+     Scoped to the document element on purpose: an unscoped [lang="fa"] also
+     matched the language-switch link on the English page, and that one word
+     was enough to pull the 121KB Arabic subset onto every English visit.
+     Inline Persian outside a Persian document falls back to the system
+     Arabic face instead. */
+  html[lang="fa"] body,
+  html[lang="fa"] {
+    /* Kode Mono sits between Kufi and the system fallback on purpose: the
+       Arabic subset carries no em dash, middot or guillemets, and /fa/ has
+       already loaded the mono face for its Latin runs. */
+    font-family: var(--font-fa), var(--font-mono), Tahoma, sans-serif;
+    letter-spacing: 0;
+  }
+
+  html[lang="en"] [lang="fa"] {
+    font-family: Tahoma, "Segoe UI", "Noto Sans Arabic", sans-serif;
+    letter-spacing: 0;
+  }
+
+  /* Latin runs inside Persian text (Revit, ETABS, CAD, C2R) keep the mono face. */
+  html[lang="fa"] .lat,
+  html[lang="fa"] code,
+  html[lang="fa"] kbd {
+    font-family: var(--font-stack-mono);
+  }
+
+  ::selection {
+    background: var(--sage);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Persian numerals in tabular contexts shouldn't jitter */
+  .tnum {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-/* HeroVisual signature element: a pen-trace-in on load. Scales from the
-   line's start point instead of animating stroke-dashoffset — Lighthouse
-   flags stroke-dashoffset as a non-composited property (it repaints every
-   frame on the main thread), while transform: scale runs on the compositor.
-   Each line is perfectly horizontal or vertical, so a single-axis scale from
-   the correct transform-origin reproduces the same "drawn in" look. */
-@keyframes draw-line-x {
-  from {
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: var(--shell-x);
+  }
+
+  /* Section label: 01 — Solutions */
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  html[lang="fa"] .eyebrow {
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.8125rem;
+  }
+
+  /* Noto Kufi sets its dots high above the baseline and hangs descenders well
+     below it, so two Persian lines at a Latin heading's leading collide — the
+     dots of one line land in the descenders of the line above. Headings that
+     can wrap carry this; single-line headings are unaffected either way. */
+  [lang="fa"] .fa-air {
+    line-height: 1.45;
+  }
+
+  /* Mono plus 0.16em tracking runs the hero eyebrow to the edge on a 390px
+     phone. Give it back a little room rather than let it wrap mid-phrase. */
+  @media (max-width: 430px) {
+    .eyebrow {
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+    }
+
+    html[lang="fa"] .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0;
+    }
+  }
+
+  /* Measure is set in ch, and ch tracks the "0" advance — narrow in the sans,
+     full-width in the mono. Hence the two different numbers for one measure. */
+  .lead {
+    /* Keeps a two- or three-word orphan off the last line. Persian shows this
+       worse than English does, because its longer words leave bigger gaps. */
+    text-wrap: pretty;
+    color: var(--fg-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    max-width: 66ch;
+  }
+
+  html[lang="fa"] .lead {
+    line-height: 2;
+    max-width: 62ch;
+  }
+
+  .body-copy {
+    color: var(--fg-muted);
+    font-size: 0.9688rem;
+    line-height: 1.72;
+  }
+
+  html[lang="fa"] .body-copy {
+    line-height: 2;
+  }
+
+  /* Article prose. Read, not scanned: a 16px floor (on-page-seo.md) and a
+     little more leading than the marketing body copy. */
+  .article-copy {
+    color: var(--fg-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    text-wrap: pretty;
+  }
+
+  html[lang="fa"] .article-copy {
+    line-height: 2.05;
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-inline-start: 1.25rem;
+  }
+
+  /* --- Interactive panels ------------------------------------------------
+     One tilt primitive, shared by the friction panels and the product cards.
+     Everything is driven off custom properties written by TiltCard, so the
+     JS never touches layout and the flat state costs nothing. */
+
+  .tilt-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition:
+      transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      border-color 320ms ease,
+      background-color 320ms ease,
+      box-shadow 420ms ease;
+  }
+
+  .tilt-card.tilt-card[data-tilt="on"] {
+    transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition:
+      transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      border-color 320ms ease,
+      background-color 320ms ease,
+      box-shadow 420ms ease;
+  }
+
+  .tilt-card.tilt-card[data-tilt="on"]:hover {
+    transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+      translateZ(var(--tilt-lift, 10px));
+    box-shadow:
+      0 18px 40px -26px rgb(0 0 0 / 0.85),
+      0 0 0 1px rgb(var(--sage-rgb) / 0.08);
+  }
+
+  .tilt-spot {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 340ms ease;
+    background: radial-gradient(
+      320px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgb(var(--sage-rgb) / 0.055),
+      transparent 66%
+    );
+  }
+
+  .tilt-card:hover .tilt-spot {
+    opacity: 1;
+  }
+
+  .tilt-inner {
+    position: relative;
+    display: block;
+    height: 100%;
+  }
+
+  /* Content floats a little in front of the panel it sits on. */
+  .tilt-card.tilt-card[data-tilt="on"] .tilt-inner {
+    transform: translateZ(24px);
+  }
+
+  /* --- Solution rows ------------------------------------------------------
+     A shallow panel rises behind the hovered row and the row lifts with it.
+     Inset sideways so the panel reads as light under the copy rather than as
+     a card, and pushed behind the text with a negative z so it never washes
+     the type it sits under. */
+
+  .solution-row {
+    transition: transform 460ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .solution-row::before {
+    content: "";
+    position: absolute;
+    inset: 0 -1rem -0.35rem;
+    z-index: -1;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, rgb(var(--sage-rgb) / 0.07), transparent 78%);
+    opacity: 0;
+    transition: opacity 460ms ease;
+  }
+
+  .solution-row:hover::before {
+    opacity: 1;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .solution-row.solution-row:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* --- Spotlight list ----------------------------------------------------
+     The sheen sits behind the rows; the dimming pulls the reader's eye to the
+     one row they are on without moving anything. */
+
+  .spotlight-sheen {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 420ms ease;
+    background: radial-gradient(
+      560px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgb(var(--sage-rgb) / 0.04),
+      transparent 72%
+    );
+  }
+
+  .spotlight-list[data-hovering] .spotlight-sheen {
+    opacity: 1;
+  }
+
+  /* Everything in the section recedes a little — heading included — and the
+     row under the cursor simply stays where it was. A wash, not a spotlight. */
+  .spotlight-list[data-spotlight="on"] .sl-dim {
+    transition: opacity 480ms ease;
+  }
+
+  .spotlight-list[data-spotlight="on"][data-hovering] .sl-dim {
+    opacity: 0.72;
+  }
+
+  .spotlight-list[data-spotlight="on"][data-hovering] article.sl-dim:hover {
+    opacity: 1;
+  }
+
+  /* Card titles carry a light amber at rest and go to full white when their
+     own card is hovered — the same amber the header's action button uses, so
+     a card reads as something you can act on before you touch it. */
+  .card-title {
+    color: rgb(var(--amber-rgb) / 0.86);
+    transition: color 380ms ease;
+  }
+
+  .group:hover .card-title,
+  .group:focus-within .card-title {
+    color: var(--fg);
+  }
+
+  /* Outline numeral that warms to sage with its panel. */
+  .numeral {
+    -webkit-text-stroke: 1px var(--line-2);
+    color: transparent;
+    transition: -webkit-text-stroke-color 340ms ease;
+  }
+
+  .group:hover .numeral {
+    -webkit-text-stroke-color: var(--sage);
+  }
+
+  .cap-row::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-end: -1px;
+    block-size: 1px;
+    inline-size: 100%;
+    background: var(--sage);
     transform: scaleX(0);
+    transform-origin: var(--draw-origin, left);
+    transition: transform 460ms cubic-bezier(0.22, 0.61, 0.36, 1);
   }
-  to {
+
+  [dir="rtl"] .cap-row::after {
+    --draw-origin: right;
+  }
+
+  .cap-row:hover::after {
     transform: scaleX(1);
   }
-}
 
-@keyframes draw-line-y {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
+  /* --- Hairline that draws itself on hover -------------------------------- */
 
-@keyframes bubble-in {
-  from {
+  .rule-draw::after {
+    content: "";
+    position: absolute;
+    inset-block-start: -1px;
+    inset-inline-start: 0;
+    block-size: 1px;
+    inline-size: 100%;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: var(--draw-origin, left);
+    transition: transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  [dir="rtl"] .rule-draw::after {
+    --draw-origin: right;
+  }
+
+  .group:hover .rule-draw::after,
+  .group:focus-within .rule-draw::after {
+    transform: scaleX(1);
+  }
+
+  /* --- R&D sheet ----------------------------------------------------------
+     A drawing sheet, not a card: ruled ground, a plotter head that crosses it
+     on a long cycle, and callouts that build themselves when picked out. */
+
+  .rnd-rule-ground {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 100% 34px;
+    mask-image: radial-gradient(ellipse 70% 80% at 50% 50%, #000 20%, transparent 82%);
+  }
+
+  .rnd-plot {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    pointer-events: none;
+    /* Full-width element carrying a 1px line at its leading edge, so a
+       transform of 100% walks the head the width of the sheet. */
+    background:
+      linear-gradient(to bottom, transparent, rgb(var(--amber-rgb) / 0.22), transparent)
+      var(--plot-origin, left) top / 1px 100% no-repeat;
+    animation: rnd-plot 16s linear infinite;
+  }
+
+  [dir="rtl"] .rnd-plot {
+    --plot-origin: right;
+    --plot-travel: -100%;
+  }
+
+  .rnd-spine::before {
+    content: "";
+    position: absolute;
+    inset-block: 0.6rem;
+    inset-inline-start: 3px;
+    inline-size: 1px;
+    background: var(--line-2);
+  }
+
+  .rnd-node {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.15rem;
+    block-size: 7px;
+    inline-size: 7px;
+    border: 1px solid var(--line-2);
+    border-radius: 999px;
+    background: var(--surface);
+    transition:
+      background-color 400ms ease,
+      border-color 400ms ease,
+      transform 400ms cubic-bezier(0.34, 1.4, 0.5, 1);
+  }
+
+  /* The leader line: grows from the node out to the text, as on a real sheet. */
+  .rnd-point::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 7px;
+    inset-block-start: 1.4rem;
+    block-size: 1px;
+    inline-size: 1.05rem;
+    background: var(--amber);
+    transform: scaleX(0);
+    transform-origin: var(--draw-origin, left);
+    transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  [dir="rtl"] .rnd-point::before {
+    --draw-origin: right;
+  }
+
+  .rnd-point:hover::before {
+    transform: scaleX(1);
+  }
+
+  .rnd-point:hover .rnd-node {
+    background: var(--amber);
+    border-color: var(--amber);
+    transform: scale(1.35);
+  }
+
+  .rnd-cta {
+    border-block-end: 1px solid var(--line-2);
+    background-image: linear-gradient(to right, var(--sage), var(--sage));
+    background-repeat: no-repeat;
+    background-position: var(--draw-origin, left) 100%;
+    background-size: 0% 1px;
+    transition:
+      background-size 480ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      color 300ms ease;
+  }
+
+  [dir="rtl"] .rnd-cta {
+    --draw-origin: right;
+  }
+
+  .rnd-cta:hover {
+    background-size: 100% 1px;
+  }
+
+  /* --- Aurora -------------------------------------------------------------
+     Dark sage and dark amber, well below the copy's contrast. Composited
+     transforms only — no blur filter — and masked to nothing at the top and
+     bottom edges so the band has no visible boundary when you scroll past.
+     The two drifts are 31s and 43s: coprime, so they never resolve into a
+     loop you can spot. */
+
+  .aurora {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 26%,
+      #000 74%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 74%, transparent 100%);
+  }
+
+  .aurora-field {
+    position: absolute;
+    inset: -30%;
+    opacity: 0.85;
+    transform: translate3d(0, 0, 0);
+    transition: transform 1600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .aurora-sage {
+    background:
+      radial-gradient(42% 46% at 30% 36%, rgb(var(--sage-rgb) / 0.16), transparent 68%),
+      radial-gradient(34% 38% at 68% 70%, rgb(var(--sage-rgb) / 0.1), transparent 70%);
+  }
+
+  .aurora-amber {
+    background:
+      radial-gradient(38% 42% at 72% 28%, rgb(var(--amber-rgb) / 0.13), transparent 68%),
+      radial-gradient(32% 36% at 24% 76%, rgb(var(--amber-rgb) / 0.085), transparent 70%);
+  }
+
+  .aurora[data-aurora="on"] .aurora-sage {
+    animation: aurora-a 31s ease-in-out infinite alternate;
+  }
+
+  .aurora[data-aurora="on"] .aurora-amber {
+    animation: aurora-b 43s ease-in-out infinite alternate;
+  }
+
+  /* The lean rides on the same property the drift animates, so it is applied
+     to the wrapper instead — one composited layer each, never fighting. */
+  .aurora[data-aurora="on"] {
+    transform: translate3d(calc(var(--lean-x, 0) * 2.2%), calc(var(--lean-y, 0) * 2.2%), 0);
+    transition: transform 1600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  /* --- Process timeline ---------------------------------------------------
+     Hovering a stage lifts the node and everything under it off the rail. */
+
+  /* Doubled class on purpose: the stagger hook's `.reveal-in { transform:
+     none }` lands in the utilities layer, so a single-class rule here would
+     lose the cascade and the stage would never lift. */
+  .stage.stage {
+    transition: transform 460ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  /* Chrome and Safari interpolate `d`; elsewhere the kink simply snaps, which
+     is a smaller loss than shipping a JS tween for one hairline. */
+  .process-rail {
+    transition: d 460ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .stage-node {
+    transition:
+      transform 460ms cubic-bezier(0.34, 1.4, 0.5, 1),
+      background-color 400ms ease,
+      box-shadow 460ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .stage.stage:hover {
+      transform: translateY(-10px);
+    }
+
+    .stage:hover .stage-node {
+      transform: scale(1.5);
+      background-color: var(--sage);
+      box-shadow: 0 0 0 6px rgb(var(--sage-rgb) / 0.1);
+    }
+  }
+
+  /* Bullets ease over as a run when their card is hovered, not all at once. */
+  .bullet-row {
+    transition:
+      transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      color 480ms ease;
+  }
+
+  .group:hover .bullet-row {
+    transform: translateX(var(--bullet-shift, 5px));
+  }
+
+  [dir="rtl"] {
+    --bullet-shift: -5px;
+  }
+
+  /* --- Border that traces the card ---------------------------------------
+     A conic sweep clipped to a 1px ring. Where @property is unsupported the
+     angle simply never animates and the ring reads as a static sage edge. */
+
+  .trace::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--trace-angle, 0deg),
+      transparent 0deg,
+      rgb(var(--sage-rgb) / 0.85) 34deg,
+      transparent 86deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
     opacity: 0;
+    transition: opacity 320ms ease;
+    pointer-events: none;
   }
-  to {
+
+  .trace:hover::before,
+  .trace:focus-within::before {
     opacity: 1;
+    animation: trace-spin 2600ms linear infinite;
+  }
+
+  /* --- Hero -------------------------------------------------------------
+     Two layouts, not one shrunk. Below lg the media is a band the text sits
+     under; from lg it goes full-bleed behind the text and the scrim carries
+     legibility. Both are capped so the fold always holds the whole message. */
+
+  .hero-scrim {
+    background:
+      linear-gradient(
+        to var(--scrim-dir, right),
+        rgb(var(--ink-rgb) / 0.97) 0%,
+        rgb(var(--ink-rgb) / 0.93) 40%,
+        rgb(var(--ink-rgb) / 0.6) 66%,
+        rgb(var(--ink-rgb) / 0) 92%
+      ),
+      /* The horizontal pass is what keeps the headline legible. This vertical
+         one only has to settle the header and the section seam, so it stays
+         light — at its old weight it was dimming the whole frame for nothing. */
+      linear-gradient(
+        to bottom,
+        rgb(var(--ink-rgb) / 0.7) 0%,
+        rgb(var(--ink-rgb) / 0.1) 22%,
+        rgb(var(--ink-rgb) / 0.18) 58%,
+        rgb(var(--ink-rgb) / 0.88) 100%
+      );
+  }
+
+  [dir="rtl"] .hero-scrim {
+    --scrim-dir: left;
+  }
+
+  /* Mobile band: the media dissolves into the ground rather than ending on a
+     hard edge, so the text below reads as the same surface. */
+  .hero-band {
+    -webkit-mask-image: linear-gradient(to bottom, #000 48%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 48%, transparent 100%);
+  }
+
+  /* Hairline rule that reads as a drawing line, not a divider */
+  .rule {
+    height: 1px;
+    background: linear-gradient(
+      to var(--rule-dir, right),
+      var(--line-2),
+      var(--line-2) 30%,
+      transparent
+    );
+  }
+
+  [dir="rtl"] .rule {
+    --rule-dir: left;
   }
 }
 
-@keyframes flag-in {
-  from {
+@layer utilities {
+  /* A display utility on the same element would otherwise out-rank preflight's
+     [hidden] rule, so inactive tab panels must win explicitly. */
+  [hidden] {
+    display: none !important;
+  }
+
+  /* Scroll reveal — final state is the default, .reveal only when JS arms it */
+  .reveal {
     opacity: 0;
-    transform: scale(0.6);
+    transform: translateY(24px);
   }
-  to {
+
+  /* Staggered groups: the wrapper hides its direct children, the hook reveals
+     them one at a time. Kept in CSS so nothing ever flashes visible first. */
+  [data-stagger] > * {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal-in,
+  [data-stagger] > .reveal-in {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
+    transition:
+      opacity 560ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
   }
-}
 
-/* HeroVisual corner registration ticks — plotter trim-mark motif. */
-.registration-ticks::before,
-.registration-ticks::after,
-.registration-ticks > .tick-tr,
-.registration-ticks > .tick-bl {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  pointer-events: none;
-}
+  /* Grid of hairlines — the CAD sheet under the hero */
+  .grid-paper {
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 20%, transparent 78%);
+  }
 
-.registration-ticks::before {
-  top: 10px;
-  left: 10px;
-  border-top: 1px solid rgba(110, 137, 187, 0.55);
-  border-left: 1px solid rgba(110, 137, 187, 0.55);
-}
+  .draw-line {
+    stroke-dasharray: var(--len, 1200);
+    stroke-dashoffset: var(--len, 1200);
+    animation: draw 1500ms cubic-bezier(0.32, 0.72, 0.3, 1) forwards;
+    animation-delay: var(--draw-delay, 0ms);
+  }
 
-.registration-ticks::after {
-  bottom: 10px;
-  right: 10px;
-  border-bottom: 1px solid rgba(110, 137, 187, 0.55);
-  border-right: 1px solid rgba(110, 137, 187, 0.55);
-}
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 
-.registration-ticks > .tick-tr {
-  top: 10px;
-  right: 10px;
-  border-top: 1px solid rgba(110, 137, 187, 0.55);
-  border-right: 1px solid rgba(110, 137, 187, 0.55);
-}
+  .node-pulse {
+    animation: node 2800ms ease-in-out infinite;
+  }
 
-.registration-ticks > .tick-bl {
-  bottom: 10px;
-  left: 10px;
-  border-bottom: 1px solid rgba(110, 137, 187, 0.55);
-  border-left: 1px solid rgba(110, 137, 187, 0.55);
-}
+  @property --trace-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
 
-/* Lighter version of the same motif for page-intro top edges — two short
-   corner marks, no full frame. */
-.top-tick::before,
-.top-tick::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 10px;
-  height: 10px;
-  border-top: 1px solid rgba(110, 137, 187, 0.4);
-  pointer-events: none;
-}
+  /* Travels on `transform` so the compositor owns it; animating an inset
+     would relayout the sheet on every frame. */
+  @keyframes rnd-plot {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    12%,
+    88% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(var(--plot-travel, 100%));
+      opacity: 0;
+    }
+  }
 
-.top-tick::before {
-  left: 0;
-  border-left: 1px solid rgba(110, 137, 187, 0.4);
-}
+  @keyframes aurora-a {
+    to {
+      transform: translate3d(4%, -3%, 0) scale(1.06);
+    }
+  }
 
-.top-tick::after {
-  right: 0;
-  border-right: 1px solid rgba(110, 137, 187, 0.4);
+  @keyframes aurora-b {
+    to {
+      transform: translate3d(-5%, 4%, 0) scale(1.04);
+    }
+  }
+
+  @keyframes trace-spin {
+    to {
+      --trace-angle: 360deg;
+    }
+  }
+
+  @keyframes node {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-in,
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .draw-line {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+
+  .node-pulse {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .tilt-card,
+  .tilt-card[data-tilt="on"],
+  .tilt-card[data-tilt="on"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .tilt-card[data-tilt="on"] .tilt-inner {
+    transform: none !important;
+  }
+
+  .tilt-spot {
+    display: none !important;
+  }
+
+  .rule-draw::after,
+  .cap-row::after,
+  .card-title {
+    transition: none !important;
+  }
+
+  .spotlight-sheen {
+    display: none !important;
+  }
+
+  .spotlight-list[data-spotlight="on"][data-hovering] .sl-dim {
+    opacity: 1 !important;
+  }
+
+  .trace::before {
+    animation: none !important;
+  }
+
+  .bullet-row,
+  .group:hover .bullet-row,
+  .solution-row.solution-row:hover,
+  .process-rail {
+    transition: none !important;
+  }
+
+  .aurora,
+  .aurora-field {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .rnd-plot {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+
+  .rnd-point::before,
+  .rnd-node,
+  .rnd-cta {
+    transition: none !important;
+  }
+
+  .stage.stage:hover,
+  .stage:hover .stage-node {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
   }
 }
