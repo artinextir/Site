@@ -15,53 +15,53 @@ export const revitFamilyCreation: ServicePage = {
 
   en: {
     meta: {
-      title: "Revit Family Creation & Development — ARTINEXT",
+      title: "Revit Family Creation & Development, ARTINEXT",
       description:
         "Custom Revit family creation for manufacturers and design offices: parametric, lightweight, and tested against real project conditions in a live model.",
     },
     breadcrumb: "Revit family creation",
-    reusedLabels: { demo: "02 — See it run", process: "04 — Process" },
+    reusedLabels: { demo: "02, See it run", process: "04, Process" },
     hero: {
       eyebrow: "Service · BIM content · Working remotely",
       title: "Revit family creation that survives a real model.",
       lead:
-        "Parametric families for manufacturers and design offices — built to your product or your standard, kept light, and tested against the conditions that break content rather than the ones that flatter it.",
+        "Parametric families for manufacturers and design offices, built to your product or your standard, kept light, and tested against the conditions that break content rather than the ones that flatter it.",
       primary: "Start a project",
       secondary: "See two running",
     },
     frictions: {
-      eyebrow: "01 — Why libraries go wrong",
+      eyebrow: "01, Why libraries go wrong",
       title: "Three ways good content stops behaving",
       lead:
-        "A family that fails rarely fails at being drawn. It fails at being used — in someone else's template, at someone else's scale, on a deadline. These are the three failures worth naming.",
+        "A family that fails rarely fails at being drawn. It fails at being used, in someone else's template, at someone else's scale, on a deadline. These are the three failures worth naming.",
       items: [
         {
           n: "01",
           title: "It flexed once and was called parametric",
           body:
-        "Two type changes in the family editor is not a test. The parameters that break are the combinations nobody tried — the shortest length with the deepest offset, the one that inverts a constraint and takes the geometry with it.",
+        "Two type changes in the family editor is not a test. The parameters that break are the combinations nobody tried, the shortest length with the deepest offset, the one that inverts a constraint and takes the geometry with it.",
         },
         {
           n: "02",
           title: "It's correct and it's enormous",
           body:
-        "Imported mesh geometry, full manufacturing detail, every fillet the CAD file had. Accurate, unusable — thirty of them in a model and the view regeneration is where the project day goes.",
+        "Imported mesh geometry, full manufacturing detail, every fillet the CAD file had. Accurate, unusable, thirty of them in a model and the view regeneration is where the project day goes.",
         },
         {
           n: "03",
           title: "It carries no data anyone can schedule",
           body:
-        "Looks right in a view, empty in a schedule. Shared parameters missing, classification absent, naming that doesn't match the office standard — so the model can be drawn from but not counted from.",
+        "Looks right in a view, empty in a schedule. Shared parameters missing, classification absent, naming that doesn't match the office standard, so the model can be drawn from but not counted from.",
         },
       ],
     },
     showcase: {
-      eyebrow: "02 — Built work",
+      eyebrow: "02, Built work",
       title: "Same bones, two skins.",
       lead:
         "Two families for one company, designed around their needs and around their own connection details, for two different areas of the project.",
       body:
-        "One curtain-wall system, two panel types. The frame, the brackets and the anchor detail are identical between them — what changes is the infill and the head condition, because the two sit in different parts of the elevation and answer to different requirements.\n\nThat is the case for building families rather than downloading them: the shared half is shared by construction, not by coincidence, so a change to the frame is one change and not two.",
+        "One curtain-wall system, two panel types. The frame, the brackets and the anchor detail are identical between them, what changes is the infill and the head condition, because the two sit in different parts of the elevation and answer to different requirements.\n\nThat is the case for building families rather than downloading them: the shared half is shared by construction, not by coincidence, so a change to the frame is one change and not two.",
       specs: [
         { k: "Scope", v: "Two unitized panel types" },
         { k: "Shared", v: "Frame, brackets, anchor detail" },
@@ -76,10 +76,10 @@ export const revitFamilyCreation: ServicePage = {
         alt: "Three-dimensional detail of the unitized glazed curtain wall corner, showing the mullion, transom and glazing rebate",
         caption: "Ringed corner, at the detail level the client's fabrication drawings work to",
       },
-      note: "Drawn from the delivered families themselves — the outlines above are the real geometry, reduced to boundary and crease edges. Nothing here is a stand-in.",
+      note: "Drawn from the delivered families themselves, the outlines above are the real geometry, reduced to boundary and crease edges. Nothing here is a stand-in.",
     },
     scope: {
-      eyebrow: "03 — What moves the number",
+      eyebrow: "03, What moves the number",
       title: "Families are priced by behaviour, not by geometry",
       lead:
         "Drawing the shape is the short part. Four things decide how long the rest takes, and you can assess all four from your own files.",
@@ -87,12 +87,12 @@ export const revitFamilyCreation: ServicePage = {
         {
           title: "How many states it has to hold",
           body:
-        "A fixed component is one thing. A family that flexes across a size range, swaps materials and hides parts by type is a matrix of combinations — and every one of them is a state that has to be checked, not assumed.",
+        "A fixed component is one thing. A family that flexes across a size range, swaps materials and hides parts by type is a matrix of combinations, and every one of them is a state that has to be checked, not assumed.",
         },
         {
           title: "How clean the source is",
           body:
-        "A dimensioned drawing is a specification. A CAD export full of imported mesh, or a PDF of a brochure, is a reconstruction job first — and reconstruction is where the hours actually go.",
+        "A dimensioned drawing is a specification. A CAD export full of imported mesh, or a PDF of a brochure, is a reconstruction job first, and reconstruction is where the hours actually go.",
         },
         {
           title: "What the data has to line up with",
@@ -102,18 +102,18 @@ export const revitFamilyCreation: ServicePage = {
         {
           title: "Whether it ships once or gets maintained",
           body:
-        "A one-off is finished when it's handed over. A catalogue that tracks a real product line has versions, a Revit release range and a changelog — a different commitment, and better decided at the start than discovered later.",
+        "A one-off is finished when it's handed over. A catalogue that tracks a real product line has versions, a Revit release range and a changelog, a different commitment, and better decided at the start than discovered later.",
         },
       ],
       note: "No estimate is given before the first two stages. A number produced before the problem is stated in full is a guess wearing a currency symbol.",
     },
     faq: {
-      eyebrow: "05 — Questions",
+      eyebrow: "05, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "What do you need from us to start?",
-          a: "Whatever actually exists — dimensioned drawings, a CAD file, a spec sheet, or a family that nearly works. The first stage establishes what is specification and what is a guess, because those are two very different jobs and they shouldn't be quoted as one.",
+          a: "Whatever actually exists, dimensioned drawings, a CAD file, a spec sheet, or a family that nearly works. The first stage establishes what is specification and what is a guess, because those are two very different jobs and they shouldn't be quoted as one.",
         },
         {
           q: "How do you keep families light?",
@@ -121,11 +121,11 @@ export const revitFamilyCreation: ServicePage = {
         },
         {
           q: "Can you match our office template and standards?",
-          a: "That's the usual case. Naming, shared parameters, subcategories and line weights come from your standard — and where the standard is ambiguous, the ambiguity gets raised rather than silently resolved in a way you find out about later.",
+          a: "That's the usual case. Naming, shared parameters, subcategories and line weights come from your standard, and where the standard is ambiguous, the ambiguity gets raised rather than silently resolved in a way you find out about later.",
         },
         {
           q: "Which Revit versions do you deliver in?",
-          a: "The ones your team and your clients run. Families are delivered in the oldest version in scope so they open forward — the range is agreed in the first stage, since it affects which features can be used at all.",
+          a: "The ones your team and your clients run. Families are delivered in the oldest version in scope so they open forward, the range is agreed in the first stage, since it affects which features can be used at all.",
         },
         {
           q: "Do you fix an existing library instead of rebuilding it?",
@@ -133,12 +133,12 @@ export const revitFamilyCreation: ServicePage = {
         },
         {
           q: "How do we know a family actually works?",
-          a: "It's tested against the combinations that break content, not the ones that flatter it, and the test cases are written before the family is. A family that flexed once in the editor hasn't proven it works — it's proven it worked once.",
+          a: "It's tested against the combinations that break content, not the ones that flatter it, and the test cases are written before the family is. A family that flexed once in the editor hasn't proven it works, it's proven it worked once.",
         },
       ],
     },
     cta: {
-      eyebrow: "06 — Start",
+      eyebrow: "06, Start",
       title: "Send the family that keeps breaking",
       lead:
         "Bring the file and the model it has to live in, not a specification of what you think it needs. If your library needs an audit rather than new content, we'd rather say so first.",
@@ -155,12 +155,12 @@ export const revitFamilyCreation: ServicePage = {
 
   fa: {
     meta: {
-      title: "ساخت و توسعه فمیلی رویت — آرتینکست",
+      title: "ساخت و توسعه فمیلی رویت، آرتینکست",
       description:
         "ساخت فمیلی اختصاصی رویت برای تولیدکنندگان و دفاتر طراحی؛ پارامتریک، سبک و تست‌شده در شرایط واقعی پروژه، با عملکرد متناسب در مدل و نه فقط در محیط فمیلی.",
     },
     breadcrumb: "ساخت فمیلی رویت",
-    reusedLabels: { demo: "۰۲ — ابزارها در عمل", process: "۰۴ — فرآیند" },
+    reusedLabels: { demo: "۰۲، ابزارها در عمل", process: "۰۴، فرآیند" },
     hero: {
       eyebrow: "خدمت · محتوای BIM · ریموت",
       title: "ساخت فمیلی رویت با عملکرد متناسب در مدل واقعی",
@@ -170,7 +170,7 @@ export const revitFamilyCreation: ServicePage = {
       secondary: "مشاهده نمونه‌ها",
     },
     frictions: {
-      eyebrow: "۰۱ — مشکلات رایج کتابخانه‌ها",
+      eyebrow: "۰۱، مشکلات رایج کتابخانه‌ها",
       title: "سه راهی که محتوای خوب از دید عملکرد افت می‌کند",
       lead:
         "فمیلی‌ای که ضعیف عمل می‌کند، معمولاً ایرادش از ترسیم نیست، بلکه در نوع ترسیم و کاربرد آن است، در تمپلیتی دیگر، برای کیفیتی دیگر، برای سطح توسعه (LOD) دیگر.",
@@ -196,7 +196,7 @@ export const revitFamilyCreation: ServicePage = {
       ],
     },
     showcase: {
-      eyebrow: "۰۲ — کار انجام‌شده",
+      eyebrow: "۰۲، کار انجام‌شده",
       title: "استخوان‌بندی یکسان، با پوششی متفاوت",
       lead:
         "دو فمیلی که برای یک شرکت ساخته شد، مطابق نیازهای متفاوت برای قسمت‌های متفاوت پروژه، با جزئیات درخواستی کارفرما.",
@@ -219,7 +219,7 @@ export const revitFamilyCreation: ServicePage = {
       note: "این خطوط مستقیماً از فمیلی‌های تحویل‌داده‌شده استخراج شده‌اند و هندسه‌ی واقعی را تا لبه‌های مرزی و شکست نشان می‌دهند.",
     },
     scope: {
-      eyebrow: "۰۳ — چه چیزی اندازه را تعیین می‌کند",
+      eyebrow: "۰۳، چه چیزی اندازه را تعیین می‌کند",
       title: "هزینه‌ی فمیلی را عملکرد آن تعیین می‌کند، نه هندسه‌ی آن",
       lead:
         "ترسیم هندسه بخش کوتاهی از کار است. چهار عامل زمان لازم برای سایر جزئیات را تعیین می‌کنند و هر چهار را نیز خودتان با بررسی فایل‌های خود می‌توانید بسنجید.",
@@ -248,7 +248,7 @@ export const revitFamilyCreation: ServicePage = {
       note: "پیش از دو مرحله‌ی نخست، هیچ برآوردی ارائه نمی‌شود. عددی که پیش از تعریف کامل مسئله اعلام شود، تنها یک حدس است.",
     },
     faq: {
-      eyebrow: "۰۵ — پرسش‌ها",
+      eyebrow: "۰۵، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -278,7 +278,7 @@ export const revitFamilyCreation: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "۰۶ — شروع",
+      eyebrow: "۰۶، شروع",
       title: "چه جزئیاتی برای کار شما لازم است؟",
       lead:
         "فمیلی، مدل یا خروجی‌ای را که داده باید در آن استفاده شود با ما در میان بگذارید. اگر کتابخانه‌ی شما به‌جای محتوای جدید به بازبینی نیاز داشته باشد، همان ابتدا می‌گوییم.",

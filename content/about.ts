@@ -61,7 +61,7 @@ const HERO_CYCLE: GlyphName[] = [
 export const about: Localized<AboutContent> = {
   fa: {
     meta: {
-      title: "درباره‌ی آرتینکست — ابزارهایی که با آن‌ها کار می‌کنیم",
+      title: "درباره‌ی آرتینکست، ابزارهایی که با آن‌ها کار می‌کنیم",
       description:
         "آرتینکست با Revit، Navisworks، AutoCAD، Rhino، Grasshopper و Dynamo کار می‌کند. در این صفحه توضیح داده‌ایم در هرکدام دقیقاً چه کاری انجام می‌دهیم و به چه دلیل.",
     },
@@ -141,7 +141,7 @@ export const about: Localized<AboutContent> = {
   },
   en: {
     meta: {
-      title: "About ARTINEXT — the tools we work in",
+      title: "About ARTINEXT, the tools we work in",
       description:
         "ARTINEXT works in Revit, Navisworks, AutoCAD, Rhino, Grasshopper and Dynamo. Here is exactly what we do in each, and why.",
     },
@@ -149,7 +149,7 @@ export const about: Localized<AboutContent> = {
     hero: {
       eyebrow: "About",
       title: "We don't sell the tools. We work in them.",
-      lead: "ARTINEXT works inside the same software your office already opens every morning. What we add isn't another tool — it's your own process, at the one place it keeps catching.",
+      lead: "ARTINEXT works inside the same software your office already opens every morning. What we add isn't another tool, it's your own process, at the one place it keeps catching.",
       cycle: HERO_CYCLE,
     },
     sections: [
@@ -162,12 +162,12 @@ export const about: Localized<AboutContent> = {
           {
             glyph: "icon-revit",
             name: "Revit",
-            note: "Parametric families, templates and a library that still works on the next project — plus the add-ins that take the repetitive modelling off your hands.",
+            note: "Parametric families, templates and a library that still works on the next project, plus the add-ins that take the repetitive modelling off your hands.",
           },
           {
             glyph: "icon-navisworks",
             name: "Navisworks",
-            note: "Clash detection and model review as an actual process — saved tests and a report the next person can read, rather than one manual pass.",
+            note: "Clash detection and model review as an actual process, saved tests and a report the next person can read, rather than one manual pass.",
           },
         ],
         controls: { prev: "Previous tool", next: "Next tool", label: "Modelling and coordination tools" },
@@ -176,17 +176,17 @@ export const about: Localized<AboutContent> = {
         id: "cad",
         eyebrow: "Drafting and geometry",
         title: "Drawn in AutoCAD, shaped in Rhino.",
-        lead: "Not every project starts in Revit, and it doesn't need to. Two-dimensional drawings, inherited files and free-form geometry all have their place — our job is keeping them attached to the model rather than beside it.",
+        lead: "Not every project starts in Revit, and it doesn't need to. Two-dimensional drawings, inherited files and free-form geometry all have their place, our job is keeping them attached to the model rather than beside it.",
         tools: [
           {
             glyph: "icon-autocad",
             name: "AutoCAD",
-            note: "Cleaning up and standardising what already exists — consistent layers and naming, and a bridge that keeps the 2D drawing connected to the model.",
+            note: "Cleaning up and standardising what already exists, consistent layers and naming, and a bridge that keeps the 2D drawing connected to the model.",
           },
           {
             glyph: "icon-rhinoceros",
             name: "Rhino",
-            note: "Geometry it makes no sense to build in Revit — façades, shells, free-form — and then getting that geometry back into the model in a state you can actually use.",
+            note: "Geometry it makes no sense to build in Revit, façades, shells, free-form, and then getting that geometry back into the model in a state you can actually use.",
           },
         ],
         controls: { prev: "Previous tool", next: "Next tool", label: "Drafting and geometry tools" },
@@ -195,17 +195,17 @@ export const about: Localized<AboutContent> = {
         id: "visual-coding",
         eyebrow: "Visual programming",
         title: "We write the rule, not the result.",
-        lead: "When a job is going to run ten times with different inputs, ten outputs is not the answer. The rule that produces them is — and the rule survives the input changing.",
+        lead: "When a job is going to run ten times with different inputs, ten outputs is not the answer. The rule that produces them is, and the rule survives the input changing.",
         tools: [
           {
             glyph: "icon-grasshopper",
             name: "Grasshopper",
-            note: "Parametric definitions for façades, patterns and repeating geometry — built so your team changes the input and gets the output themselves, without coming back to us each time.",
+            note: "Parametric definitions for façades, patterns and repeating geometry, built so your team changes the input and gets the output themselves, without coming back to us each time.",
           },
           {
             glyph: "icon-dynamo",
             name: "Dynamo",
-            note: "Scripts for the jobs that repeat inside Revit itself — parameter changes across a large set of elements, sheet and view creation, and the checks that take real time by hand.",
+            note: "Scripts for the jobs that repeat inside Revit itself, parameter changes across a large set of elements, sheet and view creation, and the checks that take real time by hand.",
           },
         ],
         controls: { prev: "Previous tool", next: "Next tool", label: "Visual programming tools" },

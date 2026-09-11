@@ -88,7 +88,7 @@ const navFa: NavItem[] = [
 export const home: Localized<HomeContent> = {
   en: {
     meta: {
-      title: "ARTINEXT — Revit tools, BIM content and workflow automation",
+      title: "ARTINEXT, Revit tools, BIM content and workflow automation",
       description:
         "Custom Revit content, digital tools and workflow automation for architecture, structural and MEP teams, built from your own process by a studio working remotely.",
     },
@@ -107,10 +107,10 @@ export const home: Localized<HomeContent> = {
       eyebrow: "Digital-systems studio · Iran · working remotely",
       title: "Build what's next.",
       lead:
-        "Custom Revit content, digital tools, and office automation for architecture, structural, and MEP teams — built from your process, never off a shelf.",
+        "Custom Revit content, digital tools, and office automation for architecture, structural, and MEP teams, built from your process, never off a shelf.",
       primary: "Start a project",
       secondary: "See it run",
-      figureCaption: "ETABS model rebuilt as native Revit framing — 5,087 members",
+      figureCaption: "ETABS model rebuilt as native Revit framing, 5,087 members",
       codeLines: [
         { t: "void CreateStructuralFraming(", k: true },
         { t: "EtabsMember m," },
@@ -119,7 +119,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     frictions: {
-      eyebrow: "01 — Where the time goes",
+      eyebrow: "01, Where the time goes",
       title: "Three frictions, in almost every office",
       lead:
         "Our time goes to three places: work still done by hand, data scattered across sources, and software that doesn't talk to itself. That's where the right system does the most.",
@@ -140,12 +140,12 @@ export const home: Localized<HomeContent> = {
           n: "03",
           title: "Tools that don't talk",
           body:
-            "Each one is fine on its own. Together they never become one traceable flow from request to execution to report — so the seams stay manual, and invisible.",
+            "Each one is fine on its own. Together they never become one traceable flow from request to execution to report, so the seams stay manual, and invisible.",
         },
       ],
     },
     products: {
-      eyebrow: "02 — Products",
+      eyebrow: "02, Products",
       title: "Three paths into the work",
       lead: "Whichever one you start from, the first step is the same: understand the problem in full.",
       items: [
@@ -153,7 +153,7 @@ export const home: Localized<HomeContent> = {
           code: "P·01",
           title: "Specialist Revit content",
           body:
-            "A family that isn't just well-drawn — it behaves correctly inside a real model, under real project conditions.",
+            "A family that isn't just well-drawn, it behaves correctly inside a real model, under real project conditions.",
           bullets: [
             "Product families for manufacturers",
             "Office libraries for design teams",
@@ -192,10 +192,10 @@ export const home: Localized<HomeContent> = {
       more: "Explore",
     },
     demo: {
-      eyebrow: "03 — See it run",
+      eyebrow: "03, See it run",
       title: "Two tools, recorded end to end",
       lead:
-        "Both of these were built for a specific conversion problem a team was doing by hand. Nothing here is a mockup — these are screen recordings of the tools running.",
+        "Both of these were built for a specific conversion problem a team was doing by hand. Nothing here is a mockup, these are screen recordings of the tools running.",
       note: "Recordings are silent and play without sound.",
       tabs: [
         {
@@ -204,7 +204,7 @@ export const home: Localized<HomeContent> = {
           flow: "CAD → Revit",
           title: "Builds the Revit model from a coordinated CAD plan set",
           body:
-            "Instead of a team tracing linework by hand, the tool reads the plan set and creates native Revit elements from it — walls placed on their real wall types, floors, levels, and openings — so the model starts from the drawing rather than from someone's interpretation of it.",
+            "Instead of a team tracing linework by hand, the tool reads the plan set and creates native Revit elements from it, walls placed on their real wall types, floors, levels, and openings, so the model starts from the drawing rather than from someone's interpretation of it.",
           specs: [
             { k: "Input", v: "Coordinated CAD plan set" },
             { k: "Output", v: "Native Revit elements" },
@@ -219,7 +219,7 @@ export const home: Localized<HomeContent> = {
           flow: "ETABS → Revit",
           title: "Rebuilds an ETABS structural model as native Revit framing",
           body:
-            "The model is built live in Revit's isometric 3D view while the tool reports its own progress: elements processed, beams, columns and braces created, non-master members, and — the line that matters most — what was not created. Anything that didn't convert is visible on screen instead of silently missing.",
+            "The model is built live in Revit's isometric 3D view while the tool reports its own progress: elements processed, beams, columns and braces created, non-master members, and, the line that matters most, what was not created. Anything that didn't convert is visible on screen instead of silently missing.",
           specs: [
             { k: "Input", v: "ETABS Excel export" },
             { k: "Output", v: "Revit structural framing" },
@@ -231,7 +231,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     process: {
-      eyebrow: "04 — Process",
+      eyebrow: "04, Process",
       title: "Discover, define, build, evolve",
       lead: "Four stages. The first two are where most of the risk gets removed.",
       steps: [
@@ -262,10 +262,10 @@ export const home: Localized<HomeContent> = {
       ],
     },
     rnd: {
-      eyebrow: "05 — Research & development",
+      eyebrow: "05, Research & development",
       title: "Small prototype, fast learning, better decision",
       lead:
-        "New technology only enters a product once the problem, the data, and the success measure are clear and testable. Staged prototyping surfaces what works, what needs to change, and what shouldn't be built at all — before full investment happens.",
+        "New technology only enters a product once the problem, the data, and the success measure are clear and testable. Staged prototyping surfaces what works, what needs to change, and what shouldn't be built at all, before full investment happens.",
       points: [
         "Test the idea before committing the budget",
         "Learn what needs to change while changing it is still cheap",
@@ -275,7 +275,7 @@ export const home: Localized<HomeContent> = {
       href: "/en/research-development/",
     },
     capabilities: {
-      eyebrow: "06 — Capabilities",
+      eyebrow: "06, Capabilities",
       title: "What we work across",
       lead: "The technical surface behind the three product paths.",
       groups: [
@@ -312,7 +312,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     insights: {
-      eyebrow: "07 — Insights",
+      eyebrow: "07, Insights",
       title: "Written from the work",
       lead: "No listicles. Each one comes out of a decision we had to make on a real project.",
       items: [
@@ -342,12 +342,12 @@ export const home: Localized<HomeContent> = {
       href: "/en/articles/",
     },
     faq: {
-      eyebrow: "08 — Questions",
+      eyebrow: "08, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "Can you just install a plugin we already picked?",
-          a: "No. If what you want is an off-the-shelf template or a generic plugin installed without any process review, we're the wrong studio — and we'll say so rather than take the work. Every project starts from the problem, not a pre-built product.",
+          a: "No. If what you want is an off-the-shelf template or a generic plugin installed without any process review, we're the wrong studio, and we'll say so rather than take the work. Every project starts from the problem, not a pre-built product.",
         },
         {
           q: "Where are you based, and can you work with our team remotely?",
@@ -355,11 +355,11 @@ export const home: Localized<HomeContent> = {
         },
         {
           q: "How is a custom tool priced?",
-          a: "By workflow complexity, integration needs, and how many people will use it — not by a flat price list. A plugin that looks like one button is priced by the weeks of decisions standing behind that button.",
+          a: "By workflow complexity, integration needs, and how many people will use it, not by a flat price list. A plugin that looks like one button is priced by the weeks of decisions standing behind that button.",
         },
         {
           q: "Can we start with something small?",
-          a: "Yes, and often that's the right move. A staged prototype tests the idea, the data, and the success measure before full investment — including the possibility that the thing shouldn't be built.",
+          a: "Yes, and often that's the right move. A staged prototype tests the idea, the data, and the success measure before full investment, including the possibility that the thing shouldn't be built.",
         },
         {
           q: "Do you work in Persian and English?",
@@ -372,7 +372,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     cta: {
-      eyebrow: "09 — Start",
+      eyebrow: "09, Start",
       title: "Tell us the process you'd change first",
       lead:
         "Bring the workflow, not the spec. If a tool is the wrong answer, we'd rather tell you that in the first conversation than at the end of a build.",
@@ -386,13 +386,13 @@ export const home: Localized<HomeContent> = {
         "Digital-systems studio working remotely with architecture, structural, and MEP teams.",
       navTitle: "Site",
       contactTitle: "Contact",
-      legal: "ARTINEXT — DESIGN TECHNOLOGY / IRAN",
+      legal: "ARTINEXT, DESIGN TECHNOLOGY / IRAN",
     },
   },
 
   fa: {
     meta: {
-      title: "آرتینکست — ابزار رویت، محتوای BIM و اتوماسیون اداری و مدیریتی",
+      title: "آرتینکست، ابزار رویت، محتوای BIM و اتوماسیون اداری و مدیریتی",
       description:
         "محتوای اختصاصی رویت، ابزارهای دیجیتال و اتوماسیون اداری و مدیریتی برای تیم‌های معماری، سازه و تأسیسات، ساخته‌شده برای فرآیند شما، به‌صورت ریموت.",
     },
@@ -411,10 +411,10 @@ export const home: Localized<HomeContent> = {
       eyebrow: "استودیوی سامانه‌های دیجیتال · ایران · ریموت",
       title: "قدم بعدی را باهم بسازیم.",
       lead:
-        "محتوای اختصاصی رویت، ابزار دیجیتال سفارشی و اتوماسیون اداری و مدیریتی برای تیم‌های معماری، سازه و تأسیسات — ساخته‌شده برای فرآیند شما.",
+        "محتوای اختصاصی رویت، ابزار دیجیتال سفارشی و اتوماسیون اداری و مدیریتی برای تیم‌های معماری، سازه و تأسیسات، ساخته‌شده برای فرآیند شما.",
       primary: "شروع پروژه",
       secondary: "مشاهده نمونه",
-      figureCaption: "مدل ETABS بازسازی‌شده به اسکلت بومی Revit — ۵٬۰۸۷ عضو",
+      figureCaption: "مدل ETABS بازسازی‌شده به اسکلت بومی Revit، ۵٬۰۸۷ عضو",
       codeLines: [
         { t: "void CreateStructuralFraming(", k: true },
         { t: "EtabsMember m," },
@@ -423,7 +423,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     frictions: {
-      eyebrow: "۰۱ — زمان کجا می‌رود",
+      eyebrow: "۰۱، زمان کجا می‌رود",
       title: "سه مشکل هر دفتر فنی",
       lead:
         "وقت ما صرف سه چیز می‌شود: کارهایی که هنوز دستی انجام می‌شوند، داده‌هایی که میان منابع پراکنده‌اند، و نرم‌افزارهایی که با هم ارتباط ندارند. سامانه‌ی مناسب، بیشترین اثر را دقیقاً در همین بخش‌ها ایجاد می‌کند.",
@@ -449,7 +449,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     products: {
-      eyebrow: "۰۲ — محصولات",
+      eyebrow: "۰۲، محصولات",
       title: "سه مسیر ورود به کار",
       lead: "از هرکدام که شروع کنید، گام اول یکی است: درک کامل مسئله.",
       items: [
@@ -496,7 +496,7 @@ export const home: Localized<HomeContent> = {
       more: "مشاهده",
     },
     demo: {
-      eyebrow: "۰۳ — ابزارها در عمل",
+      eyebrow: "۰۳، ابزارها در عمل",
       title: "دو ابزار، از ابتدا تا انتها",
       lead:
         "هر دو برای یک مسئله‌ی تبدیل خروجی نرم‌افزاری به نرم‌افزاری دیگر طراحی شدند، فرآیندی که پیش از این به‌صورت دستی توسط تیم انجام می‌شد.",
@@ -535,7 +535,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     process: {
-      eyebrow: "۰۴ — فرآیند",
+      eyebrow: "۰۴، فرآیند",
       title: "کشف، تعریف، ساخت، تکامل",
       lead: "چهار مرحله، با تمرکز بر حذف بیشترین ریسک در دو مرحله‌ی نخست.",
       steps: [
@@ -566,7 +566,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     rnd: {
-      eyebrow: "۰۵ — تحقیق و توسعه",
+      eyebrow: "۰۵، تحقیق و توسعه",
       title: "نمونه‌ی اولیه، یادگیری سریع، تصمیم بهتر",
       lead:
         "فناوری جدید تنها زمانی وارد محصول می‌شود که مسئله، داده و معیار موفقیت آن روشن و قابل‌آزمون باشد. نمونه‌سازی مرحله‌ای مشخص می‌کند چه چیزی کار می‌کند، چه چیزی نیاز به تغییر دارد و چه چیزی اساساً نباید ساخته شود، پیش از آنکه سرمایه‌گذاری کامل انجام شود.",
@@ -579,7 +579,7 @@ export const home: Localized<HomeContent> = {
       href: "/fa/research-development/",
     },
     capabilities: {
-      eyebrow: "۰۶ — توانمندی‌ها",
+      eyebrow: "۰۶، توانمندی‌ها",
       title: "دامنه‌ی کاری ما",
       lead: "توانمندی‌های فنی پشت سه شکل اصلی محصولات.",
       groups: [
@@ -616,7 +616,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     insights: {
-      eyebrow: "۰۷ — بینش‌ها",
+      eyebrow: "۰۷، بینش‌ها",
       title: "نوشته‌شده از دل کار",
       lead: "هر نوشته حاصل تصمیم و نتیجه‌گیری‌ای است که در جریان کاری یک پروژه‌ی واقعی با آن روبه‌رو شده‌ایم.",
       items: [
@@ -646,7 +646,7 @@ export const home: Localized<HomeContent> = {
       href: "/fa/articles/",
     },
     faq: {
-      eyebrow: "۰۸ — پرسش‌ها",
+      eyebrow: "۰۸، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -663,7 +663,7 @@ export const home: Localized<HomeContent> = {
         },
         {
           q: "می‌شود از چیزی کوچک شروع کرد؟",
-          a: "بله، و اغلب همین حرکت درست است. نمونه‌ی مرحله‌ای، ایده و داده و معیار موفقیت را پیش از سرمایه‌گذاری کامل می‌آزماید — از جمله این احتمال که اصلاً نباید ساخته شود.",
+          a: "بله، و اغلب همین حرکت درست است. نمونه‌ی مرحله‌ای، ایده و داده و معیار موفقیت را پیش از سرمایه‌گذاری کامل می‌آزماید، از جمله این احتمال که اصلاً نباید ساخته شود.",
         },
         {
           q: "به فارسی و انگلیسی کار می‌کنید؟",
@@ -676,7 +676,7 @@ export const home: Localized<HomeContent> = {
       ],
     },
     cta: {
-      eyebrow: "۰۹ — شروع",
+      eyebrow: "۰۹، شروع",
       title: "اولین چیزی که می‌خواهید تغییر کند چیست؟",
       lead:
         "از جریان کاری‌تان بگویید، کجا زمان از دست می‌رود و کجا خطا ایجاد می‌شود. بعد تصمیم می‌گیریم چه چیزی باید ساخته شود. اگر راه‌حل ابزار نباشد، همان ابتدا می‌گوییم.",
@@ -689,7 +689,7 @@ export const home: Localized<HomeContent> = {
       tagline: "استودیوی سامانه‌های دیجیتال، به‌صورت ریموت در کنار تیم‌های معماری، سازه و تأسیسات.",
       navTitle: "سایت",
       contactTitle: "تماس",
-      legal: "ARTINEXT — DESIGN TECHNOLOGY / IRAN",
+      legal: "ARTINEXT, DESIGN TECHNOLOGY / IRAN",
     },
   },
 };

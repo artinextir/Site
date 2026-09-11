@@ -37,7 +37,7 @@ export type ProductsContent = {
 export const products: Localized<ProductsContent> = {
   fa: {
     meta: {
-      title: "محصولات آرتینکست — فمیلی رویت، پلاگین رویت و اتوماسیون اداری",
+      title: "محصولات آرتینکست، فمیلی رویت، پلاگین رویت و اتوماسیون اداری",
       description:
         "سه چیزی که آرتینکست تحویل می‌دهد: فمیلی‌های پارامتریک رویت با عملکرد متناسب در مدل واقعی، پلاگین رویت بر اساس فرآیند دفتر، و اتوماسیون اداری و مدیریتی.",
     },
@@ -49,30 +49,30 @@ export const products: Localized<ProductsContent> = {
     },
     families: {
       id: "revit-families",
-      eyebrow: "۰۱ — فمیلی رویت",
+      eyebrow: "۰۱، فمیلی رویت",
       title: "فمیلی با عملکرد متناسب در مدل واقعی",
       lead: "دو یونیت کرتین‌وال با اتصالات یکسان و پرکننده‌ی متفاوت. هر فمیلی پیش از تحویل در یک مدل واقعی بارگذاری و در اسکجوال‌ها تست شده است.",
       link: { label: "ساخت فمیلی رویت", href: "/fa/revit-family-creation/" },
     },
     tools: {
       id: "digital-tools",
-      eyebrow: "۰۲ — ابزار دیجیتال",
+      eyebrow: "۰۲، ابزار دیجیتال",
       title: "حذف کارهای تکراری با یک دکمه روی ریبون",
       lead: "دو ابزار در حال اجرا داخل رویت. هرکدام بر اساس مراحل کاری یک دفتر مشخص طراحی شده و در نتیجه، کل فرآیند با یک دکمه انجام می‌شود.",
       link: { label: "توسعه پلاگین رویت", href: "/fa/revit-plugin-development/" },
     },
     automation: {
       id: "automation",
-      eyebrow: "۰۳ — اتوماسیون",
+      eyebrow: "۰۳، اتوماسیون",
       title: "یک صفحه برای کل دفتر",
       lead: "یک سیستم برای دو دفتر و دو زبان: درخواست‌ها، اسناد و وضعیت پروژه‌ها در یک صفحه. سیستم را در حال کار و با فرآیند مکتوبش تحویل می‌گیرید.",
       link: { label: "اتوماسیون اداری و مدیریتی", href: "/fa/aec-workflow-automation/" },
     },
-    ctaEyebrow: "۰۴ — شروع",
+    ctaEyebrow: "۰۴، شروع",
   },
   en: {
     meta: {
-      title: "Products — Revit families, plugins, automation | ARTINEXT",
+      title: "Products, Revit families, plugins, automation | ARTINEXT",
       description:
         "Three things ARTINEXT delivers: parametric Revit families that behave in a live model, Revit plugins built around your workflow, and office automation.",
     },
@@ -80,29 +80,29 @@ export const products: Localized<ProductsContent> = {
     hero: {
       eyebrow: "Products",
       title: "Three things you keep after the project.",
-      lead: "A family that lives in your library, a tool on your Revit ribbon, a process that runs without anyone re-typing it. Each is shown below as it actually shipped — the work, not a picture of it.",
+      lead: "A family that lives in your library, a tool on your Revit ribbon, a process that runs without anyone re-typing it. Each is shown below as it actually shipped, the work, not a picture of it.",
     },
     families: {
       id: "revit-families",
-      eyebrow: "01 — Revit families",
+      eyebrow: "01, Revit families",
       title: "Families that behave in a live model",
       lead: "Two curtain-wall units from one job share a frame; only the infill changes. You get the family and proof it behaves: flexed, scheduled and loaded into a live model first.",
       link: { label: "Revit family creation", href: "/en/revit-family-creation/" },
     },
     tools: {
       id: "digital-tools",
-      eyebrow: "02 — Digital tools",
+      eyebrow: "02, Digital tools",
       title: "A button on your ribbon that takes the tedious part",
       lead: "Two tools, recorded running inside Revit. Each was built around one office's own steps, which is why it's a button and not a ten-page procedure nobody opens.",
       link: { label: "Revit plugin development", href: "/en/revit-plugin-development/" },
     },
     automation: {
       id: "automation",
-      eyebrow: "03 — Automation",
+      eyebrow: "03, Automation",
       title: "One screen the whole office works from",
       lead: "One system for two offices in two languages: requests, documents and project status on one screen, not five. You get it running, with its process written down.",
       link: { label: "Office automation", href: "/en/aec-workflow-automation/" },
     },
-    ctaEyebrow: "04 — Start",
+    ctaEyebrow: "04, Start",
   },
 };

@@ -1,4 +1,4 @@
-# ARTINEXT — full reference
+# ARTINEXT, full reference
 
 > ARTINEXT is a digital-systems studio based in Tehran, Iran, working remotely with architecture, structural and MEP teams. Three service lines: custom Revit content, custom digital tools, and office and workflow automation. Every page exists in Persian (`/fa/`, the default) and English (`/en/`) at matching paths.
 

@@ -27,7 +27,7 @@ export const customParametricRevitFamilyCreation: ArticlePage = {
     fa: {
       slug: "custom-parametric-revit-family-creation",
       meta: {
-        title: "ساخت فمیلی پارامتریک رویت؛ پارامتر، فرمول و تست — آرتینکست",
+        title: "ساخت فمیلی پارامتریک رویت؛ پارامتر، فرمول و تست، آرتینکست",
         description:
           "ساخت فمیلی پارامتریک رویت یعنی طراحی پارامترها، فرمول‌ها و قیدها برای عملکرد در پروژه‌ی واقعی، نه یک‌بار فلکس در ادیتور. روش تست و زمان مناسب را بخوانید.",
       },
@@ -149,9 +149,9 @@ export const customParametricRevitFamilyCreation: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "Autodesk Revit Help — Family Editor Tools", href: "https://help.autodesk.com/view/RVT/2025/ENU/?guid=GUID-253B2300-35C2-4024-AB70-43E576CEA49C" },
-        { label: "Autodesk Revit Help — Formula Examples", href: "https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-7610D11E-D1C9-44AF-9B0B-4A75EAC709B9.htm" },
-        { label: "Autodesk Revit Help — Create a Type Catalog", href: "https://help.autodesk.com/cloudhelp/2021/ENU/Revit-Customize/files/GUID-FFA71D72-D4C5-416D-BF65-1757657C3CE9.htm" },
+        { label: "Autodesk Revit Help, Family Editor Tools", href: "https://help.autodesk.com/view/RVT/2025/ENU/?guid=GUID-253B2300-35C2-4024-AB70-43E576CEA49C" },
+        { label: "Autodesk Revit Help, Formula Examples", href: "https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-7610D11E-D1C9-44AF-9B0B-4A75EAC709B9.htm" },
+        { label: "Autodesk Revit Help, Create a Type Catalog", href: "https://help.autodesk.com/cloudhelp/2021/ENU/Revit-Customize/files/GUID-FFA71D72-D4C5-416D-BF65-1757657C3CE9.htm" },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -195,7 +195,7 @@ export const customParametricRevitFamilyCreation: ArticlePage = {
     en: {
       slug: "custom-parametric-revit-family-creation",
       meta: {
-        title: "Custom Parametric Revit Family Creation — ARTINEXT",
+        title: "Custom Parametric Revit Family Creation, ARTINEXT",
         description:
           "Custom parametric Revit family creation: parameters, formulas and constraints built for real project behavior, not a single flex in the editor. How to test it.",
       },
@@ -317,9 +317,9 @@ export const customParametricRevitFamilyCreation: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "Autodesk Revit Help — Family Editor Tools", href: "https://help.autodesk.com/view/RVT/2025/ENU/?guid=GUID-253B2300-35C2-4024-AB70-43E576CEA49C" },
-        { label: "Autodesk Revit Help — Formula Examples", href: "https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-7610D11E-D1C9-44AF-9B0B-4A75EAC709B9.htm" },
-        { label: "Autodesk Revit Help — Create a Type Catalog", href: "https://help.autodesk.com/cloudhelp/2021/ENU/Revit-Customize/files/GUID-FFA71D72-D4C5-416D-BF65-1757657C3CE9.htm" },
+        { label: "Autodesk Revit Help, Family Editor Tools", href: "https://help.autodesk.com/view/RVT/2025/ENU/?guid=GUID-253B2300-35C2-4024-AB70-43E576CEA49C" },
+        { label: "Autodesk Revit Help, Formula Examples", href: "https://help.autodesk.com/cloudhelp/2026/ENU/Revit-Model/files/GUID-7610D11E-D1C9-44AF-9B0B-4A75EAC709B9.htm" },
+        { label: "Autodesk Revit Help, Create a Type Catalog", href: "https://help.autodesk.com/cloudhelp/2021/ENU/Revit-Customize/files/GUID-FFA71D72-D4C5-416D-BF65-1757657C3CE9.htm" },
       ],
       faqHeading: "FAQ",
       faq: [

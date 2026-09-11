@@ -24,22 +24,22 @@ export const revitFamilyCreationTehran: ServicePage = {
 
   en: {
     meta: {
-      title: "Revit Family Creation in Tehran — ARTINEXT",
+      title: "Revit Family Creation in Tehran, ARTINEXT",
       description:
         "Custom Revit family creation for manufacturers, architecture and MEP offices in Tehran, from a studio in the same city that measures the product itself.",
     },
     breadcrumb: "Tehran",
-    reusedLabels: { demo: "02 — See it run", process: "04 — Process" },
+    reusedLabels: { demo: "02, See it run", process: "04, Process" },
     hero: {
       eyebrow: "Service · Tehran · In person or remote",
       title: "Revit family creation in Tehran.",
       lead:
-        "Parametric families for Tehran manufacturers and design offices, built to your product or your office standard. The studio is here too — which means the source can be measured in a room rather than inferred from a PDF.",
+        "Parametric families for Tehran manufacturers and design offices, built to your product or your office standard. The studio is here too, which means the source can be measured in a room rather than inferred from a PDF.",
       primary: "Start a project",
       secondary: "See two running",
     },
     frictions: {
-      eyebrow: "01 — What Tehran offices and manufacturers ask for",
+      eyebrow: "01, What Tehran offices and manufacturers ask for",
       title: "Three problems that arrive with an existing library",
       lead:
         "Tehran holds the largest concentration of BIM-capable offices in the country, and almost every library here has at least one of these. Which one you have decides whether the answer is new content or an audit.",
@@ -60,17 +60,17 @@ export const revitFamilyCreationTehran: ServicePage = {
           n: "03",
           title: "Content the consultant won't accept",
           body:
-            "It looks right and it schedules empty. Parameters that don't match the reviewer's file, naming that doesn't match the submission, classification missing — so the model gets drawn from and counted by hand.",
+            "It looks right and it schedules empty. Parameters that don't match the reviewer's file, naming that doesn't match the submission, classification missing, so the model gets drawn from and counted by hand.",
         },
       ],
     },
     showcase: {
-      eyebrow: "02 — Built work",
+      eyebrow: "02, Built work",
       title: "Same bones, two skins.",
       lead:
-        "A curtain-wall system delivered as two panel types — one company, one set of connection details, two positions on the elevation.",
+        "A curtain-wall system delivered as two panel types, one company, one set of connection details, two positions on the elevation.",
       body:
-        "The frame, the brackets and the anchor detail are identical across both units. What changes is the infill and the head condition, because the two sit in different parts of the façade and answer to different requirements.\n\nThat shared half is the argument for having families built rather than collected. It is shared by construction rather than by coincidence — so a change to the frame is one change, made once, and not a hunt through a library for everything that happened to look similar.",
+        "The frame, the brackets and the anchor detail are identical across both units. What changes is the infill and the head condition, because the two sit in different parts of the façade and answer to different requirements.\n\nThat shared half is the argument for having families built rather than collected. It is shared by construction rather than by coincidence, so a change to the frame is one change, made once, and not a hunt through a library for everything that happened to look similar.",
       specs: [
         { k: "Scope", v: "Two unitized panel types" },
         { k: "Shared", v: "Frame, brackets, anchor detail" },
@@ -85,10 +85,10 @@ export const revitFamilyCreationTehran: ServicePage = {
         alt: "Three-dimensional detail of the unitized glazed curtain wall corner, showing the mullion, transom and glazing rebate",
         caption: "Ringed corner, at the detail level the client's fabrication drawings work to",
       },
-      note: "Drawn from the delivered families themselves — the outlines above are the real geometry, reduced to boundary and crease edges. Nothing here is a stand-in.",
+      note: "Drawn from the delivered families themselves, the outlines above are the real geometry, reduced to boundary and crease edges. Nothing here is a stand-in.",
     },
     local: {
-      eyebrow: "03 — What being in Tehran changes",
+      eyebrow: "03, What being in Tehran changes",
       title: "The product is in the same city as the people modelling it",
       lead:
         "Most of this work is done remotely regardless of where anyone sits. Four things are genuinely different when the source is an hour away, and they are all in the half of the job that costs the most.",
@@ -114,27 +114,27 @@ export const revitFamilyCreationTehran: ServicePage = {
             "Tehran offices are working against a shared set of consultant expectations and submission requirements. Naming, parameters and classification land against a context that doesn't have to be explained from scratch first.",
         },
       ],
-      note: "None of it is a requirement. Plenty of family work runs entirely on files and calls, and the process is identical either way — this is what is available, not what is expected.",
+      note: "None of it is a requirement. Plenty of family work runs entirely on files and calls, and the process is identical either way, this is what is available, not what is expected.",
     },
     faq: {
-      eyebrow: "05 — Questions",
+      eyebrow: "05, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "Can you come to our office or our production line?",
-          a: "Yes, for the stages where it changes the answer — establishing what the product actually is, and reviewing the first family against it. The rest doesn't get better with anyone in the room, so it isn't billed as if it does.",
+          a: "Yes, for the stages where it changes the answer, establishing what the product actually is, and reviewing the first family against it. The rest doesn't get better with anyone in the room, so it isn't billed as if it does.",
         },
         {
           q: "What do you need from us to start?",
-          a: "Whatever actually exists — dimensioned drawings, a CAD file, a spec sheet, or a family that nearly works. The first stage establishes what is specification and what is a guess, because those are two very different jobs and they shouldn't be quoted as one.",
+          a: "Whatever actually exists, dimensioned drawings, a CAD file, a spec sheet, or a family that nearly works. The first stage establishes what is specification and what is a guess, because those are two very different jobs and they shouldn't be quoted as one.",
         },
         {
           q: "Can you match our office template and standards?",
-          a: "That's the usual case. Naming, shared parameters, subcategories and line weights come from your standard — and where the standard is ambiguous, the ambiguity gets raised rather than silently resolved in a way you find out about later.",
+          a: "That's the usual case. Naming, shared parameters, subcategories and line weights come from your standard, and where the standard is ambiguous, the ambiguity gets raised rather than silently resolved in a way you find out about later.",
         },
         {
           q: "Which Revit versions do you deliver in?",
-          a: "The ones your team and your clients run. Families are delivered in the oldest version in scope so they open forward — the range is agreed in the first stage, since it affects which features can be used at all.",
+          a: "The ones your team and your clients run. Families are delivered in the oldest version in scope so they open forward, the range is agreed in the first stage, since it affects which features can be used at all.",
         },
         {
           q: "What does it cost?",
@@ -147,7 +147,7 @@ export const revitFamilyCreationTehran: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "06 — Start",
+      eyebrow: "06, Start",
       title: "Send the family that keeps breaking",
       lead:
         "Bring the file and the model it has to live in, not a specification of what you think it needs. If your library needs an audit rather than new content, we'd rather say so first.",
@@ -165,12 +165,12 @@ export const revitFamilyCreationTehran: ServicePage = {
 
   fa: {
     meta: {
-      title: "ساخت فمیلی رویت در تهران — آرتینکست",
+      title: "ساخت فمیلی رویت در تهران، آرتینکست",
       description:
         "ساخت و توسعه فمیلی رویت برای تولیدکنندگان و دفاتر معماری و تأسیسات در تهران؛ استودیویی در همان شهر که اندازه‌گیری را روی خود محصول انجام می‌دهد، نه از روی بروشور.",
     },
     breadcrumb: "تهران",
-    reusedLabels: { demo: "۰۲ — ابزارها در عمل", process: "۰۴ — فرآیند" },
+    reusedLabels: { demo: "۰۲، ابزارها در عمل", process: "۰۴، فرآیند" },
     hero: {
       eyebrow: "خدمت · تهران · حضوری یا ریموت",
       title: "ساخت فمیلی رویت در تهران",
@@ -180,7 +180,7 @@ export const revitFamilyCreationTehran: ServicePage = {
       secondary: "مشاهده نمونه‌ها",
     },
     frictions: {
-      eyebrow: "۰۱ — دفاتر و تولیدکنندگان تهران چه می‌خواهند",
+      eyebrow: "۰۱، دفاتر و تولیدکنندگان تهران چه می‌خواهند",
       title: "سه مشکل رایج در کتابخانه‌ی فمیلی دفاتر تهران",
       lead:
         "بیشترین تمرکز دفاتر مجهز به BIM در کشور در تهران است و تقریباً هر کتابخانه‌ای در این شهر دست‌کم یکی از این سه مشکل را دارد. نوع مشکل تعیین می‌کند راه‌حل، محتوای جدید است یا بازبینی.",
@@ -206,7 +206,7 @@ export const revitFamilyCreationTehran: ServicePage = {
       ],
     },
     showcase: {
-      eyebrow: "۰۲ — کار انجام‌شده",
+      eyebrow: "۰۲، کار انجام‌شده",
       title: "استخوان‌بندی یکسان، با پوششی متفاوت",
       lead:
         "یک سیستم کرتین‌وال که به‌شکل دو نوع پنل تحویل شد، برای یک شرکت، با یک مجموعه جزئیات اتصال و دو جایگاه متفاوت روی نما.",
@@ -229,7 +229,7 @@ export const revitFamilyCreationTehran: ServicePage = {
       note: "این خطوط مستقیماً از فمیلی‌های تحویل‌داده‌شده استخراج شده‌اند و هندسه‌ی واقعی را تا لبه‌های مرزی و شکست نشان می‌دهند.",
     },
     local: {
-      eyebrow: "۰۳ — بودن در تهران چه چیزی را عوض می‌کند",
+      eyebrow: "۰۳، بودن در تهران چه چیزی را عوض می‌کند",
       title: "محصول در همان شهری است که مدل می‌شود",
       lead:
         "بیشتر این کار، فارغ از محل استقرار تیم‌ها، به‌صورت ریموت انجام می‌شود. وقتی منبع تنها یک ساعت با شما فاصله دارد، چهار مورد تغییر می‌کند و هر چهار به پرهزینه‌ترین بخش کار مربوط‌اند.",
@@ -258,7 +258,7 @@ export const revitFamilyCreationTehran: ServicePage = {
       note: "هیچ‌کدام از این موارد الزامی نیست. بسیاری از کارهای فمیلی کاملاً از طریق فایل و تماس پیش می‌روند و فرآیند در هر دو حالت یکسان است؛ حضوری‌بودن یک امکان است، نه یک شرط.",
     },
     faq: {
-      eyebrow: "۰۵ — پرسش‌ها",
+      eyebrow: "۰۵، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -288,7 +288,7 @@ export const revitFamilyCreationTehran: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "۰۶ — شروع",
+      eyebrow: "۰۶، شروع",
       title: "چه جزئیاتی برای کار شما لازم است؟",
       lead:
         "فمیلی، مدل یا خروجی‌ای را که داده باید در آن استفاده شود با ما در میان بگذارید. اگر کتابخانه‌ی شما به‌جای محتوای جدید به بازبینی نیاز داشته باشد، همان ابتدا می‌گوییم.",

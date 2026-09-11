@@ -21,22 +21,22 @@ export const revitPluginDevelopmentTehran: ServicePage = {
 
   en: {
     meta: {
-      title: "Revit Plugin Development in Tehran — ARTINEXT",
+      title: "Revit Plugin Development in Tehran, ARTINEXT",
       description:
         "Custom Revit plugin and add-in development for architecture, structural and MEP offices in Tehran, from workflow analysis to a tool your team uses.",
     },
     breadcrumb: "Tehran",
-    reusedLabels: { demo: "02 — See it run", process: "04 — Process" },
+    reusedLabels: { demo: "02, See it run", process: "04, Process" },
     hero: {
       eyebrow: "Service · Tehran · In person or remote",
       title: "Revit plugin development in Tehran.",
       lead:
-        "Custom Revit plugins and add-ins for Tehran architecture, structural, and MEP offices. The studio is here too — which means the workflow analysis can happen in your office, at your machines, watching the actual work.",
+        "Custom Revit plugins and add-ins for Tehran architecture, structural, and MEP offices. The studio is here too, which means the workflow analysis can happen in your office, at your machines, watching the actual work.",
       primary: "Start a project",
       secondary: "See two running",
     },
     frictions: {
-      eyebrow: "01 — What Tehran offices ask for",
+      eyebrow: "01, What Tehran offices ask for",
       title: "Three needs almost every office has",
       lead:
         "Tehran runs the largest concentration of BIM-capable offices in the country, and the same three problems surface across almost all of them. Which one you're in decides what the tool has to do.",
@@ -51,7 +51,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
           n: "02",
           title: "A standard the office wrote but can't enforce",
           body:
-            "Naming, parameters, sheet setup — decided years ago, written down somewhere, and checked by whoever happens to open the model. Until it's a test, it's a preference.",
+            "Naming, parameters, sheet setup, decided years ago, written down somewhere, and checked by whoever happens to open the model. Until it's a test, it's a preference.",
         },
         {
           n: "03",
@@ -62,7 +62,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
       ],
     },
     local: {
-      eyebrow: "03 — Working with a studio in the same city",
+      eyebrow: "03, Working with a studio in the same city",
       title: "What being in Tehran actually changes",
       lead:
         "Most of this work is done remotely regardless of where anyone sits. Four things are genuinely different when both offices are in the same city, and they are all in the first half of the project.",
@@ -70,7 +70,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
         {
           title: "Discovery happens at your machines",
           body:
-            "The first stage is watching the real workflow, not the documented one. Doing that in the room — at the workstation, with the actual model open — surfaces in an afternoon what a screen-share turns into three calls.",
+            "The first stage is watching the real workflow, not the documented one. Doing that in the room, at the workstation, with the actual model open, surfaces in an afternoon what a screen-share turns into three calls.",
         },
         {
           title: "No timezone to schedule around",
@@ -88,27 +88,27 @@ export const revitPluginDevelopmentTehran: ServicePage = {
             "Tehran offices are working against a shared set of consultant expectations and submission requirements. That context doesn't have to be explained from scratch before the real problem can be discussed.",
         },
       ],
-      note: "None of this is a requirement. Plenty of projects run entirely remote, and the process is the same either way — this is what is available, not what is expected.",
+      note: "None of this is a requirement. Plenty of projects run entirely remote, and the process is the same either way, this is what is available, not what is expected.",
     },
     faq: {
-      eyebrow: "05 — Questions",
+      eyebrow: "05, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "Can you come to our office?",
-          a: "Yes, for the stages where it helps — discovery and handover, mostly. The build itself doesn't get better with anyone in the room, so it isn't billed as if it does.",
+          a: "Yes, for the stages where it helps, discovery and handover, mostly. The build itself doesn't get better with anyone in the room, so it isn't billed as if it does.",
         },
         {
           q: "Do you build for a specific Revit version?",
-          a: "Whichever ones your office actually runs, including more than one at a time. The version range is a scoping question asked in the first stage — supporting three versions is not three times the work, but it isn't free either.",
+          a: "Whichever ones your office actually runs, including more than one at a time. The version range is a scoping question asked in the first stage, supporting three versions is not three times the work, but it isn't free either.",
         },
         {
           q: "Can you work with our existing plugins and templates?",
-          a: "Yes, and it's usually the better answer. If something already installed does part of the job, the honest recommendation is to extend or connect it rather than replace it. If a tool doesn't solve the real problem, we don't recommend it — even when building it from scratch would look more impressive.",
+          a: "Yes, and it's usually the better answer. If something already installed does part of the job, the honest recommendation is to extend or connect it rather than replace it. If a tool doesn't solve the real problem, we don't recommend it, even when building it from scratch would look more impressive.",
         },
         {
           q: "Who owns the code?",
-          a: "You do. It's your process encoded — it shouldn't live somewhere you can't reach it. Source and build instructions are handed over.",
+          a: "You do. It's your process encoded, it shouldn't live somewhere you can't reach it. Source and build instructions are handed over.",
         },
         {
           q: "What does it cost?",
@@ -121,7 +121,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "06 — Start",
+      eyebrow: "06, Start",
       title: "Tell us the step you'd stop doing by hand",
       lead:
         "Bring the workflow, not the spec. If a plugin is the wrong answer, we'd rather tell you that in the first conversation than at the end of a build.",
@@ -139,12 +139,12 @@ export const revitPluginDevelopmentTehran: ServicePage = {
 
   fa: {
     meta: {
-      title: "توسعه پلاگین رویت در تهران — آرتینکست",
+      title: "توسعه پلاگین رویت در تهران، آرتینکست",
       description:
         "ساخت و توسعه پلاگین اختصاصی رویت برای دفاتر معماری، سازه و تأسیسات در تهران؛ استودیویی در همان شهر، از بررسی فرآیند تا ابزاری که تیم واقعاً از آن استفاده می‌کند.",
     },
     breadcrumb: "تهران",
-    reusedLabels: { demo: "۰۲ — ابزارها در عمل", process: "۰۴ — فرآیند" },
+    reusedLabels: { demo: "۰۲، ابزارها در عمل", process: "۰۴، فرآیند" },
     hero: {
       eyebrow: "خدمت · تهران · حضوری یا ریموت",
       title: "توسعه پلاگین رویت در تهران",
@@ -154,7 +154,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
       secondary: "مشاهده نمونه‌ها",
     },
     frictions: {
-      eyebrow: "۰۱ — دفاتر تهران چه می‌خواهند",
+      eyebrow: "۰۱، دفاتر تهران چه می‌خواهند",
       title: "سه نیازی که تقریباً همه‌ی دفاتر دارند",
       lead:
         "بیشترین تمرکز دفاتر مجهز به BIM در کشور در تهران است و در بیشتر آن‌ها همین سه مسئله تکرار می‌شود. مشخص‌کردن مسئله‌ی شما تعیین می‌کند ابزار باید چه کاری انجام دهد.",
@@ -180,7 +180,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
       ],
     },
     local: {
-      eyebrow: "۰۳ — کار با استودیویی در همان شهر",
+      eyebrow: "۰۳، کار با استودیویی در همان شهر",
       title: "حضور در تهران چه چیزی را تغییر می‌دهد",
       lead:
         "بیشتر این کار، فارغ از محل استقرار تیم‌ها، به‌صورت ریموت انجام می‌شود. وقتی هر دو دفتر در یک شهر باشند، چهار مورد تغییر می‌کند و هر چهار به نیمه‌ی اول پروژه مربوط‌اند.",
@@ -209,7 +209,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
       note: "هیچ‌کدام از این موارد الزامی نیست. بسیاری از پروژه‌ها کاملاً ریموت پیش می‌روند و فرآیند در هر دو حالت یکسان است؛ حضوری‌بودن یک امکان است، نه یک شرط.",
     },
     faq: {
-      eyebrow: "۰۵ — پرسش‌ها",
+      eyebrow: "۰۵، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -239,7 +239,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "۰۶ — شروع",
+      eyebrow: "۰۶، شروع",
       title: "کدام مرحله را می‌خواهید دیگر به‌صورت دستی انجام ندهید؟",
       lead:
         "از روند کاری‌تان بگویید، کجا زمان از دست می‌رود و کجا خطا ایجاد می‌شود. اگر راه‌حل پلاگین نباشد، همان ابتدا می‌گوییم.",

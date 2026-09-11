@@ -35,7 +35,7 @@ export const aecWorkflowAutomation: ArticlePage = {
     fa: {
       slug: "aec-workflow-automation",
       meta: {
-        title: "هوشمندسازی فرآیند کاری از کجا شروع می‌شود؟ — آرتینکست",
+        title: "هوشمندسازی فرآیند کاری از کجا شروع می‌شود؟ آرتینکست",
         description:
           "هوشمندسازی فرآیند کاری در صنعت ساختمان با یک فرآیند تکراری و مکتوب شروع می‌شود، نه با خرید یک پلتفرم. انتخاب اولین فرآیند، اصلاح داده، اجرای آزمایشی و تصمیم ساخت یا همکاری.",
       },
@@ -203,8 +203,8 @@ export const aecWorkflowAutomation: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "NIST — Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry", href: NIST },
-        { label: "ECOSI — Why AEC Process Automation Should Start with Well-Defined Workflows", href: ECOSI },
+        { label: "NIST, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry", href: NIST },
+        { label: "ECOSI, Why AEC Process Automation Should Start with Well-Defined Workflows", href: ECOSI },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -253,7 +253,7 @@ export const aecWorkflowAutomation: ArticlePage = {
     en: {
       slug: "aec-workflow-automation",
       meta: {
-        title: "Where AEC Workflow Automation Should Start — ARTINEXT",
+        title: "Where AEC Workflow Automation Should Start, ARTINEXT",
         description:
           "AEC workflow automation starts with one defined, repeated process, not a new platform. How to pick it, fix its data, pilot it, and decide who should build it.",
       },
@@ -421,8 +421,8 @@ export const aecWorkflowAutomation: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "NIST — Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry", href: NIST },
-        { label: "ECOSI — Why AEC Process Automation Should Start with Well-Defined Workflows", href: ECOSI },
+        { label: "NIST, Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry", href: NIST },
+        { label: "ECOSI, Why AEC Process Automation Should Start with Well-Defined Workflows", href: ECOSI },
       ],
       faqHeading: "FAQ",
       faq: [

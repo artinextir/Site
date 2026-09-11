@@ -31,7 +31,7 @@ export const revitModelChecker: ArticlePage = {
     fa: {
       slug: "revit-model-checker",
       meta: {
-        title: "کنترل‌کننده مدل رویت؛ چک‌ست و کنترل کیفیت — آرتینکست",
+        title: "کنترل‌کننده مدل رویت؛ چک‌ست و کنترل کیفیت، آرتینکست",
         description:
           "کنترل‌کننده مدل رویت پارامترها و نام‌گذاری را با قواعد مکتوب مقایسه می‌کند. روش ساخت چک‌ست، اولویت‌بندی خطاها و زمان مناسب برای کمک بیرونی را بخوانید.",
       },
@@ -174,8 +174,8 @@ export const revitModelChecker: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "Autodesk — Model Checker for Revit", href: "https://interoperability.autodesk.com/modelchecker.php" },
-        { label: "Autodesk — Model Checker Configurator", href: "https://interoperability.autodesk.com/modelcheckerconfigurator.php" },
+        { label: "Autodesk, Model Checker for Revit", href: "https://interoperability.autodesk.com/modelchecker.php" },
+        { label: "Autodesk, Model Checker Configurator", href: "https://interoperability.autodesk.com/modelcheckerconfigurator.php" },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -367,8 +367,8 @@ export const revitModelChecker: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "Autodesk — Model Checker for Revit", href: "https://interoperability.autodesk.com/modelchecker.php" },
-        { label: "Autodesk — Model Checker Configurator", href: "https://interoperability.autodesk.com/modelcheckerconfigurator.php" },
+        { label: "Autodesk, Model Checker for Revit", href: "https://interoperability.autodesk.com/modelchecker.php" },
+        { label: "Autodesk, Model Checker Configurator", href: "https://interoperability.autodesk.com/modelcheckerconfigurator.php" },
       ],
       faqHeading: "FAQ",
       faq: [

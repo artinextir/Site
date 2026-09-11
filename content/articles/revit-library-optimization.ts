@@ -31,7 +31,7 @@ export const revitLibraryOptimization: ArticlePage = {
     fa: {
       slug: "revit-library-optimization",
       meta: {
-        title: "بهینه‌سازی کتابخانه رویت؛ از پاک‌سازی تا استاندارد — آرتینکست",
+        title: "بهینه‌سازی کتابخانه رویت؛ از پاک‌سازی تا استاندارد، آرتینکست",
         description:
           "بهینه‌سازی کتابخانه رویت یعنی اصلاح فمیلی‌هایی که مشکل ایجاد می‌کنند، نه کوچک‌کردن کل کتابخانه. پاک‌سازی، محتوای دانلودی، Object Styles، استاندارد و ارزیابی دوره‌ای.",
       },
@@ -212,8 +212,8 @@ export const revitLibraryOptimization: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "ArchOverFlow — Managing Revit File Size & Performance", href: "https://archoverflow.com/managing-revit-file-size-performance/" },
-        { label: "GRAITEC — Why Your Revit Model Is Slow, and How To Fix It", href: "https://graitec.com/ca-en/blog/why-revit-model-is-slow-how-to-fix-it/" },
+        { label: "ArchOverFlow, Managing Revit File Size & Performance", href: "https://archoverflow.com/managing-revit-file-size-performance/" },
+        { label: "GRAITEC, Why Your Revit Model Is Slow, and How To Fix It", href: "https://graitec.com/ca-en/blog/why-revit-model-is-slow-how-to-fix-it/" },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -262,7 +262,7 @@ export const revitLibraryOptimization: ArticlePage = {
     en: {
       slug: "revit-library-optimization",
       meta: {
-        title: "Revit Library Optimization: What to Fix First — ARTINEXT",
+        title: "Revit Library Optimization: What to Fix First, ARTINEXT",
         description:
           "Revit library optimization means fixing the specific families causing trouble, not shrinking the library. Purge, downloads, object styles, standards and audits.",
       },
@@ -443,8 +443,8 @@ export const revitLibraryOptimization: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "ArchOverFlow — Managing Revit File Size & Performance", href: "https://archoverflow.com/managing-revit-file-size-performance/" },
-        { label: "GRAITEC — Why Your Revit Model Is Slow, and How To Fix It", href: "https://graitec.com/ca-en/blog/why-revit-model-is-slow-how-to-fix-it/" },
+        { label: "ArchOverFlow, Managing Revit File Size & Performance", href: "https://archoverflow.com/managing-revit-file-size-performance/" },
+        { label: "GRAITEC, Why Your Revit Model Is Slow, and How To Fix It", href: "https://graitec.com/ca-en/blog/why-revit-model-is-slow-how-to-fix-it/" },
       ],
       faqHeading: "FAQ",
       faq: [

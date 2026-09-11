@@ -14,12 +14,12 @@ export const revitPluginDevelopment: ServicePage = {
 
   en: {
     meta: {
-      title: "Revit Plugin Development for AEC Teams — ARTINEXT",
+      title: "Revit Plugin Development for AEC Teams, ARTINEXT",
       description:
-        "Custom Revit plugin and add-in development for architecture, structural, and MEP teams. Built from your actual workflow, not a generic add-on — see two of ours running end to end.",
+        "Custom Revit plugin and add-in development for architecture, structural, and MEP teams. Built from your actual workflow, not a generic add-on, see two of ours running end to end.",
     },
     breadcrumb: "Revit plugin development",
-    reusedLabels: { demo: "02 — See it run", process: "04 — Process" },
+    reusedLabels: { demo: "02, See it run", process: "04, Process" },
     hero: {
       eyebrow: "Service · Custom tools · Working remotely",
       title: "Revit plugin development, built from your workflow.",
@@ -29,10 +29,10 @@ export const revitPluginDevelopment: ServicePage = {
       secondary: "See two running",
     },
     frictions: {
-      eyebrow: "01 — Why a plugin, and why now",
+      eyebrow: "01, Why a plugin, and why now",
       title: "The three things a plugin is usually bought to fix",
       lead:
-        "Almost every plugin request traces back to one of these. Naming which one you're in decides what the tool has to do — and how much of it you actually need.",
+        "Almost every plugin request traces back to one of these. Naming which one you're in decides what the tool has to do, and how much of it you actually need.",
       items: [
         {
           n: "01",
@@ -44,7 +44,7 @@ export const revitPluginDevelopment: ServicePage = {
           n: "02",
           title: "Two pieces of software that don't speak",
           body:
-            "The structural model, the spreadsheet, the drawing set. Each one is fine alone. Moving between them is a person retyping — which is where the discrepancies come from, and why nobody trusts the numbers.",
+            "The structural model, the spreadsheet, the drawing set. Each one is fine alone. Moving between them is a person retyping, which is where the discrepancies come from, and why nobody trusts the numbers.",
         },
         {
           n: "03",
@@ -55,7 +55,7 @@ export const revitPluginDevelopment: ServicePage = {
       ],
     },
     scope: {
-      eyebrow: "03 — What moves the number",
+      eyebrow: "03, What moves the number",
       title: "What a plugin actually costs is decided before it's built",
       lead:
         "There's no price list on this site, because a plugin isn't priced by its button. Four things move the size of the job, and you can estimate all four before talking to anyone.",
@@ -78,26 +78,26 @@ export const revitPluginDevelopment: ServicePage = {
         {
           title: "What has to happen when it fails",
           body:
-            "Silence is cheap and useless. Reporting what didn't convert, and why, is the difference between a tool your team trusts and one they check by hand anyway — which means they now do both jobs.",
+            "Silence is cheap and useless. Reporting what didn't convert, and why, is the difference between a tool your team trusts and one they check by hand anyway, which means they now do both jobs.",
         },
       ],
       note: "No estimate is given before the first two stages. A number produced before the problem is stated in full is a guess wearing a currency symbol.",
     },
     faq: {
-      eyebrow: "05 — Questions",
+      eyebrow: "05, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "Do you build for a specific Revit version?",
-          a: "Whichever ones your office actually runs, including more than one at a time. The version range is a scoping question asked in the first stage — supporting three versions is not three times the work, but it isn't free either.",
+          a: "Whichever ones your office actually runs, including more than one at a time. The version range is a scoping question asked in the first stage, supporting three versions is not three times the work, but it isn't free either.",
         },
         {
           q: "Can you work with our existing plugins and templates?",
-          a: "Yes, and it's usually the better answer. If something already installed does part of the job, the honest recommendation is to extend or connect it rather than replace it. If a tool doesn't solve the real problem, we don't recommend it — even when building it from scratch would look more impressive.",
+          a: "Yes, and it's usually the better answer. If something already installed does part of the job, the honest recommendation is to extend or connect it rather than replace it. If a tool doesn't solve the real problem, we don't recommend it, even when building it from scratch would look more impressive.",
         },
         {
           q: "Who owns the code?",
-          a: "You do. It's your process encoded — it shouldn't live somewhere you can't reach it. Source and build instructions are handed over.",
+          a: "You do. It's your process encoded, it shouldn't live somewhere you can't reach it. Source and build instructions are handed over.",
         },
         {
           q: "Is Dynamo an option instead of a plugin?",
@@ -105,7 +105,7 @@ export const revitPluginDevelopment: ServicePage = {
         },
         {
           q: "How do we know it works before it's finished?",
-          a: "The success measure is written down in stage two, before anything is built, and it has to be testable. A tool that can't be checked against a stated measure hasn't been finished — it's been stopped.",
+          a: "The success measure is written down in stage two, before anything is built, and it has to be testable. A tool that can't be checked against a stated measure hasn't been finished, it's been stopped.",
         },
         {
           q: "Do you work with teams outside Iran?",
@@ -114,7 +114,7 @@ export const revitPluginDevelopment: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "06 — Start",
+      eyebrow: "06, Start",
       title: "Tell us the step you'd stop doing by hand",
       lead:
         "Bring the workflow, not the spec. If a plugin is the wrong answer, we'd rather tell you that in the first conversation than at the end of a build.",
@@ -131,12 +131,12 @@ export const revitPluginDevelopment: ServicePage = {
 
   fa: {
     meta: {
-      title: "توسعه پلاگین رویت برای تیم‌های فنی — آرتینکست",
+      title: "توسعه پلاگین رویت برای تیم‌های فنی، آرتینکست",
       description:
         "توسعه پلاگین و افزونه‌ی اختصاصی رویت برای تیم‌های معماری، سازه و تأسیسات، ساخته‌شده برای فرآیند واقعی شما. دو نمونه را از ابتدا تا انتها مشاهده کنید.",
     },
     breadcrumb: "توسعه پلاگین رویت",
-    reusedLabels: { demo: "۰۲ — ابزارها در عمل", process: "۰۴ — فرآیند" },
+    reusedLabels: { demo: "۰۲، ابزارها در عمل", process: "۰۴، فرآیند" },
     hero: {
       eyebrow: "خدمت · ابزار اختصاصی · ریموت",
       title: "توسعه پلاگین رویت، بر اساس فرآیند شما",
@@ -146,7 +146,7 @@ export const revitPluginDevelopment: ServicePage = {
       secondary: "مشاهده نمونه‌ها",
     },
     frictions: {
-      eyebrow: "۰۱ — چرا پلاگین، و چرا حالا",
+      eyebrow: "۰۱، چرا پلاگین، و چرا حالا",
       title: "سه مسئله‌ای که معمولاً با پلاگین حل می‌شوند",
       lead:
         "تقریباً هر درخواست پلاگین به یکی از این سه مسئله مربوط است. مشخص‌کردن مسئله تعیین می‌کند ابزار باید چه کاری انجام دهد و چه بخشی از آن واقعاً لازم است.",
@@ -172,7 +172,7 @@ export const revitPluginDevelopment: ServicePage = {
       ],
     },
     scope: {
-      eyebrow: "۰۳ — چه چیزی اندازه را تعیین می‌کند",
+      eyebrow: "۰۳، چه چیزی اندازه را تعیین می‌کند",
       title: "هزینه‌ی پلاگین پیش از ساخت آن تعیین می‌شود",
       lead:
         "در این سایت فهرست قیمت وجود ندارد، زیرا هزینه‌ی پلاگین به تعداد دکمه‌های آن بستگی ندارد. چهار عامل اندازه‌ی کار را تعیین می‌کنند و هر چهار را نیز خودتان پیش از گفت‌وگو می‌توانید بسنجید.",
@@ -201,7 +201,7 @@ export const revitPluginDevelopment: ServicePage = {
       note: "پیش از دو مرحله‌ی نخست، هیچ برآوردی ارائه نمی‌شود. عددی که پیش از تعریف کامل مسئله اعلام شود، تنها یک حدس است.",
     },
     faq: {
-      eyebrow: "۰۵ — پرسش‌ها",
+      eyebrow: "۰۵، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -231,7 +231,7 @@ export const revitPluginDevelopment: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "۰۶ — شروع",
+      eyebrow: "۰۶، شروع",
       title: "کدام مرحله را می‌خواهید دیگر به‌صورت دستی انجام ندهید؟",
       lead:
         "از روند کاری‌تان بگویید، کجا زمان از دست می‌رود و کجا خطا ایجاد می‌شود. اگر راه‌حل پلاگین نباشد، همان ابتدا می‌گوییم.",

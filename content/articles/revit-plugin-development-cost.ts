@@ -43,7 +43,7 @@ export const revitPluginDevelopmentCost: ArticlePage = {
     fa: {
       slug: "revit-plugin-development-cost",
       meta: {
-        title: "توسعه پلاگین رویت چقدر هزینه دارد؟ عوامل اصلی — آرتینکست",
+        title: "توسعه پلاگین رویت چقدر هزینه دارد؟ عوامل اصلی، آرتینکست",
         description:
           "توسعه پلاگین رویت چقدر هزینه دارد؟ قیمت به پیچیدگی جریان کاری، یکپارچه‌سازی، تعداد کاربران و نسخه‌های رویت بستگی دارد. عوامل اصلی و روش برآورد را بخوانید.",
       },
@@ -217,9 +217,9 @@ export const revitPluginDevelopmentCost: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "Autodesk Platform Services — Revit SDKs and Tools", href: "https://aps.autodesk.com/developer/overview/revit-api" },
-        { label: "Autodesk Platform Services — Estimate Automation costs", href: "https://aps.autodesk.com/blog/estimate-design-automation-costs" },
-        { label: "Autodesk Developer Blog — Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
+        { label: "Autodesk Platform Services, Revit SDKs and Tools", href: "https://aps.autodesk.com/developer/overview/revit-api" },
+        { label: "Autodesk Platform Services, Estimate Automation costs", href: "https://aps.autodesk.com/blog/estimate-design-automation-costs" },
+        { label: "Autodesk Developer Blog, Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -268,7 +268,7 @@ export const revitPluginDevelopmentCost: ArticlePage = {
     en: {
       slug: "revit-plugin-development-cost",
       meta: {
-        title: "Revit Plugin Development Cost, Explained — ARTINEXT",
+        title: "Revit Plugin Development Cost, Explained, ARTINEXT",
         description:
           "How much does Revit plugin development cost? It depends on workflow complexity, integrations, users and yearly Revit updates. Here is what sets the number.",
       },
@@ -443,9 +443,9 @@ export const revitPluginDevelopmentCost: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "Autodesk Platform Services — Revit SDKs and Tools", href: "https://aps.autodesk.com/developer/overview/revit-api" },
-        { label: "Autodesk Platform Services — Estimate Automation costs", href: "https://aps.autodesk.com/blog/estimate-design-automation-costs" },
-        { label: "Autodesk Developer Blog — Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
+        { label: "Autodesk Platform Services, Revit SDKs and Tools", href: "https://aps.autodesk.com/developer/overview/revit-api" },
+        { label: "Autodesk Platform Services, Estimate Automation costs", href: "https://aps.autodesk.com/blog/estimate-design-automation-costs" },
+        { label: "Autodesk Developer Blog, Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
       ],
       faqHeading: "FAQ",
       faq: [

@@ -35,7 +35,7 @@ export const revitPluginDevelopmentCompany: ArticlePage = {
     fa: {
       slug: "revit-plugin-development-company",
       meta: {
-        title: "انتخاب شرکت توسعه پلاگین رویت: معیارهای اصلی — آرتینکست",
+        title: "انتخاب شرکت توسعه پلاگین رویت: معیارهای اصلی، آرتینکست",
         description:
           "برای انتخاب شرکت توسعه پلاگین رویت، درک جریان کاری، مالکیت کد، به‌روزرسانی نسخه‌ها و پشتیبانی پس از تحویل را بسنجید، نه فقط نمونه‌کار. پرسش‌ها و علائم هشدار.",
       },
@@ -258,9 +258,9 @@ export const revitPluginDevelopmentCompany: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "Autodesk Platform Services — Certified Apps Program, How to Apply", href: "https://aps.autodesk.com/app-store/certified-apps/how-apply" },
-        { label: "Autodesk Platform Services — Marketplace Publisher Center", href: "https://aps.autodesk.com/app-store/publisher-center" },
-        { label: "Autodesk Developer Blog — Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
+        { label: "Autodesk Platform Services, Certified Apps Program, How to Apply", href: "https://aps.autodesk.com/app-store/certified-apps/how-apply" },
+        { label: "Autodesk Platform Services, Marketplace Publisher Center", href: "https://aps.autodesk.com/app-store/publisher-center" },
+        { label: "Autodesk Developer Blog, Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -532,9 +532,9 @@ export const revitPluginDevelopmentCompany: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "Autodesk Platform Services — Certified Apps Program, How to Apply", href: "https://aps.autodesk.com/app-store/certified-apps/how-apply" },
-        { label: "Autodesk Platform Services — Marketplace Publisher Center", href: "https://aps.autodesk.com/app-store/publisher-center" },
-        { label: "Autodesk Developer Blog — Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
+        { label: "Autodesk Platform Services, Certified Apps Program, How to Apply", href: "https://aps.autodesk.com/app-store/certified-apps/how-apply" },
+        { label: "Autodesk Platform Services, Marketplace Publisher Center", href: "https://aps.autodesk.com/app-store/publisher-center" },
+        { label: "Autodesk Developer Blog, Migrating from .NET 4.8 to .NET Core 8", href: "https://blog.autodesk.io/migrating-from-net-48-to-net-core-8/" },
       ],
       faqHeading: "FAQ",
       faq: [

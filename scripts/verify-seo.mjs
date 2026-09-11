@@ -125,6 +125,10 @@ function check(rel, html) {
     for (const [re, label] of banned) if (re.test(text)) errors.push(`Persian rule: ${label}`);
   }
 
+  // No em dash anywhere on the site, either language (owner's rule, 2026-09-12):
+  // it reads as machine-written. Persian joins with «،», English with ",".
+  if (/—/.test(strip(html.match(/<body[\s\S]*<\/body>/)?.[0] ?? html))) errors.push("em dash in page text (use ، or ,)");
+
   // Images
   const imgs = article.match(/<img [^>]*>/g) ?? [];
   if (!imgs.length) errors.push("no images in the article");

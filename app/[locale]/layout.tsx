@@ -76,6 +76,9 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
+    // Search Console ownership (HTML-tag method), carried over from V2. Every
+    // page under /fa/ and /en/ inherits it; the root stub in postbuild repeats it.
+    verification: { google: "__KQ4LYB2VWUh-e_l24qlvw9E4Kf10IcHPl0w8zsARA" },
     title: c.meta.title,
     description: c.meta.description,
     alternates: {

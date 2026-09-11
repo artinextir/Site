@@ -200,7 +200,7 @@ export function Demo({
                   loop
                   playsInline
                   controls
-                  aria-label={`${t.tab} — ${t.title}`}
+                  aria-label={`${t.tab}${/[؀-ۿ]/.test(t.title) ? "،" : ","} ${t.title}`}
                 >
                   <source src={t.src} type="video/mp4" />
                   {/* The recordings genuinely have no audio. A caption track

@@ -49,7 +49,7 @@ export function ContactForm({ content }: { content: ContactContent["form"] }) {
     setStatus("submitting");
 
     data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "");
-    data.append("subject", `New contact form submission — ${values.fullName}`);
+    data.append("subject", `New contact form submission, ${values.fullName}`);
     data.append("from_name", "artinext.ir contact form");
 
     // multipart/form-data is a CORS-safelisted content type, so this skips the

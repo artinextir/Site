@@ -64,7 +64,7 @@ export function Products({ c }: { c: HomeContent }) {
               href={item.href}
               // Three links reading "Explore" that go three different places
               // are indistinguishable to a screen reader listing them.
-              aria-label={`${s.more} — ${item.title}`}
+              aria-label={`${s.more}${/[؀-ۿ]/.test(item.title) ? "،" : ","} ${item.title}`}
               className="mt-5 inline-flex min-h-[24px] items-center gap-2 justify-self-start self-start text-[0.875rem] text-fg transition-colors duration-200 hover:text-sage"
             >
               {s.more}

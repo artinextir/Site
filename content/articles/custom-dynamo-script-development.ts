@@ -35,7 +35,7 @@ export const customDynamoScriptDevelopment: ArticlePage = {
     fa: {
       slug: "custom-dynamo-script-development",
       meta: {
-        title: "توسعه اسکریپت اختصاصی Dynamo؛ کاربردها و مرزها — آرتینکست",
+        title: "توسعه اسکریپت اختصاصی Dynamo؛ کاربردها و مرزها، آرتینکست",
         description:
           "توسعه اسکریپت اختصاصی Dynamo یعنی تبدیل یک کار تکراری رویت به گرافی که دیگران هم بتوانند اجرا کنند. کاربردها، Dynamo Player، Python، ارتقای نسخه و زمان ساخت افزونه.",
       },
@@ -204,9 +204,9 @@ export const customDynamoScriptDevelopment: ArticlePage = {
       ],
       externalHeading: "منابع",
       externalLinks: [
-        { label: "Autodesk — Play a Script in Dynamo Player", href: PLAYER },
-        { label: "The Dynamo Primer — Python and Revit", href: PRIMER },
-        { label: "Dynamo BIM — Dynamo on .NET 8", href: NET8 },
+        { label: "Autodesk, Play a Script in Dynamo Player", href: PLAYER },
+        { label: "The Dynamo Primer, Python and Revit", href: PRIMER },
+        { label: "Dynamo BIM, Dynamo on .NET 8", href: NET8 },
       ],
       faqHeading: "پرسش‌های متداول",
       faq: [
@@ -255,7 +255,7 @@ export const customDynamoScriptDevelopment: ArticlePage = {
     en: {
       slug: "custom-dynamo-script-development",
       meta: {
-        title: "Custom Dynamo Script Development: What It Replaces — ARTINEXT",
+        title: "Custom Dynamo Script Development: What It Replaces, ARTINEXT",
         description:
           "Custom Dynamo script development turns a repeated Revit task into a graph other people can run and trust: use cases, Dynamo Player, Python, upgrades and add-ins.",
       },
@@ -424,9 +424,9 @@ export const customDynamoScriptDevelopment: ArticlePage = {
       ],
       externalHeading: "Sources",
       externalLinks: [
-        { label: "Autodesk — Play a Script in Dynamo Player", href: PLAYER },
-        { label: "The Dynamo Primer — Python and Revit", href: PRIMER },
-        { label: "Dynamo BIM — Dynamo on .NET 8", href: NET8 },
+        { label: "Autodesk, Play a Script in Dynamo Player", href: PLAYER },
+        { label: "The Dynamo Primer, Python and Revit", href: PRIMER },
+        { label: "Dynamo BIM, Dynamo on .NET 8", href: NET8 },
       ],
       faqHeading: "FAQ",
       faq: [

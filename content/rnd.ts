@@ -46,7 +46,7 @@ const STAGES: GlyphName[] = [
 export const rnd: Localized<RndContent> = {
   fa: {
     meta: {
-      title: "تحقیق و توسعه در آرتینکست — نمونه‌ی اولیه، تصمیم بهتر",
+      title: "تحقیق و توسعه در آرتینکست، نمونه‌ی اولیه، تصمیم بهتر",
       description:
         "فناوری جدید تنها زمانی وارد کار می‌شود که مسئله، داده و معیار موفقیت آن روشن و قابل‌آزمون باشد. در این صفحه توضیح داده‌ایم نمونه‌سازی مرحله‌ای در آرتینکست چگونه انجام می‌شود.",
     },
@@ -89,7 +89,7 @@ export const rnd: Localized<RndContent> = {
   },
   en: {
     meta: {
-      title: "Research & development at ARTINEXT — small prototype, better decision",
+      title: "Research & development at ARTINEXT, small prototype, better decision",
       description:
         "New technology enters the work once the problem, the data and the measure of success are clear and testable. Here is how staged prototyping runs at ARTINEXT.",
     },
@@ -110,7 +110,7 @@ export const rnd: Localized<RndContent> = {
       {
         eyebrow: "Stage two",
         title: "The smallest thing that answers the question.",
-        body: "The first prototype isn't meant to be a product. It's meant to answer one specific question. The smaller it is, the sooner we find out what we were wrong about — while changing it is still cheap.",
+        body: "The first prototype isn't meant to be a product. It's meant to answer one specific question. The smaller it is, the sooner we find out what we were wrong about, while changing it is still cheap.",
       },
       {
         eyebrow: "Stage three",
@@ -120,7 +120,7 @@ export const rnd: Localized<RndContent> = {
       {
         eyebrow: "Stage four",
         title: "Three outcomes, and one is not building it.",
-        body: "A prototype either becomes something we build, or shows which part has to change, or makes clear it shouldn't be built at all. That third result is also a result — at a cost you haven't paid yet.",
+        body: "A prototype either becomes something we build, or shows which part has to change, or makes clear it shouldn't be built at all. That third result is also a result, at a cost you haven't paid yet.",
       },
     ],
     cta: {

@@ -74,7 +74,7 @@ function cards(locale: Locale): ArticleCard[] {
 export const articles: Localized<ArticlesContent> = {
   fa: {
     meta: {
-      title: "بینش‌ها — نوشته‌های آرتینکست درباره‌ی رویت، BIM و اتوماسیون",
+      title: "بینش‌ها، نوشته‌های آرتینکست درباره‌ی رویت، BIM و اتوماسیون",
       description:
         "نوشته‌هایی درباره‌ی ساخت پلاگین رویت، کنترل کیفیت مدل، بهینه‌سازی کتابخانه و هوشمندسازی فرآیند کاری در تیم‌های معماری، سازه و تأسیسات.",
     },
@@ -85,7 +85,7 @@ export const articles: Localized<ArticlesContent> = {
       lead: "هر پرسشی که چند بار از سوی تیم‌های مختلف مطرح شود، ارزش نوشتن دارد. هر نوشته به یک پرسش مشخص پاسخ می‌دهد، حتی اگر پاسخ این باشد که کاری نباید انجام شود.",
     },
     index: {
-      eyebrow: "۰۱ — نوشته‌ها",
+      eyebrow: "۰۱، نوشته‌ها",
       title: "فهرست",
       tabsLabel: "ترتیب نمایش",
       tabs: { recent: "تازه‌ترین", viewed: "پربازدید", hot: "داغ" },
@@ -107,7 +107,7 @@ export const articles: Localized<ArticlesContent> = {
   },
   en: {
     meta: {
-      title: "Insights — writing on Revit, BIM and workflow automation | ARTINEXT",
+      title: "Insights, writing on Revit, BIM and workflow automation | ARTINEXT",
       description:
         "Writing on Revit plugin development, model quality control, library optimization, and workflow automation for architecture, structural and MEP teams.",
     },
@@ -115,10 +115,10 @@ export const articles: Localized<ArticlesContent> = {
     hero: {
       eyebrow: "Insights",
       title: "The things that keep coming up in meetings.",
-      lead: "Any question asked enough times, by enough different teams, is worth writing down. Each piece answers one specific question — and where the answer is that something shouldn't be done, that's what gets written.",
+      lead: "Any question asked enough times, by enough different teams, is worth writing down. Each piece answers one specific question, and where the answer is that something shouldn't be done, that's what gets written.",
     },
     index: {
-      eyebrow: "01 — Writing",
+      eyebrow: "01, Writing",
       title: "The index",
       tabsLabel: "Sort order",
       tabs: { recent: "Recent", viewed: "Most viewed", hot: "Hot topics" },

@@ -19,7 +19,7 @@ export const site = {
   name: "ARTINEXT",
   nameFa: "آرتینکست",
   nameFaAlt: "ارتینکست",
-  legalLine: "ARTINEXT — DESIGN TECHNOLOGY / IRAN",
+  legalLine: "ARTINEXT, DESIGN TECHNOLOGY / IRAN",
   /** Footer line, in English on both locales. */
   motto: "advanced research & technology innovation for the next generation",
   email: "artinext.ai@gmail.com",

@@ -16,6 +16,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARTINEXT</title>
+<meta name="google-site-verification" content="__KQ4LYB2VWUh-e_l24qlvw9E4Kf10IcHPl0w8zsARA">
 <link rel="canonical" href="https://artinext.ir/fa/">
 <link rel="alternate" hreflang="fa" href="https://artinext.ir/fa/">
 <link rel="alternate" hreflang="en" href="https://artinext.ir/en/">

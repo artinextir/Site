@@ -27,25 +27,25 @@ export const aecWorkflowAutomation: ServicePage = {
 
   en: {
     meta: {
-      title: "Office Automation for AEC Companies and Technical Teams — ARTINEXT",
+      title: "Office Automation for AEC Companies and Technical Teams, ARTINEXT",
       description:
         "Office automation, software and data integration, and operational dashboards for AEC companies and technical offices, built from the process you already run.",
     },
     breadcrumb: "Office automation",
-    reusedLabels: { demo: "02 — See it run", process: "04 — Process" },
+    reusedLabels: { demo: "02, See it run", process: "04, Process" },
     hero: {
       eyebrow: "Service · Office automation · Working remotely",
       title: "Office automation, from contract to delivery.",
       lead:
-        "Automation, software and data integration, and operational dashboards for AEC companies and technical offices. This isn't software design — it's your own chain of work, the one that repeats every week and depends each time on one person.",
+        "Automation, software and data integration, and operational dashboards for AEC companies and technical offices. This isn't software design, it's your own chain of work, the one that repeats every week and depends each time on one person.",
       primary: "Start a project",
       secondary: "See two dashboards",
     },
     frictions: {
-      eyebrow: "01 — Why automate, and where to start",
+      eyebrow: "01, Why automate, and where to start",
       title: "Three signs your process needs automation",
       lead:
-        "Not every process is worth automating, and some are fine exactly as they run today. These three say which one is a candidate — and which needs reviewing first, automating second.",
+        "Not every process is worth automating, and some are fine exactly as they run today. These three say which one is a candidate, and which needs reviewing first, automating second.",
       items: [
         {
           n: "01",
@@ -57,7 +57,7 @@ export const aecWorkflowAutomation: ServicePage = {
           n: "02",
           title: "A process carried by experience, not by documentation",
           body:
-            "Everyone knows how the work moves; nowhere is it written down. Until it is, it can't be improved and then automated, and you can't show where the delay is coming from — so the first conversation is about the process, not the software.",
+            "Everyone knows how the work moves; nowhere is it written down. Until it is, it can't be improved and then automated, and you can't show where the delay is coming from, so the first conversation is about the process, not the software.",
         },
         {
           n: "03",
@@ -68,10 +68,10 @@ export const aecWorkflowAutomation: ServicePage = {
       ],
     },
     dashboards: {
-      eyebrow: "02 — Built work",
+      eyebrow: "02, Built work",
       title: "One structure, two offices.",
       lead:
-        "Project status, documents and correspondence on one page, instead of four files and somebody assembling them. Two builds, each in its own language — open either one from here.",
+        "Project status, documents and correspondence on one page, instead of four files and somebody assembling them. Two builds, each in its own language, open either one from here.",
       regionLabel: "Dashboard builds",
       controls: { prev: "Previous screen", next: "Next screen" },
       note: "Demonstration data. No real project, document or person appears on these screens.",
@@ -119,7 +119,7 @@ export const aecWorkflowAutomation: ServicePage = {
           logo: "saber.webp",
           tab: "English build",
           body:
-            "The same four screens for an English-speaking studio, on a dark theme. The structure carries across; the content does not — each office has its own phases, states and naming.\n\nThat is the case against a dashboard off a shelf. Columns can be renamed; the order the work moves in cannot.",
+            "The same four screens for an English-speaking studio, on a dark theme. The structure carries across; the content does not, each office has its own phases, states and naming.\n\nThat is the case against a dashboard off a shelf. Columns can be renamed; the order the work moves in cannot.",
           specs: [
             { k: "Language", v: "English · left-to-right" },
             { k: "Screens", v: "Four" },
@@ -151,7 +151,7 @@ export const aecWorkflowAutomation: ServicePage = {
       ],
     },
     scope: {
-      eyebrow: "03 — What moves the number",
+      eyebrow: "03, What moves the number",
       title: "The process sets the size of the job, not the button count",
       lead:
         "No price list, because two automations that look identical from the outside can differ by a factor of ten underneath. Four things decide it, and you can assess all four before speaking to anyone.",
@@ -159,7 +159,7 @@ export const aecWorkflowAutomation: ServicePage = {
         {
           title: "How much of the process is documented",
           body:
-            "A procedure that exists as a document already has its specification. A procedure that lives in three people's heads has to be written down and agreed first — and that extraction is itself part of the work.",
+            "A procedure that exists as a document already has its specification. A procedure that lives in three people's heads has to be written down and agreed first, and that extraction is itself part of the work.",
         },
         {
           title: "Whether the systems have an API",
@@ -169,23 +169,23 @@ export const aecWorkflowAutomation: ServicePage = {
         {
           title: "How many people steer the process",
           body:
-            "A tool for one person can be simple and uncomplicated. A flow that passes through three has to survive their disagreements about who owns which step — disagreements that existed before the automation and will outlive it.",
+            "A tool for one person can be simple and uncomplicated. A flow that passes through three has to survive their disagreements about who owns which step, disagreements that existed before the automation and will outlive it.",
         },
         {
           title: "What happens off stage",
           body:
-            "Something that runs in front of a person can fail without causing trouble. Something that runs off stage at 2am has to know it failed, say so to someone, and leave the data in a state that can be resumed — or repaired.",
+            "Something that runs in front of a person can fail without causing trouble. Something that runs off stage at 2am has to know it failed, say so to someone, and leave the data in a state that can be resumed, or repaired.",
         },
       ],
       note: "No estimate is given before the first two stages. A number produced before the problem is stated in full is a guess wearing a currency symbol.",
     },
     faq: {
-      eyebrow: "05 — Questions",
+      eyebrow: "05, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "Does any of this require Revit?",
-          a: "No. This service is about the work between your software, whatever that software is — a spreadsheet, an ERP export, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser.",
+          a: "No. This service is about the work between your software, whatever that software is, a spreadsheet, an ERP export, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser.",
         },
         {
           q: "Do we have to replace the software we already use?",
@@ -193,15 +193,15 @@ export const aecWorkflowAutomation: ServicePage = {
         },
         {
           q: "What happens when the process changes next year?",
-          a: "It will, so the parts that change are separated from the parts that don't. The rules that move — a threshold, an approver, a naming pattern — live somewhere a person can edit without opening code. Anything hard-coded that should have been a setting is a maintenance bill you pay later.",
+          a: "It will, so the parts that change are separated from the parts that don't. The rules that move, a threshold, an approver, a naming pattern, live somewhere a person can edit without opening code. Anything hard-coded that should have been a setting is a maintenance bill you pay later.",
         },
         {
           q: "Where does it run, and who can see the data?",
-          a: "Wherever the data is allowed to be. That's decided in the first stage, not assumed — some offices can only run on their own machines, some already have a server, some have a client contract that settles it for them. The answer changes the build, so it's asked early rather than discovered late.",
+          a: "Wherever the data is allowed to be. That's decided in the first stage, not assumed, some offices can only run on their own machines, some already have a server, some have a client contract that settles it for them. The answer changes the build, so it's asked early rather than discovered late.",
         },
         {
           q: "Who owns what gets built?",
-          a: "You do. It's your process encoded — it shouldn't live somewhere you can't reach it. Source and build instructions are handed over.",
+          a: "You do. It's your process encoded, it shouldn't live somewhere you can't reach it. Source and build instructions are handed over.",
         },
         {
           q: "Do you work with teams outside Iran?",
@@ -210,7 +210,7 @@ export const aecWorkflowAutomation: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "06 — Start",
+      eyebrow: "06, Start",
       title: "Tell us the step that runs on someone remembering",
       lead:
         "Bring the process, not a platform you've been quoted for. If the honest answer is that the process needs writing down before anything is built, we'd rather say that first.",
@@ -227,12 +227,12 @@ export const aecWorkflowAutomation: ServicePage = {
 
   fa: {
     meta: {
-      title: "اتوماسیون اداری و مدیریتی برای شرکت‌ها و دفاتر فنی — آرتینکست",
+      title: "اتوماسیون اداری و مدیریتی برای شرکت‌ها و دفاتر فنی، آرتینکست",
       description:
         "اتوماسیون اداری و مدیریتی، یکپارچه‌سازی نرم‌افزارها و داده‌ها و داشبوردهای عملیاتی برای شرکت‌ها و دفاتر فنی، ساخته‌شده برای فرآیندی که همین حالا اجرا می‌کنید.",
     },
     breadcrumb: "اتوماسیون اداری و مدیریتی",
-    reusedLabels: { demo: "۰۲ — ابزارها در عمل", process: "۰۴ — فرآیند" },
+    reusedLabels: { demo: "۰۲، ابزارها در عمل", process: "۰۴، فرآیند" },
     hero: {
       eyebrow: "خدمت · اتوماسیون اداری و مدیریتی · ریموت",
       title: "اتوماسیون اداری و مدیریتی، از قرارداد تا تحویل",
@@ -242,7 +242,7 @@ export const aecWorkflowAutomation: ServicePage = {
       secondary: "مشاهده نمونه‌ها",
     },
     frictions: {
-      eyebrow: "۰۱ — چرا اتوماسیون، و از کجا شروع شود",
+      eyebrow: "۰۱، چرا اتوماسیون، و از کجا شروع شود",
       title: "سه نشانه که فرآیند شما نیاز به اتوماسیون دارد",
       lead:
         "هر فرآیندی ارزش خودکارشدن ندارد و بعضی در شرایط فعلی خود کافی هستند. این سه نشانه مشخص می‌کنند کدام فرآیند برای اتوماسیون مناسب است و کدام ابتدا باید بررسی شود.",
@@ -268,7 +268,7 @@ export const aecWorkflowAutomation: ServicePage = {
       ],
     },
     dashboards: {
-      eyebrow: "۰۲ — کار انجام‌شده",
+      eyebrow: "۰۲، کار انجام‌شده",
       title: "یک ساختار، دو دفتر",
       lead:
         "وضعیت پروژه‌ها، اسناد و مکاتبات در یک صفحه، به‌جای چهار فایل جداگانه. دو نمونه، هرکدام به زبان خود.",
@@ -351,7 +351,7 @@ export const aecWorkflowAutomation: ServicePage = {
       ],
     },
     scope: {
-      eyebrow: "۰۳ — چه چیزی اندازه را تعیین می‌کند",
+      eyebrow: "۰۳، چه چیزی اندازه را تعیین می‌کند",
       title: "اندازه‌ی کار را فرآیند تعیین می‌کند، نه تعداد دکمه‌ها",
       lead:
         "فهرست قیمت ثابتی وجود ندارد، زیرا دو اتوماسیون با ظاهر مشابه ممکن است از نظر حجم کار تا ده برابر تفاوت داشته باشند. چهار عامل این تفاوت را ایجاد می‌کنند و هر چهار را نیز خودتان پیش از هر گفت‌وگویی می‌توانید بسنجید.",
@@ -380,7 +380,7 @@ export const aecWorkflowAutomation: ServicePage = {
       note: "پیش از دو مرحله‌ی نخست، هیچ برآوردی ارائه نمی‌شود. عددی که پیش از تعریف کامل مسئله اعلام شود، تنها یک حدس است.",
     },
     faq: {
-      eyebrow: "۰۵ — پرسش‌ها",
+      eyebrow: "۰۵، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -410,7 +410,7 @@ export const aecWorkflowAutomation: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "۰۶ — شروع",
+      eyebrow: "۰۶، شروع",
       title: "کدام مرحله از کار شما به یک نفر وابسته است؟",
       lead:
         "از فرآیند کاری‌تان بگویید، کجا زمان از دست می‌رود و کجا کار به یک نفر وابسته است. اگر لازم باشد فرآیند پیش از هر ساختی مستند شود، همان ابتدا می‌گوییم.",

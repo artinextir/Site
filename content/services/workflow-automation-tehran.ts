@@ -25,22 +25,22 @@ export const workflowAutomationTehran: ServicePage = {
 
   en: {
     meta: {
-      title: "Office Automation in Tehran — ARTINEXT",
+      title: "Office Automation in Tehran, ARTINEXT",
       description:
         "Office and workflow automation, data integration and in-network dashboards for Tehran companies and technical offices, from a studio in the same city.",
     },
     breadcrumb: "Tehran",
-    reusedLabels: { demo: "02 — See it run", process: "04 — Process" },
+    reusedLabels: { demo: "02, See it run", process: "04, Process" },
     hero: {
       eyebrow: "Service · Tehran · In person or remote",
       title: "Office automation in Tehran.",
       lead:
-        "Workflow automation, software and data integration and in-network dashboards for Tehran companies and technical offices. The studio is here too — which means the process can be watched where it actually happens, and the people who run it are in the room when it is designed.",
+        "Workflow automation, software and data integration and in-network dashboards for Tehran companies and technical offices. The studio is here too, which means the process can be watched where it actually happens, and the people who run it are in the room when it is designed.",
       primary: "Start a project",
       secondary: "See two dashboards",
     },
     frictions: {
-      eyebrow: "01 — What Tehran offices ask for",
+      eyebrow: "01, What Tehran offices ask for",
       title: "Three places workflow automation is asked for first",
       lead:
         "Tehran holds the country's largest concentration of technical offices, and the same three requests come out of almost all of them. Which one you're in decides where to start.",
@@ -49,13 +49,13 @@ export const workflowAutomationTehran: ServicePage = {
           n: "01",
           title: "An approval chain that lives in a messaging app",
           body:
-            "A request is raised in one place, approved in another, and recorded in a third — if it is recorded at all. Six months later nobody can show who approved what, and the answer is somewhere in a group chat.",
+            "A request is raised in one place, approved in another, and recorded in a third, if it is recorded at all. Six months later nobody can show who approved what, and the answer is somewhere in a group chat.",
         },
         {
           n: "02",
           title: "Accounting, projects, and the drive that don't agree",
           body:
-            "Each one is correct on its own terms. Between them, a person retypes — so the project's number, the invoice's number and the filed drawing's revision are three separate opinions about the same job.",
+            "Each one is correct on its own terms. Between them, a person retypes, so the project's number, the invoice's number and the filed drawing's revision are three separate opinions about the same job.",
         },
         {
           n: "03",
@@ -66,10 +66,10 @@ export const workflowAutomationTehran: ServicePage = {
       ],
     },
     dashboards: {
-      eyebrow: "02 — Built work",
+      eyebrow: "02, Built work",
       title: "One structure, two offices.",
       lead:
-        "Project status, documents and correspondence on one page, instead of four files and somebody assembling them. Two builds, each in its own language — open either one from here.",
+        "Project status, documents and correspondence on one page, instead of four files and somebody assembling them. Two builds, each in its own language, open either one from here.",
       regionLabel: "Dashboard builds",
       controls: { prev: "Previous screen", next: "Next screen" },
       note: "Demonstration data. No real project, document or person appears on these screens.",
@@ -117,7 +117,7 @@ export const workflowAutomationTehran: ServicePage = {
           logo: "saber.webp",
           tab: "English build",
           body:
-            "The same four screens for an English-speaking studio, on a dark theme. The structure carries across; the content does not — each office has its own phases, states and naming.\n\nThat is the case against a dashboard off a shelf. Columns can be renamed; the order the work moves in cannot.",
+            "The same four screens for an English-speaking studio, on a dark theme. The structure carries across; the content does not, each office has its own phases, states and naming.\n\nThat is the case against a dashboard off a shelf. Columns can be renamed; the order the work moves in cannot.",
           specs: [
             { k: "Language", v: "English · left-to-right" },
             { k: "Screens", v: "Four" },
@@ -149,7 +149,7 @@ export const workflowAutomationTehran: ServicePage = {
       ],
     },
     local: {
-      eyebrow: "03 — What being in Tehran changes",
+      eyebrow: "03, What being in Tehran changes",
       title: "Automation fails on people, and the people are here",
       lead:
         "The build itself is the same wherever anyone sits. Four things are genuinely different in the same city, and every one of them is about the people the process runs through rather than the code.",
@@ -162,7 +162,7 @@ export const workflowAutomationTehran: ServicePage = {
         {
           title: "Who owns which step gets settled in a room",
           body:
-            "Every flow that crosses three people has a step two of them think they own. That disagreement is older than the automation and it doesn't get resolved in a thread — it gets resolved by everyone being at one table for an hour.",
+            "Every flow that crosses three people has a step two of them think they own. That disagreement is older than the automation and it doesn't get resolved in a thread, it gets resolved by everyone being at one table for an hour.",
         },
         {
           title: "It can be installed on your own network",
@@ -172,22 +172,22 @@ export const workflowAutomationTehran: ServicePage = {
         {
           title: "The people who use it are trained by someone in the room",
           body:
-            "Automation is abandoned by the staff, not by the managers who bought it. Sitting with the people who will run it the first week is worth more than the documentation — and here, it costs an afternoon.",
+            "Automation is abandoned by the staff, not by the managers who bought it. Sitting with the people who will run it the first week is worth more than the documentation, and here, it costs an afternoon.",
         },
       ],
-      note: "None of this is a requirement. Plenty of these projects run entirely remote, and the process is identical either way — this is what's available, not what's expected.",
+      note: "None of this is a requirement. Plenty of these projects run entirely remote, and the process is identical either way, this is what's available, not what's expected.",
     },
     faq: {
-      eyebrow: "05 — Questions",
+      eyebrow: "05, Questions",
       title: "Before you write to us",
       items: [
         {
           q: "Can you come to our office?",
-          a: "Yes, for the stages where it changes the answer — watching the process, the session where step ownership gets agreed, installation and the first week of use. The build itself doesn't improve with anyone in the room, so it isn't billed as if it does.",
+          a: "Yes, for the stages where it changes the answer, watching the process, the session where step ownership gets agreed, installation and the first week of use. The build itself doesn't improve with anyone in the room, so it isn't billed as if it does.",
         },
         {
           q: "Does any of this require Revit?",
-          a: "No. This is the work between your software, whatever that software is — a spreadsheet, an accounting system, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser.",
+          a: "No. This is the work between your software, whatever that software is, a spreadsheet, an accounting system, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser.",
         },
         {
           q: "Do we have to replace the software we already use?",
@@ -195,7 +195,7 @@ export const workflowAutomationTehran: ServicePage = {
         },
         {
           q: "Can it run on our own server?",
-          a: "Yes, and for most offices here that is the default rather than the exception. Where it runs is decided in the first stage, because it changes the build — not assumed and discovered later.",
+          a: "Yes, and for most offices here that is the default rather than the exception. Where it runs is decided in the first stage, because it changes the build, not assumed and discovered later.",
         },
         {
           q: "What does it cost?",
@@ -208,7 +208,7 @@ export const workflowAutomationTehran: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "06 — Start",
+      eyebrow: "06, Start",
       title: "Tell us the step that runs on someone remembering",
       lead:
         "Bring the process, not a platform you've been quoted for. If the honest answer is that the process needs writing down before anything is built, we'd rather say that first.",
@@ -226,12 +226,12 @@ export const workflowAutomationTehran: ServicePage = {
 
   fa: {
     meta: {
-      title: "اتوماسیون اداری و مدیریتی در تهران — آرتینکست",
+      title: "اتوماسیون اداری و مدیریتی در تهران، آرتینکست",
       description:
         "اتوماسیون اداری و مدیریتی در تهران؛ یکپارچه‌سازی نرم‌افزارها و داده‌ها و داشبوردهای درون‌شبکه برای شرکت‌ها و دفاتر فنی، با استودیویی در همان شهر.",
     },
     breadcrumb: "تهران",
-    reusedLabels: { demo: "۰۲ — ابزارها در عمل", process: "۰۴ — فرآیند" },
+    reusedLabels: { demo: "۰۲، ابزارها در عمل", process: "۰۴، فرآیند" },
     hero: {
       eyebrow: "خدمت · تهران · حضوری یا ریموت",
       title: "اتوماسیون اداری و مدیریتی در تهران",
@@ -241,7 +241,7 @@ export const workflowAutomationTehran: ServicePage = {
       secondary: "مشاهده نمونه‌ها",
     },
     frictions: {
-      eyebrow: "۰۱ — دفاتر تهران چه می‌خواهند",
+      eyebrow: "۰۱، دفاتر تهران چه می‌خواهند",
       title: "هوشمندسازی فرآیند کاری از کجا شروع می‌شود",
       lead:
         "بیشترین تمرکز دفاتر فنی کشور در تهران است و تقریباً همه‌ی آن‌ها یکی از این سه نیاز را دارند. نوع نیاز شما تعیین می‌کند کار از کجا شروع شود.",
@@ -267,7 +267,7 @@ export const workflowAutomationTehran: ServicePage = {
       ],
     },
     dashboards: {
-      eyebrow: "۰۲ — کار انجام‌شده",
+      eyebrow: "۰۲، کار انجام‌شده",
       title: "یک ساختار، دو دفتر",
       lead:
         "وضعیت پروژه‌ها، اسناد و مکاتبات در یک صفحه، به‌جای چهار فایل جداگانه. دو نمونه، هرکدام به زبان خود.",
@@ -350,7 +350,7 @@ export const workflowAutomationTehran: ServicePage = {
       ],
     },
     local: {
-      eyebrow: "۰۳ — بودن در تهران چه چیزی را عوض می‌کند",
+      eyebrow: "۰۳، بودن در تهران چه چیزی را عوض می‌کند",
       title: "موفقیت اتوماسیون به افراد بستگی دارد",
       lead:
         "مرحله‌ی ساخت، فارغ از محل استقرار، یکسان است. حضور در یک شهر چهار مورد را تغییر می‌دهد و هر چهار به افرادی مربوط است که کار از آن‌ها عبور می‌کند، نه به کد.",
@@ -379,7 +379,7 @@ export const workflowAutomationTehran: ServicePage = {
       note: "هیچ‌کدام از این موارد الزامی نیست. بسیاری از این پروژه‌ها کاملاً ریموت پیش می‌روند و فرآیند در هر دو حالت یکسان است؛ حضوری‌بودن یک امکان است، نه یک شرط.",
     },
     faq: {
-      eyebrow: "۰۵ — پرسش‌ها",
+      eyebrow: "۰۵، پرسش‌ها",
       title: "پیش از آنکه برایمان بنویسید",
       items: [
         {
@@ -409,7 +409,7 @@ export const workflowAutomationTehran: ServicePage = {
       ],
     },
     cta: {
-      eyebrow: "۰۶ — شروع",
+      eyebrow: "۰۶، شروع",
       title: "کدام مرحله از کار شما به یک نفر وابسته است؟",
       lead:
         "از فرآیند کاری‌تان بگویید، کجا زمان از دست می‌رود و کجا کار به یک نفر وابسته است. اگر لازم باشد فرآیند پیش از هر ساختی مستند شود، همان ابتدا می‌گوییم.",
