@@ -11,6 +11,7 @@ import { site, siteUrl } from "@/content/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SectionAnchor } from "@/components/SectionAnchor";
+import { SnapScroll } from "@/components/SnapScroll";
 
 /* Kode Mono is the display + engineering voice: headlines, eyebrows, code,
    specs. It is deliberately NOT the body face — its advance widths push a
@@ -145,6 +146,7 @@ export default async function LocaleLayout({
         </a>
 
         <SectionAnchor />
+        <SnapScroll />
         <Header locale={locale} c={c} />
         {children}
         <Footer locale={locale} c={c} />
