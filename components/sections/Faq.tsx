@@ -1,13 +1,15 @@
 import type { HomeContent } from "@/content/home";
+import type { Locale } from "@/lib/i18n/config";
 import { Reveal } from "@/components/Reveal";
 import { Section, SectionHead } from "@/components/SectionHead";
+import { InlineText } from "@/components/article/InlineText";
 import { Plus } from "@/components/Icons";
 
 /**
  * Native <details> — keyboard and screen-reader behaviour comes for free, and
  * the answers stay in the DOM for search engines whether open or closed.
  */
-export function Faq({ s }: { s: HomeContent["faq"] }) {
+export function Faq({ s, locale }: { s: HomeContent["faq"]; locale: Locale }) {
 
   return (
     <Section>
@@ -25,7 +27,11 @@ export function Faq({ s }: { s: HomeContent["faq"] }) {
                 className="mt-1 shrink-0 text-slate transition-transform duration-300 group-open:rotate-45"
               />
             </summary>
-            <p className="body-copy max-w-[68ch] pb-5 pe-10">{item.a}</p>
+            {/* Answers carry `[label](/path)` so a question that already
+                names a topic can point at the piece that covers it. */}
+            <p className="body-copy max-w-[68ch] pb-5 pe-10">
+              <InlineText text={item.a} locale={locale} />
+            </p>
           </details>
         ))}
       </Reveal>

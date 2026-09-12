@@ -89,7 +89,7 @@ export const revitPluginDevelopment: ServicePage = {
       items: [
         {
           q: "Do you build for a specific Revit version?",
-          a: "Whichever ones your office actually runs, including more than one at a time. The version range is a scoping question asked in the first stage, supporting three versions is not three times the work, but it isn't free either.",
+          a: "Whichever ones your office actually runs, including more than one at a time. The version range is a scoping question asked in the first stage, supporting three versions is not three times the work, but it isn't free either. What the version range does to the size of a job is set out in [the plugin cost piece](/articles/revit-plugin-development-cost/).",
         },
         {
           q: "Can you work with our existing plugins and templates?",
@@ -101,7 +101,7 @@ export const revitPluginDevelopment: ServicePage = {
         },
         {
           q: "Is Dynamo an option instead of a plugin?",
-          a: "Sometimes it's the right one. A graph is faster to build and easier for your team to adjust; compiled code is faster to run, easier to distribute, and doesn't break when someone reorganises a node. Which one fits is decided against how the tool will be used, not by preference.",
+          a: "Sometimes it's the right one. A graph is faster to build and easier for your team to adjust; compiled code is faster to run, easier to distribute, and doesn't break when someone reorganises a node. Which one fits is decided against how the tool will be used, not by preference. Where a graph stops being enough is covered in [the Dynamo piece](/articles/custom-dynamo-script-development/).",
         },
         {
           q: "How do we know it works before it's finished?",
@@ -206,7 +206,7 @@ export const revitPluginDevelopment: ServicePage = {
       items: [
         {
           q: "برای نسخه‌ی خاصی از رویت می‌سازید؟",
-          a: "برای همان نسخه‌هایی که دفتر شما واقعاً با آن‌ها کار می‌کند، حتی اگر هم‌زمان چند نسخه باشد. بازه‌ی نسخه‌ها در مرحله‌ی اول مشخص می‌شود، زیرا پشتیبانی از سه نسخه سه برابر کار نیست، اما هزینه‌ی اضافه دارد.",
+          a: "برای همان نسخه‌هایی که دفتر شما واقعاً با آن‌ها کار می‌کند، حتی اگر هم‌زمان چند نسخه باشد. بازه‌ی نسخه‌ها در مرحله‌ی اول مشخص می‌شود، زیرا پشتیبانی از سه نسخه سه برابر کار نیست، اما هزینه‌ی اضافه دارد. طھط£ط«غŒط± ط¨ط§ط²ظ‡â€ŒغŒ ظ†ط³ط®ظ‡â€Œظ‡ط§ ط¨ط± ط§ظ†ط¯ط§ط²ظ‡â€ŒغŒ ع©ط§ط±طŒ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ ظ‡ط²غŒظ†ظ‡â€ŒغŒ طھظˆط³ط¹ظ‡ ظ¾ظ„ط§ع¯غŒظ† ط±ظˆغŒطھ](/articles/revit-plugin-development-cost/) ط¨ط±ط±ط³غŒ ط´ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "با پلاگین‌ها و تمپلیت‌های فعلی ما کار می‌کنید؟",
@@ -218,7 +218,7 @@ export const revitPluginDevelopment: ServicePage = {
         },
         {
           q: "به‌جای پلاگین می‌شود از Dynamo استفاده کرد؟",
-          a: "گاهی انتخاب درست همین است. گراف Dynamo سریع‌تر ساخته می‌شود و تیم شما راحت‌تر آن را تغییر می‌دهد، در مقابل کد کامپایل‌شده سریع‌تر اجرا می‌شود، ساده‌تر توزیع می‌شود و با جابه‌جایی یک نود از کار نمی‌افتد. انتخاب بر اساس نحوه‌ی استفاده انجام می‌شود، نه سلیقه.",
+          a: "گاهی انتخاب درست همین است. گراف Dynamo سریع‌تر ساخته می‌شود و تیم شما راحت‌تر آن را تغییر می‌دهد، در مقابل کد کامپایل‌شده سریع‌تر اجرا می‌شود، ساده‌تر توزیع می‌شود و با جابه‌جایی یک نود از کار نمی‌افتد. انتخاب بر اساس نحوه‌ی استفاده انجام می‌شود، نه سلیقه. ظ…ط±ط² ع©ط§ط±ط§غŒغŒ ع¯ط±ط§ظپ Dynamo ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ طھظˆط³ط¹ظ‡ ط§ط³ع©ط±غŒظ¾طھ ط§ط®طھطµط§طµغŒ Dynamo](/articles/custom-dynamo-script-development/) ط¨ط±ط±ط³غŒ ط´ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "از کجا بدانیم کار می‌کند، پیش از آنکه تمام شود؟",

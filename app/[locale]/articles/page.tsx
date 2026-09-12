@@ -71,9 +71,58 @@ export default async function ArticlesPageRoute({
 }) {
   const { locale: localeRaw } = await params;
   const { locale, c } = resolve(localeRaw);
+  const url = `${siteUrl}/${locale}/articles/`;
+
+  /* The index is the only sitemap page without a graph. It lists the same
+     articles in the same order the page shows first: newest by the date on
+     the card, which is the updated date where there is one. */
+  const listed = [...c.articles].sort((a, b) => b.date.localeCompare(a.date));
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": url,
+        url,
+        name: c.meta.title,
+        description: c.meta.description,
+        inLanguage: locale === "fa" ? "fa-IR" : "en",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${url}#breadcrumb` },
+        about: { "@id": `${siteUrl}/#organization` },
+        mainEntity: { "@id": `${url}#articles` },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${url}#articles`,
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: listed.length,
+        itemListElement: listed.map((a, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: a.title,
+          url: `${siteUrl}/${locale}/articles/${a.slug}/`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: site.name, item: `${siteUrl}/${locale}/` },
+          { "@type": "ListItem", position: 2, name: c.breadcrumb, item: url },
+        ],
+      },
+    ],
+  };
 
   return (
     <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/*
         The contact page's arrangement — copy in one column, an amber mark in
         the other — with a dim amber field in place of the aurora. The field

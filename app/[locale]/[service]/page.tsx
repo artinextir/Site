@@ -14,6 +14,7 @@ import { Showcase } from "@/components/sections/Showcase";
 import { Dashboards } from "@/components/sections/Dashboards";
 import { Scope } from "@/components/sections/Scope";
 import { Process } from "@/components/sections/Process";
+import { plainText } from "@/components/article/InlineText";
 import { Faq } from "@/components/sections/Faq";
 import { Cta } from "@/components/sections/Cta";
 
@@ -166,7 +167,7 @@ export default async function ServicePageRoute({
         mainEntity: s.faq.items.map((f) => ({
           "@type": "Question",
           name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
+          acceptedAnswer: { "@type": "Answer", text: plainText(f.a) },
         })),
       },
       {
@@ -209,7 +210,7 @@ export default async function ServicePageRoute({
       {s.local ? <Scope s={s.local} id="working-together" /> : null}
       <Process s={{ ...c.process, eyebrow: s.reusedLabels.process }} />
 
-      <Faq s={s.faq} />
+      <Faq s={s.faq} locale={locale} />
       <Cta locale={locale} s={s.cta} action={c.navCta} />
     </main>
   );

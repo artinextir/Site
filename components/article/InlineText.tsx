@@ -9,6 +9,15 @@ export function localHref(locale: Locale, href: string) {
 }
 
 /**
+ * The same text with the markup removed, for places that take a plain string:
+ * JSON-LD answers, meta descriptions, alt text. Schema.org wants the sentence,
+ * not the link syntax.
+ */
+export function plainText(text: string) {
+  return text.replace(TOKEN, (_m, bold, label) => bold ?? label);
+}
+
+/**
  * Inline `**bold**` and `[label](/href)` inside a paragraph.
  *
  * Site paths become `next/link`; absolute URLs open in a new tab with

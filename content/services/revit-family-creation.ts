@@ -117,7 +117,7 @@ export const revitFamilyCreation: ServicePage = {
         },
         {
           q: "How do you keep families light?",
-          a: "By deciding what the geometry is for. Detail that only reads at 1:5 is modelled as detail components at that scale, not carried in 3D through every view. Imported mesh is rebuilt as native geometry rather than wrapped. The size target is set in stage two and tested against, not hoped for.",
+          a: "By deciding what the geometry is for. Detail that only reads at 1:5 is modelled as detail components at that scale, not carried in 3D through every view. Imported mesh is rebuilt as native geometry rather than wrapped. The size target is set in stage two and tested against, not hoped for. The same discipline across a whole library is covered in [library optimization](/articles/revit-library-optimization/).",
         },
         {
           q: "Can you match our office template and standards?",
@@ -133,7 +133,7 @@ export const revitFamilyCreation: ServicePage = {
         },
         {
           q: "How do we know a family actually works?",
-          a: "It's tested against the combinations that break content, not the ones that flatter it, and the test cases are written before the family is. A family that flexed once in the editor hasn't proven it works, it's proven it worked once.",
+          a: "It's tested against the combinations that break content, not the ones that flatter it, and the test cases are written before the family is. A family that flexed once in the editor hasn't proven it works, it's proven it worked once. The tests themselves are set out in [the parametric family piece](/articles/custom-parametric-revit-family-creation/).",
         },
       ],
     },
@@ -257,7 +257,7 @@ export const revitFamilyCreation: ServicePage = {
         },
         {
           q: "چگونه فمیلی‌ها را سبک نگه می‌دارید؟",
-          a: "با مشخص‌کردن کاربرد هر بخش از هندسه. جزئیاتی که فقط در مقیاس ۱:۵ خوانده می‌شوند، به‌شکل دیتیل‌کامپوننت در همان مقیاس ساخته می‌شوند و به‌صورت سه‌بعدی در همه‌ی ویوها بارگذاری نمی‌شوند. مش واردشده نیز به‌صورت هندسه‌ی بومی بازسازی می‌شود. حجم هدف در مرحله‌ی دوم تعیین و فمیلی بر اساس آن تست می‌شود.",
+          a: "با مشخص‌کردن کاربرد هر بخش از هندسه. جزئیاتی که فقط در مقیاس ۱:۵ خوانده می‌شوند، به‌شکل دیتیل‌کامپوننت در همان مقیاس ساخته می‌شوند و به‌صورت سه‌بعدی در همه‌ی ویوها بارگذاری نمی‌شوند. مش واردشده نیز به‌صورت هندسه‌ی بومی بازسازی می‌شود. حجم هدف در مرحله‌ی دوم تعیین و فمیلی بر اساس آن تست می‌شود. ظ‡ظ…غŒظ† ط§طµظˆظ„ ط¯ط± ط³ط·ط­ ع©ظ„ ع©طھط§ط¨ط®ط§ظ†ظ‡طŒ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ ط¨ظ‡غŒظ†ظ‡â€Œط³ط§ط²غŒ ع©طھط§ط¨ط®ط§ظ†ظ‡ ط±ظˆغŒطھ](/articles/revit-library-optimization/) ط¢ظ…ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "با تمپلیت و استاندارد دفتر ما هماهنگ می‌شوید؟",
@@ -273,7 +273,7 @@ export const revitFamilyCreation: ServicePage = {
         },
         {
           q: "از کجا بدانیم یک فمیلی واقعاً کار می‌کند؟",
-          a: "فمیلی در ترکیب‌ها و شرایطی تست می‌شود که محتوا باید در آن استفاده شود و موارد تست پیش از ساخت فمیلی مکتوب می‌شوند. فمیلی‌ای که یک‌بار در محیط ادیتور تغییر کرده، الزاماً عملکرد درستی در پروژه ندارد.",
+          a: "فمیلی در ترکیب‌ها و شرایطی تست می‌شود که محتوا باید در آن استفاده شود و موارد تست پیش از ساخت فمیلی مکتوب می‌شوند. فمیلی‌ای که یک‌بار در محیط ادیتور تغییر کرده، الزاماً عملکرد درستی در پروژه ندارد. ط´ط±ط­ ط§غŒظ† طھط³طھâ€Œظ‡ط§ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ ط³ط§ط®طھ ظپظ…غŒظ„غŒ ظ¾ط§ط±ط§ظ…طھط±غŒع© ط±ظˆغŒطھ](/articles/custom-parametric-revit-family-creation/) ط¢ظ…ط¯ظ‡ ط§ط³طھ.",
         },
       ],
     },

@@ -138,7 +138,7 @@ export const revitFamilyCreationTehran: ServicePage = {
         },
         {
           q: "What does it cost?",
-          a: "There's no price list, because a family is priced by its behaviour rather than its geometry. Four things move the size of the job, and they're set out on the main Revit family creation page. No estimate is given before the problem is stated in full.",
+          a: "There's no price list, because a family is priced by its behaviour rather than its geometry. Four things move the size of the job, and they're set out on the main Revit family creation page. No estimate is given before the problem is stated in full. What behaviour means in practice is set out in [the parametric family piece](/articles/custom-parametric-revit-family-creation/).",
         },
         {
           q: "Do you only work with Tehran companies?",
@@ -279,7 +279,7 @@ export const revitFamilyCreationTehran: ServicePage = {
         },
         {
           q: "هزینه چقدر است؟",
-          a: "فهرست قیمت ثابتی وجود ندارد، زیرا هزینه‌ی فمیلی را عملکرد آن تعیین می‌کند، نه هندسه‌ی آن. چهار عامل اندازه‌ی کار را تعیین می‌کنند که در صفحه‌ی اصلی ساخت فمیلی رویت توضیح داده شده‌اند. پیش از تعریف کامل مسئله، برآوردی ارائه نمی‌شود.",
+          a: "فهرست قیمت ثابتی وجود ندارد، زیرا هزینه‌ی فمیلی را عملکرد آن تعیین می‌کند، نه هندسه‌ی آن. چهار عامل اندازه‌ی کار را تعیین می‌کنند که در صفحه‌ی اصلی ساخت فمیلی رویت توضیح داده شده‌اند. پیش از تعریف کامل مسئله، برآوردی ارائه نمی‌شود. ظ…ظ†ط¸ظˆط± ط§ط² ط¹ظ…ظ„ع©ط±ط¯ ظپظ…غŒظ„غŒطŒ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ ط³ط§ط®طھ ظپظ…غŒظ„غŒ ظ¾ط§ط±ط§ظ…طھط±غŒع© ط±ظˆغŒطھ](/articles/custom-parametric-revit-family-creation/) ط´ط±ط­ ط¯ط§ط¯ظ‡ ط´ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "فقط با شرکت‌های تهران کار می‌کنید؟",

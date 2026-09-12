@@ -187,7 +187,7 @@ export const workflowAutomationTehran: ServicePage = {
         },
         {
           q: "Does any of this require Revit?",
-          a: "No. This is the work between your software, whatever that software is, a spreadsheet, an accounting system, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser.",
+          a: "No. This is the work between your software, whatever that software is, a spreadsheet, an accounting system, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser. Revit-side automation is its own subject, covered in [the Dynamo piece](/articles/custom-dynamo-script-development/).",
         },
         {
           q: "Do we have to replace the software we already use?",
@@ -388,7 +388,7 @@ export const workflowAutomationTehran: ServicePage = {
         },
         {
           q: "این خدمت به رویت نیاز دارد؟",
-          a: "نه. موضوع، کاری است که میان نرم‌افزارهای شما انجام می‌شود، هر نرم‌افزاری که باشد، مانند اکسل، سامانه‌ی مالی، یک درایو مشترک یا فرمی که کسی پر می‌کند. هیچ‌کدام از دو داشبورد بالا داخل نرم‌افزار مهندسی اجرا نمی‌شوند و در مرورگر باز می‌شوند.",
+          a: "نه. موضوع، کاری است که میان نرم‌افزارهای شما انجام می‌شود، هر نرم‌افزاری که باشد، مانند اکسل، سامانه‌ی مالی، یک درایو مشترک یا فرمی که کسی پر می‌کند. هیچ‌کدام از دو داشبورد بالا داخل نرم‌افزار مهندسی اجرا نمی‌شوند و در مرورگر باز می‌شوند. ط®ظˆط¯ع©ط§ط±ط³ط§ط²غŒ ط¯ط± ط³ظ…طھ ط±ظˆغŒطھ ظ…ظˆط¶ظˆط¹ ط¬ط¯ط§ع¯ط§ظ†ظ‡â€Œط§غŒ ط§ط³طھ ظˆ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ طھظˆط³ط¹ظ‡ ط§ط³ع©ط±غŒظ¾طھ ط§ط®طھطµط§طµغŒ Dynamo](/articles/custom-dynamo-script-development/) ط¨ط±ط±ط³غŒ ط´ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "باید نرم‌افزارهای فعلی را کنار بگذاریم؟",

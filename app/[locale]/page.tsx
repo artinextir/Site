@@ -77,7 +77,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Rnd c={c} />
       <Capabilities c={c} />
       <Insights c={c} />
-      <Faq s={c.faq} />
+      <Faq s={c.faq} locale={locale} />
       <Cta locale={locale} s={c.cta} action={c.navCta} />
     </main>
   );

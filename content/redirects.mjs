@@ -50,6 +50,28 @@ export const redirects = [
   ["/en/products/digital-tools/", "/en/products/"],
   ["/fa/products/automation/", "/fa/products/"],
   ["/en/products/automation/", "/en/products/"],
+
+  /* Unprefixed V1/V2 URLs. Search Console still reports these as 404s: they
+     predate the locale prefix, and Google has them on file. GitHub Pages
+     cannot issue a real 301, so these land as the same stub the other moved
+     paths use, which Google follows as a redirect and which carries the
+     canonical to the surviving page. */
+  ["/solutions/", "/fa/"],
+  ["/about/", "/fa/about/"],
+  ["/products/", "/fa/products/"],
+  ["/products/automation/", "/fa/products/"],
+  ["/products/revit-families/", "/fa/products/"],
+  ["/products/digital-tools/", "/fa/products/"],
+  ["/research-development/", "/fa/research-development/"],
+  ["/revit-family-creation-tehran/", "/fa/revit-family-creation-tehran/"],
+  ["/workflow-automation-tehran/", "/fa/workflow-automation-tehran/"],
+  ["/revit-family-creation-isfahan/", "/fa/revit-family-creation/"],
+  ["/articles/aec-workflow-automation/", "/fa/articles/aec-workflow-automation/"],
+  ["/articles/custom-parametric-revit-family-creation/", "/fa/articles/custom-parametric-revit-family-creation/"],
+  ["/articles/revit-plugin-development-company/", "/fa/articles/revit-plugin-development-company/"],
+  ["/articles/custom-dynamo-script-development/", "/fa/articles/custom-dynamo-script-development/"],
+  ["/articles/revit-plugin-development-cost/", "/fa/articles/revit-plugin-development-cost/"],
+  ["/articles/revit-model-checker/", "/fa/articles/revit-model-checker/"],
 ];
 
 /** Paths that should return 410 Gone and never come back. */

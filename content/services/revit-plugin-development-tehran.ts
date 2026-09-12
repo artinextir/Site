@@ -112,7 +112,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
         },
         {
           q: "What does it cost?",
-          a: "There's no price list, because a plugin isn't priced by its button. Four things move the size of the job, and they're set out on the main Revit plugin development page. No estimate is given before the problem is stated in full.",
+          a: "There's no price list, because a plugin isn't priced by its button. Four things move the size of the job, and they're set out on the main Revit plugin development page. No estimate is given before the problem is stated in full. The four drivers are set out in [the plugin cost piece](/articles/revit-plugin-development-cost/).",
         },
         {
           q: "Do you only work with Tehran offices?",
@@ -230,7 +230,7 @@ export const revitPluginDevelopmentTehran: ServicePage = {
         },
         {
           q: "هزینه چقدر است؟",
-          a: "فهرست قیمت ثابتی وجود ندارد، زیرا هزینه‌ی پلاگین به تعداد دکمه‌های آن بستگی ندارد. چهار عامل اندازه‌ی کار را تعیین می‌کنند که در صفحه‌ی اصلی توسعه پلاگین رویت توضیح داده شده‌اند. پیش از تعریف کامل مسئله، برآوردی ارائه نمی‌شود.",
+          a: "فهرست قیمت ثابتی وجود ندارد، زیرا هزینه‌ی پلاگین به تعداد دکمه‌های آن بستگی ندارد. چهار عامل اندازه‌ی کار را تعیین می‌کنند که در صفحه‌ی اصلی توسعه پلاگین رویت توضیح داده شده‌اند. پیش از تعریف کامل مسئله، برآوردی ارائه نمی‌شود. ع†ظ‡ط§ط± ط¹ط§ظ…ظ„ ظ…ط¤ط«ط± ط¨ط± ط§ظ†ط¯ط§ط²ظ‡â€ŒغŒ ع©ط§ط±طŒ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ ظ‡ط²غŒظ†ظ‡â€ŒغŒ طھظˆط³ط¹ظ‡ ظ¾ظ„ط§ع¯غŒظ† ط±ظˆغŒطھ](/articles/revit-plugin-development-cost/) ط¢ظ…ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "فقط با دفاتر تهران کار می‌کنید؟",

@@ -185,7 +185,7 @@ export const aecWorkflowAutomation: ServicePage = {
       items: [
         {
           q: "Does any of this require Revit?",
-          a: "No. This service is about the work between your software, whatever that software is, a spreadsheet, an ERP export, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser.",
+          a: "No. This service is about the work between your software, whatever that software is, a spreadsheet, an ERP export, a shared drive, a form somebody fills in. Neither dashboard above runs inside an engineering application; both open in a browser. Revit-side automation is its own subject, covered in [the Dynamo piece](/articles/custom-dynamo-script-development/).",
         },
         {
           q: "Do we have to replace the software we already use?",
@@ -193,7 +193,7 @@ export const aecWorkflowAutomation: ServicePage = {
         },
         {
           q: "What happens when the process changes next year?",
-          a: "It will, so the parts that change are separated from the parts that don't. The rules that move, a threshold, an approver, a naming pattern, live somewhere a person can edit without opening code. Anything hard-coded that should have been a setting is a maintenance bill you pay later.",
+          a: "It will, so the parts that change are separated from the parts that don't. The rules that move, a threshold, an approver, a naming pattern, live somewhere a person can edit without opening code. Anything hard-coded that should have been a setting is a maintenance bill you pay later. Writing the process down before automating it is covered in [where automation should start](/articles/aec-workflow-automation/).",
         },
         {
           q: "Where does it run, and who can see the data?",
@@ -385,7 +385,7 @@ export const aecWorkflowAutomation: ServicePage = {
       items: [
         {
           q: "این خدمت به رویت نیاز دارد؟",
-          a: "نه. موضوع این صفحه کاری است که میان نرم‌افزارهای شما انجام می‌شود، هر نرم‌افزاری که باشد، مانند اکسل، خروجی یک سامانه‌ی ERP، یک درایو مشترک یا فرمی که کسی پر می‌کند. هیچ‌کدام از دو داشبورد بالا داخل نرم‌افزار مهندسی اجرا نمی‌شوند و در مرورگر باز می‌شوند.",
+          a: "نه. موضوع این صفحه کاری است که میان نرم‌افزارهای شما انجام می‌شود، هر نرم‌افزاری که باشد، مانند اکسل، خروجی یک سامانه‌ی ERP، یک درایو مشترک یا فرمی که کسی پر می‌کند. هیچ‌کدام از دو داشبورد بالا داخل نرم‌افزار مهندسی اجرا نمی‌شوند و در مرورگر باز می‌شوند. ط®ظˆط¯ع©ط§ط±ط³ط§ط²غŒ ط¯ط± ط³ظ…طھ ط±ظˆغŒطھ ظ…ظˆط¶ظˆط¹ ط¬ط¯ط§ع¯ط§ظ†ظ‡â€Œط§غŒ ط§ط³طھ ظˆ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ طھظˆط³ط¹ظ‡ ط§ط³ع©ط±غŒظ¾طھ ط§ط®طھطµط§طµغŒ Dynamo](/articles/custom-dynamo-script-development/) ط¨ط±ط±ط³غŒ ط´ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "باید نرم‌افزارهای فعلی را کنار بگذاریم؟",
@@ -393,7 +393,7 @@ export const aecWorkflowAutomation: ServicePage = {
         },
         {
           q: "اگر سال آینده فرآیند عوض شود چه؟",
-          a: "فرآیندها تغییر می‌کنند، به همین دلیل بخش‌های متغیر از بخش‌های ثابت جدا نگه داشته می‌شوند. قواعدی که ممکن است تغییر کنند، مانند یک حد آستانه، یک تأییدکننده یا یک الگوی نام‌گذاری، در تنظیماتی قرار می‌گیرند که بدون بازکردن کد قابل‌ویرایش باشد. هر قاعده‌ای که به‌جای تنظیمات در کد ثابت شود، بعداً هزینه‌ی اضافه ایجاد می‌کند.",
+          a: "فرآیندها تغییر می‌کنند، به همین دلیل بخش‌های متغیر از بخش‌های ثابت جدا نگه داشته می‌شوند. قواعدی که ممکن است تغییر کنند، مانند یک حد آستانه، یک تأییدکننده یا یک الگوی نام‌گذاری، در تنظیماتی قرار می‌گیرند که بدون بازکردن کد قابل‌ویرایش باشد. هر قاعده‌ای که به‌جای تنظیمات در کد ثابت شود، بعداً هزینه‌ی اضافه ایجاد می‌کند. ظ…ع©طھظˆط¨â€Œع©ط±ط¯ظ† ظپط±ط¢غŒظ†ط¯ ظ¾غŒط´ ط§ط² ط®ظˆط¯ع©ط§ط±ط³ط§ط²غŒطŒ ط¯ط± [ظ†ظˆط´طھظ‡â€ŒغŒ ظ‡ظˆط´ظ…ظ†ط¯ط³ط§ط²غŒ ظپط±ط¢غŒظ†ط¯ ع©ط§ط±غŒ](/articles/aec-workflow-automation/) ط¨ط±ط±ط³غŒ ط´ط¯ظ‡ ط§ط³طھ.",
         },
         {
           q: "کجا اجرا می‌شود و داده کجا می‌ماند؟",
