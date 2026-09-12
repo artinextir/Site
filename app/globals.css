@@ -807,6 +807,18 @@
     transform: translateY(24px);
   }
 
+  /* The first screen is exempt. Everywhere the hero copy sits inside a
+     Reveal, the largest text on the page could not paint until hydration
+     armed the hook, which cost /products/ about half a second of LCP (3.14s
+     to 2.61s, median of three runs, 2026-09-12). The home hero never used
+     Reveal and always painted straight away; this brings the rest in line
+     with it. Sections below the fold still animate in. */
+  main > section:first-of-type .reveal,
+  main > section:first-of-type [data-stagger] > * {
+    opacity: 1;
+    transform: none;
+  }
+
   /* Staggered groups: the wrapper hides its direct children, the hook reveals
      them one at a time. Kept in CSS so nothing ever flashes visible first. */
   [data-stagger] > * {

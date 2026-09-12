@@ -248,6 +248,9 @@ export function HeroModel({ className = "" }: { className?: string }) {
       amber: vivid(channels("--amber-rgb", "216,167,106"), 0.95, 1.22),
     };
 
+    /* Assigned once the loader exists below; `resize` runs before that. */
+    let scheduleLoad: () => void = () => {};
+
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const { width, height } = host.getBoundingClientRect();
@@ -259,6 +262,8 @@ export function HeroModel({ className = "" }: { className?: string }) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.lineCap = "round";
       if (model.current) draw(performance.now());
+      // A band that was hidden at load can gain a box on rotate or resize.
+      else scheduleLoad();
     };
 
     resize();
@@ -284,6 +289,15 @@ export function HeroModel({ className = "" }: { className?: string }) {
     });
     io.observe(host);
 
+    /* The hero renders its art twice: a short band for phones and a full-bleed
+       copy from lg up, one of which is always display:none. Both used to fetch
+       and parse the model — 188KB of JSON, twice per page, for a canvas with no
+       box. Nothing starts here until the host actually has one. */
+    const hasBox = () => {
+      const r = host.getBoundingClientRect();
+      return r.width > 0 && r.height > 0;
+    };
+
     let cancelled = false;
     // The geometry is decoration, and 188KB of it. Waiting for an idle frame
     // keeps the fetch and the JSON parse out of the critical path entirely.
@@ -306,9 +320,14 @@ export function HeroModel({ className = "" }: { className?: string }) {
     // lib.dom declares requestIdleCallback unconditionally, so the detection
     // has to go through typeof — `in` and truthiness both get narrowed away.
     const supportsIdle = typeof window.requestIdleCallback === "function";
-    const idle = supportsIdle
-      ? window.requestIdleCallback(load, { timeout: 2500 })
-      : window.setTimeout(load, 600);
+    let idle = 0;
+    scheduleLoad = () => {
+      if (idle || cancelled || model.current || !hasBox()) return;
+      idle = supportsIdle
+        ? window.requestIdleCallback(load, { timeout: 2500 })
+        : window.setTimeout(load, 600);
+    };
+    scheduleLoad();
 
     const onMove = (e: PointerEvent) => {
       leanTarget.current = {
@@ -316,12 +335,15 @@ export function HeroModel({ className = "" }: { className?: string }) {
         y: (e.clientY / window.innerHeight - 0.5) * 2,
       };
     };
-    if (!still.current && fine) window.addEventListener("pointermove", onMove, { passive: true });
+    // Only the visible copy needs the cursor: the hidden band has no box.
+    if (!still.current && fine && hasBox()) window.addEventListener("pointermove", onMove, { passive: true });
 
     return () => {
       cancelled = true;
-      if (supportsIdle) window.cancelIdleCallback(idle);
-      else clearTimeout(idle);
+      if (idle) {
+        if (supportsIdle) window.cancelIdleCallback(idle);
+        else clearTimeout(idle);
+      }
       stop();
       ro.disconnect();
       io.disconnect();
