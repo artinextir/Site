@@ -99,15 +99,29 @@ export function SnapScroll() {
       const y = window.scrollY;
       const points = snapPoints();
       const next = direction > 0 ? points.find((p) => p > y + 4) : [...points].reverse().find((p) => p < y - 4);
-      // Past the last point, or a section taller than the screen: leave it native.
-      if (next === undefined || Math.abs(next - y) > window.innerHeight * 1.2) return;
+      // Nothing beyond this point: let the browser have its own end-of-page feel.
+      if (next === undefined) return;
+
+      /* A section taller than the screen â€” which is what the media sections on
+         /products/ become on a short laptop window â€” used to be handed back to
+         the browser so its lower half stayed reachable. That handed the whole
+         page back to a free-spinning wheel, which is the runaway again, on the
+         one page most likely to have such a section. So step through it a
+         screen at a time instead, landing on the section edge at the end. */
+      const step = Math.round(window.innerHeight * 0.85);
+      const far = Math.abs(next - y) > window.innerHeight * 1.2;
+      const target = far
+        ? direction > 0
+          ? Math.min(y + step, next)
+          : Math.max(y - step, next)
+        : next;
 
       event.preventDefault();
       if (moving) return;
 
       moving = true;
       movedAt = performance.now();
-      window.scrollTo({ top: next, behavior: reduceMotion.matches ? "auto" : "smooth" });
+      window.scrollTo({ top: target, behavior: reduceMotion.matches ? "auto" : "smooth" });
       window.clearTimeout(releaseTimer);
       releaseTimer = window.setTimeout(release, FALLBACK_SETTLE_MS);
     };
