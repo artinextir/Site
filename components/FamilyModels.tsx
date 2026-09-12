@@ -37,6 +37,9 @@ export function FamilyModels({ className = "" }: { className?: string }) {
   const live = useRef(false);
   const size = useRef({ w: 0, h: 0 });
   const still = useRef(false);
+  /** A touch device turns too, at ~30fps: frozen geometry reads as broken. */
+  const frameGap = useRef(0);
+  const lastFrame = useRef(0);
   /**
    * The spin waits for the visitor's first input. Until then the page is
    * still loading and the main thread belongs to that; a still frame says the
@@ -175,7 +178,10 @@ export function FamilyModels({ className = "" }: { className?: string }) {
 
   const tick = useCallback(
     (now: number) => {
-      draw(now);
+      if (now - lastFrame.current >= frameGap.current) {
+        lastFrame.current = now;
+        draw(now);
+      }
       raf.current = requestAnimationFrame(tick);
     },
     [draw],
@@ -189,7 +195,8 @@ export function FamilyModels({ className = "" }: { className?: string }) {
     if (!ctx || !host) return;
 
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    still.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches || !fine;
+    still.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    frameGap.current = fine ? 0 : 33;
     rtl.current = getComputedStyle(canvas).direction === "rtl";
 
     const styles = getComputedStyle(canvas);
@@ -234,7 +241,9 @@ export function FamilyModels({ className = "" }: { className?: string }) {
       cancelAnimationFrame(raf.current);
     };
 
-    const INPUTS = ["pointermove", "wheel", "scroll", "keydown"] as const;
+    // `touchstart` so a phone that lands on the section without scrolling
+    // still starts the turn; the rest cover a pointer, a wheel and a keyboard.
+    const INPUTS = ["pointermove", "wheel", "scroll", "keydown", "touchstart"] as const;
     const engage = () => {
       if (engaged.current) return;
       engaged.current = true;

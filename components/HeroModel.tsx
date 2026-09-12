@@ -82,10 +82,17 @@ export function HeroModel({ className = "" }: { className?: string }) {
   const lean = useRef({ x: 0, y: 0 });
   const leanTarget = useRef({ x: 0, y: 0 });
   const size = useRef({ w: 0, h: 0 });
-  /** One still frame instead of a live orbit: reduced motion, or any touch
-      device, where a permanent rAF is a battery cost with no pointer to
-      answer and the band is too short for the sweep to read anyway. */
+  /** One still frame instead of a live orbit, for prefers-reduced-motion. */
   const still = useRef(false);
+  /** A touch device: it still turns, but on the decimated model and at half
+      the frame rate, and without the pointer lean there is no cursor to feed.
+      The orbit was frozen here until 2026-09-12; a phone showing a dead
+      wireframe reads as broken rather than as restraint. */
+  const coarse = useRef(false);
+  /** Minimum gap between drawn frames: every frame on a desktop, ~30fps on a
+      phone, where the battery matters more than the extra smoothness. */
+  const frameGap = useRef(0);
+  const lastFrame = useRef(0);
 
   const palette = useRef({
     sage: "158,193,172",
@@ -206,9 +213,12 @@ export function HeroModel({ className = "" }: { className?: string }) {
 
   const tick = useCallback(
     (now: number) => {
-      lean.current.x += (leanTarget.current.x - lean.current.x) * 0.045;
-      lean.current.y += (leanTarget.current.y - lean.current.y) * 0.045;
-      draw(now);
+      if (now - lastFrame.current >= frameGap.current) {
+        lastFrame.current = now;
+        lean.current.x += (leanTarget.current.x - lean.current.x) * 0.045;
+        lean.current.y += (leanTarget.current.y - lean.current.y) * 0.045;
+        draw(now);
+      }
       raf.current = requestAnimationFrame(tick);
     },
     [draw],
@@ -222,7 +232,9 @@ export function HeroModel({ className = "" }: { className?: string }) {
     if (!ctx || !host) return;
 
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    still.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches || !fine;
+    still.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    coarse.current = !fine;
+    frameGap.current = fine ? 0 : 33;
 
     const styles = getComputedStyle(canvas);
     const channels = (name: string, fallback: string) => {
@@ -278,7 +290,7 @@ export function HeroModel({ className = "" }: { className?: string }) {
     // A phone gets the decimated frame. The band is ~300px tall there, where
     // the full member list reads as noise, and the full file lands late
     // enough over a slow connection to show up as a Speed Index penalty.
-    const src = still.current ? SRC_LITE : SRC;
+    const src = still.current || coarse.current ? SRC_LITE : SRC;
     const load = () =>
       fetch(src, { priority: "low" } as RequestInit)
         .then((r) => r.json())
@@ -304,7 +316,7 @@ export function HeroModel({ className = "" }: { className?: string }) {
         y: (e.clientY / window.innerHeight - 0.5) * 2,
       };
     };
-    if (!still.current) window.addEventListener("pointermove", onMove, { passive: true });
+    if (!still.current && fine) window.addEventListener("pointermove", onMove, { passive: true });
 
     return () => {
       cancelled = true;
