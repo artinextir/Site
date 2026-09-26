@@ -6,6 +6,9 @@ import { revitModelChecker } from "@/content/articles/revit-model-checker";
 import { revitLibraryOptimization } from "@/content/articles/revit-library-optimization";
 import { customDynamoScriptDevelopment } from "@/content/articles/custom-dynamo-script-development";
 import { aecWorkflowAutomation } from "@/content/articles/aec-workflow-automation";
+import { cadToRevitAutomation } from "@/content/articles/cad-to-revit-automation";
+import { revitScheduleToExcelExport } from "@/content/articles/revit-schedule-to-excel-export";
+import { prepareCompanyDataForAi } from "@/content/articles/prepare-company-data-for-ai";
 
 /**
  * Every published article. The `/[locale]/articles/[slug]/` route builds
@@ -22,6 +25,9 @@ export const articlePages: ArticlePage[] = [
   revitLibraryOptimization,
   customDynamoScriptDevelopment,
   aecWorkflowAutomation,
+  cadToRevitAutomation,
+  revitScheduleToExcelExport,
+  prepareCompanyDataForAi,
 ];
 
 export const articleSlugs = articlePages.map((a) => a.slug);
