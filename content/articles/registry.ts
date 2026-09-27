@@ -9,6 +9,8 @@ import { aecWorkflowAutomation } from "@/content/articles/aec-workflow-automatio
 import { cadToRevitAutomation } from "@/content/articles/cad-to-revit-automation";
 import { revitScheduleToExcelExport } from "@/content/articles/revit-schedule-to-excel-export";
 import { prepareCompanyDataForAi } from "@/content/articles/prepare-company-data-for-ai";
+import { constructionManagementDashboard } from "@/content/articles/construction-management-dashboard";
+import { customAiAssistantForBusiness } from "@/content/articles/custom-ai-assistant-for-business";
 
 /**
  * Every published article. The `/[locale]/articles/[slug]/` route builds
@@ -28,6 +30,8 @@ export const articlePages: ArticlePage[] = [
   cadToRevitAutomation,
   revitScheduleToExcelExport,
   prepareCompanyDataForAi,
+  constructionManagementDashboard,
+  customAiAssistantForBusiness,
 ];
 
 export const articleSlugs = articlePages.map((a) => a.slug);
