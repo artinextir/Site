@@ -11,6 +11,9 @@ import { revitScheduleToExcelExport } from "@/content/articles/revit-schedule-to
 import { prepareCompanyDataForAi } from "@/content/articles/prepare-company-data-for-ai";
 import { constructionManagementDashboard } from "@/content/articles/construction-management-dashboard";
 import { customAiAssistantForBusiness } from "@/content/articles/custom-ai-assistant-for-business";
+import { softwareDataIntegrationConsulting } from "@/content/articles/software-data-integration-consulting";
+import { mvpDevelopmentInternalTools } from "@/content/articles/mvp-development-internal-tools";
+import { revitRoomFinishingAutomation } from "@/content/articles/revit-room-finishing-automation";
 
 /**
  * Every published article. The `/[locale]/articles/[slug]/` route builds
@@ -32,6 +35,9 @@ export const articlePages: ArticlePage[] = [
   prepareCompanyDataForAi,
   constructionManagementDashboard,
   customAiAssistantForBusiness,
+  softwareDataIntegrationConsulting,
+  mvpDevelopmentInternalTools,
+  revitRoomFinishingAutomation,
 ];
 
 export const articleSlugs = articlePages.map((a) => a.slug);
