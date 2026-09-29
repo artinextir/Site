@@ -14,6 +14,8 @@ import { customAiAssistantForBusiness } from "@/content/articles/custom-ai-assis
 import { softwareDataIntegrationConsulting } from "@/content/articles/software-data-integration-consulting";
 import { mvpDevelopmentInternalTools } from "@/content/articles/mvp-development-internal-tools";
 import { revitRoomFinishingAutomation } from "@/content/articles/revit-room-finishing-automation";
+import { revitApiDevelopment } from "@/content/articles/revit-api-development";
+import { revitSheetSortingPlugin } from "@/content/articles/revit-sheet-sorting-plugin";
 
 /**
  * Every published article. The `/[locale]/articles/[slug]/` route builds
@@ -38,6 +40,8 @@ export const articlePages: ArticlePage[] = [
   softwareDataIntegrationConsulting,
   mvpDevelopmentInternalTools,
   revitRoomFinishingAutomation,
+  revitApiDevelopment,
+  revitSheetSortingPlugin,
 ];
 
 export const articleSlugs = articlePages.map((a) => a.slug);
