@@ -16,6 +16,8 @@ import { mvpDevelopmentInternalTools } from "@/content/articles/mvp-development-
 import { revitRoomFinishingAutomation } from "@/content/articles/revit-room-finishing-automation";
 import { revitApiDevelopment } from "@/content/articles/revit-api-development";
 import { revitSheetSortingPlugin } from "@/content/articles/revit-sheet-sorting-plugin";
+import { revitOutputManagementTool } from "@/content/articles/revit-output-management-tool";
+import { revitWallPostAutomation } from "@/content/articles/revit-wall-post-automation";
 
 /**
  * Every published article. The `/[locale]/articles/[slug]/` route builds
@@ -42,6 +44,8 @@ export const articlePages: ArticlePage[] = [
   revitRoomFinishingAutomation,
   revitApiDevelopment,
   revitSheetSortingPlugin,
+  revitOutputManagementTool,
+  revitWallPostAutomation,
 ];
 
 export const articleSlugs = articlePages.map((a) => a.slug);
